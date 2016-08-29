@@ -1,6 +1,0 @@
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|a2fcb57d-0224-4192-86b7-7243fc504657
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyReferenceLibrary\CyReferenceLibrary.cylib\CyReferenceLibrary.cyprj|cb0ba9b2-6043-47a2-99bc-bbd6e3383cd2
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|d3c81bb3-845e-4104-974e-75ae439fbe04
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|1917332d-a5f8-4fac-89c0-b6050c8392ab
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|3c39bbc2-94a6-4930-9b87-492a589c469f
-C:\Dropbox\Projects\Spectacle\Spectacle_Audio_Output_Board\Firmware\Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board.cydsn\Spectacle_Audio_Output_Board.cyprj|33c391c3-6803-4640-9e1d-93affa218db7
