@@ -21157,7 +21157,7 @@ This is the "EZ" version, which has limited top masking for improved ease of ass
 <part name="J4" library="SparkFun-Connectors" deviceset="AUDIO-JACK3" device=""/>
 <part name="D4" library="SparkFun-DiscreteSemi" deviceset="PESD1CAN" device=""/>
 <part name="GND4" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="D5" library="SparkFun-DiscreteSemi" deviceset="PESD1CAN" device=""/>
+<part name="D1" library="SparkFun-DiscreteSemi" deviceset="PESD1CAN" device=""/>
 <part name="SUPPLY1" library="SparkFun-Aesthetics" deviceset="3.3V" device=""/>
 <part name="H1" library="SparkFun-Electromechanical" deviceset="STAND-OFF" device=""/>
 <part name="H2" library="SparkFun-Electromechanical" deviceset="STAND-OFF" device=""/>
@@ -21235,7 +21235,7 @@ This is the "EZ" version, which has limited top masking for improved ease of ass
 <part name="SUPPLY21" library="SparkFun-Aesthetics" deviceset="3.3V" device=""/>
 <part name="GND28" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="R29" library="SparkFun-Resistors" deviceset="100KOHM-1/16W-1%(0402)" device="" value="100K"/>
-<part name="C22" library="SparkFun-Capacitors" deviceset="2.2UF-10V-20%(0603)" device="" value="2.2uF"/>
+<part name="C20" library="SparkFun-Capacitors" deviceset="2.2UF-10V-20%(0603)" device="" value="2.2uF"/>
 <part name="C12" library="SparkFun-Capacitors" deviceset="10UF-6.3V-20%(0603)" device="" value="10uF"/>
 <part name="C9" library="SparkFun-Capacitors" deviceset="0.1UF-16V(+-10%)(0402)" device="" value="0.1uF"/>
 <part name="C11" library="SparkFun-Capacitors" deviceset="10UF-6.3V-20%(0603)" device="" value="10uF"/>
@@ -21324,7 +21324,7 @@ Disable</text>
 <instance part="J4" gate="G$1" x="190.5" y="76.2" rot="MR180"/>
 <instance part="D4" gate="G$1" x="223.52" y="71.12" rot="MR180"/>
 <instance part="GND4" gate="1" x="241.3" y="40.64"/>
-<instance part="D5" gate="G$1" x="223.52" y="43.18"/>
+<instance part="D1" gate="G$1" x="223.52" y="43.18"/>
 <instance part="SUPPLY1" gate="G$1" x="22.86" y="177.8"/>
 <instance part="H1" gate="G$1" x="246.38" y="33.02"/>
 <instance part="H2" gate="G$1" x="243.84" y="33.02"/>
@@ -21441,7 +21441,7 @@ Disable</text>
 <pinref part="GND4" gate="1" pin="GND"/>
 <wire x1="238.76" y1="66.04" x2="241.3" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="241.3" y1="66.04" x2="241.3" y2="48.26" width="0.1524" layer="91"/>
-<pinref part="D5" gate="G$1" pin="3"/>
+<pinref part="D1" gate="G$1" pin="3"/>
 <wire x1="241.3" y1="48.26" x2="241.3" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="238.76" y1="48.26" x2="241.3" y2="48.26" width="0.1524" layer="91"/>
 <junction x="241.3" y="48.26"/>
@@ -21506,7 +21506,7 @@ Disable</text>
 <pinref part="J4" gate="G$1" pin="EARTH"/>
 <wire x1="208.28" y1="45.72" x2="208.28" y2="48.26" width="0.1524" layer="91"/>
 <junction x="208.28" y="71.12"/>
-<pinref part="D5" gate="G$1" pin="2"/>
+<pinref part="D1" gate="G$1" pin="2"/>
 <wire x1="208.28" y1="48.26" x2="208.28" y2="71.12" width="0.1524" layer="91"/>
 <wire x1="208.28" y1="45.72" x2="218.44" y2="45.72" width="0.1524" layer="91"/>
 <pinref part="J5" gate="G$1" pin="EARTH"/>
@@ -21882,7 +21882,7 @@ Disable</text>
 <attribute name="NAME" x="85.09" y="171.2214" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="80.01" y="170.942" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="C22" gate="G$1" x="154.94" y="165.1"/>
+<instance part="C20" gate="G$1" x="154.94" y="165.1"/>
 <instance part="C12" gate="G$1" x="213.36" y="152.4"/>
 <instance part="C9" gate="G$1" x="223.52" y="152.4"/>
 <instance part="C11" gate="G$1" x="203.2" y="152.4"/>
@@ -22122,7 +22122,7 @@ Disable</text>
 <segment>
 <pinref part="GND22" gate="1" pin="GND"/>
 <wire x1="154.94" y1="160.02" x2="154.94" y2="162.56" width="0.1524" layer="91"/>
-<pinref part="C22" gate="G$1" pin="2"/>
+<pinref part="C20" gate="G$1" pin="2"/>
 </segment>
 <segment>
 <pinref part="U4" gate="G$1" pin="GND"/>
@@ -22206,7 +22206,7 @@ Disable</text>
 <wire x1="154.94" y1="170.18" x2="154.94" y2="172.72" width="0.1524" layer="91"/>
 <wire x1="154.94" y1="172.72" x2="152.4" y2="172.72" width="0.1524" layer="91"/>
 <junction x="152.4" y="172.72"/>
-<pinref part="C22" gate="G$1" pin="1"/>
+<pinref part="C20" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="SUPPLY12" gate="VDD" pin="VDD"/>
