@@ -1,0 +1,50 @@
+
+//_____________________________________________________________
+//
+	.sect code,putstrp	// 24 words
+	.export _putstrp
+_putstrp:
+	ldx (I6)+1,NULL	// I6 += 1
+	stx LR0,(I6)+1
+	stx A0,(I6) ; sty A1,(I6)+1
+	ldc 255,A1	// 255 -> 0 -> ET8
+	stx B0,(I6) ; sty B1,(I6)
+	j F0B6
+	ldc -8,B0	// -8 -> 0 -> ET6
+// jumped away
+F0B7:	// (loop lvl 2)
+// 	}
+// {
+// 	    putch(i >> 8);
+// 	if (i & 255)
+	and B1,A1,A0	// 'i' and ET8 -> ET9
+	nop
+	jzs F0B1	// compare against zero
+	nop
+// jumped away
+// 	}
+// {
+// 	    putch(i);
+	call _putch
+	add B1,NULL,A0	// 'i' -> A0
+// jumped away
+F0B6:	// (loop lvl 2)
+//     }
+
+	ldx (I0)+1,B1	// 'packedStr' ==> 'i'
+// (i >> 8)
+	ashl B1,B0,A0	// 'i' << ET6 -> ET7
+	sub A0,NULL,A0	// ET7 != (0) -> (0)
+	nop
+	callzc _putch
+	ldc F0B7,LR0
+// jumped away
+F0B1:
+	ldy (I6),B1 ; ldx (I6)-1,B0
+	ldy (I6),A1 ; ldx (I6)-1,A0
+	ldx (I6)-1,LR0
+	jr
+	nop
+// jumped away
+
+	.end

@@ -1,0 +1,443 @@
+
+//_____________________________________________________________
+//
+	.sect code,UartLoadCheck	// 50 words
+	.export _UartLoadCheck
+_UartLoadCheck:
+	ldx (I6)+1,NULL	// I6 += 1
+	stx LR0,(I6)+1
+	stx I6,(I6) ; sty I4,(I6)
+	ldx (I6)+1,I4
+	stx A0,(I6) ; sty A1,(I6)+1
+	stx C1,(I6) ; sty I0,(I6)
+	ldx (I4)-2,NULL	// I4 += -2
+//   if (cs == 0)
+	ldx (I4)-1,A0	// unspill 'cs' from #-2
+	sub A0,NULL,A0	// 'cs' == (0) -> (0)
+	nop
+	jzs F0B3	// signed compare
+	nop
+// jumped away
+	ldc 35,A1	// 35 -> 1 -> ET6
+	add A0,A1,A0 ; ldy (I4)+3,NULL
+	mv A0,I0	// AT11 -> ET7
+//   if (cs->gain != player.volumeOffset)
+	ldx (I0),A0	// ET7 ==> 35 -> ET8
+	ldc _player+7,I0	// ETb
+	ldx (I0),A1	// ETb ==> 7 -> ETc
+	sub A0,A1,A1	// ET8 == ETc -> ATf
+	nop
+	jzs F0B1	// signed compare
+	nop
+// jumped away
+//   }
+// {
+//     player.volumeOffset = cs->gain;
+//     PlayerVolume();
+	call _PlayerVolume
+	stx A0,(I0)	// ET8 ==> ETb
+// jumped away
+F0B1:
+	ldy (I6),I0 ; ldx (I6)-1,C1
+	ldy (I6),A1 ; ldx (I6)-1,A0
+	ldx (I4),I6 ; ldy (I4),I4
+	ldx (I6)-1,NULL	// I6 += -1
+	ldx (I6)-1,LR0
+	jr
+	nop
+// jumped away
+	ldx (I4)-3,NULL	// I4 += -3
+F0B3:
+//   }
+// {
+//     if (n)
+	ldx (I4)+3,A0	// unspill 'n' from #0
+	sub A0,NULL,A0	// 'n' == (0) -> (0)
+	ldc 6,A0	// 6 -> 1 -> ET4
+	jzs F0B6	// signed compare
+	ldc _clockX,I0	// ET2
+// jumped away
+//     }
+// {
+// 	clockX = 8;
+	ldc 8,A0	// 8 -> 1 -> ET1
+// 	goto set;
+F0B7:
+	sty A0,(I0)/*V*/ ; ldx (I6)+1,NULL	// ET1 ==> ET2
+// 	SetRate(hwSampleRate);
+	ldc _hwSampleRate,I0	// ET5
+	ldy (I0),C1/*V*/	// ET5 ==> 'hwSampleRate'
+	call _SetRate
+	ldc F0B1,LR0
+// jumped away
+F0B6:
+//     if (clockX != 6)
+	ldy (I0),A1/*V*/	// ET2 ==> ET3
+	sub A1,A0,A1	// ET3 == ET4 -> AT10
+	nop
+	jzs F0B1	// unsigned compare
+	nop
+// jumped away
+//     }
+// {
+// 	clockX = 6;
+//     set:
+	j F0B7
+	nop
+// jumped away
+
+//_____________________________________________________________
+//
+	.sect code,UartIdleHook	// 180 words
+	.export _UartIdleHook
+_UartIdleHook:
+	ldx (I6)+1,NULL	// I6 += 1
+	stx LR0,(I6)+1
+	stx I6,(I6) ; sty I4,(I6)
+	ldx (I6)+1,I4
+	stx A0,(I6) ; sty A1,(I6)+1
+	stx B0,(I6) ; sty B1,(I6)+1
+	stx C0,(I6) ; sty C1,(I6)+1
+//     if (UartFill())
+	call _UartFill
+	stx I0,(I6)
+// jumped away
+	sub A0,NULL,A0	// ET0 == (0) -> (0)
+	nop
+	jzs F1B4	// signed compare
+	nop
+// jumped away
+//     }
+// cmd
+	call _UartGetByte
+	nop
+// jumped away
+// (cmd == 'f')
+	ldc 102,A1	// 102 -> 0 -> ET2
+	sub A0,A1,A1	// 'cmd' == ET2 -> AT47
+	nop
+	jzs F1B7	// signed compare
+	nop
+// jumped away
+// else if (cmd == 'c')
+	ldc 99,A1	// 99 -> 0 -> ET5
+	sub A0,A1,A1	// 'cmd' == ET5 -> AT48
+	nop
+	jzs F1B10	// signed compare
+	nop
+// jumped away
+// else if (cmd == 'C')
+	ldc 67,A1	// 67 -> 0 -> ET7
+	sub A0,A1,A1	// 'cmd' == ET7 -> AT49
+	nop
+	jzs F1B13	// signed compare
+	nop
+// jumped away
+// else if (cmd == '+')
+	ldc 43,A1	// 43 -> 0 -> ET8
+	sub A0,A1,A1	// 'cmd' == ET8 -> AT4a
+	nop
+	jzs F1B18	// signed compare
+	nop
+// jumped away
+// else if (cmd == '-')
+	ldc 45,A1	// 45 -> 0 -> ETa
+	sub A0,A1,A1	// 'cmd' == ETa -> AT4b
+	nop
+	jzs F1B23	// signed compare
+	nop
+// jumped away
+// else if (cmd == '=')
+	ldc 61,A1	// 61 -> 0 -> ET10
+	sub A0,A1,A1	// 'cmd' == ET10 -> AT4c
+	ldc 62,A1	// 62 -> 0 -> ET13
+	jzs F1B28	// signed compare
+	sub A0,A1,A1	// 'cmd' == ET13 -> AT4d
+// jumped away
+// else if (cmd == '>')
+	ldc -69,A1	// -69 -> 0 -> ET18
+	jzs F1B32	// signed compare
+	sub A0,A1,A1	// 'cmd' == ET18 -> AT4e
+// jumped away
+// else if (cmd == '»')
+	nop
+	jzs F1B35	// signed compare
+	nop
+// jumped away
+// else if (cmd == 'n')
+	ldc 110,A1	// 110 -> 0 -> ET1c
+	sub A0,A1,A1	// 'cmd' == ET1c -> AT4f
+	nop
+	jzs F1B39	// signed compare
+	nop
+// jumped away
+// else if (cmd == 'p')
+	ldc 112,A1	// 112 -> 0 -> ET22
+	sub A0,A1,A1	// 'cmd' == ET22 -> AT50
+	nop
+	jzs F1B43	// signed compare
+	nop
+// jumped away
+// else if (cmd == '?')
+	ldc 63,A1	// 63 -> 0 -> ET24
+	sub A0,A1,A1	// 'cmd' == ET24 -> AT51
+	nop
+	jzs F1B47	// signed compare
+	nop
+// jumped away
+F1B31:
+// 	    putch(cmd);
+	call _putch
+	nop
+// jumped away
+F1B4:
+//     if (uiTrigger)
+	ldc _uiTrigger,I0	// ET39
+	ldy (I0),A0/*V*/	// ET39 ==> 'uiTrigger'
+	sub A0,NULL,A0	// 'uiTrigger' == (0) -> (0)
+	nop
+	jzs F1B1	// unsigned compare
+	nop
+// jumped away
+//     }
+// {
+// 	uiTrigger = 0;
+	and NULL,NULL,A0	// 0 -> 1 -> ET3a
+// 	CheckSd();
+	call _CheckSd
+	sty A0,(I0)/*V*/	// ET3a ==> ET39
+// jumped away
+// 	if (USBIsAttached())
+	call _USBIsAttached
+	ldx (I6)+1,NULL	// I6 += 1
+// jumped away
+	sub A0,NULL,A0	// ET3b != (0) -> (0)
+	nop
+	jzc F1B17	// unsigned compare
+	nop
+// jumped away
+F1B59:
+// 	if ((*(__x volatile u_int16 *)(u_int16)(0xC001)) &(1<<4))
+	ldc 16,A0	// 16 -> 1 -> ET41
+	ldc 49153,I0	// 49153 -> ET3e
+	ldx (I0),A1/*V*/	// ET3e ==> ET3f
+	and A1,A0,A0	// ET3f and ET41 -> ET42
+	ldc 8192,A0	// 8192 -> 1 -> ET43
+	jzs F1B1	// compare against zero
+	ldc 49223,I0	// 49223 -> ET44
+// jumped away
+// 	}
+// {
+// (*(__x volatile u_int16 *)(u_int16)(0xC047)) = 0x2000;
+// 		RealPowerOff();
+	call _RealPowerOff
+	stx A0,(I0)/*V*/	// ET43 ==> ET44
+// jumped away
+F1B1:
+	ldx (I6)-1,I0
+	ldy (I6),C1 ; ldx (I6)-1,C0
+	ldy (I6),B1 ; ldx (I6)-1,B0
+	ldy (I6),A1 ; ldx (I6)-1,A0
+	ldx (I4),I6 ; ldy (I4),I4
+	ldx (I6)-1,NULL	// I6 += -1
+	ldx (I6)-1,LR0
+	jr
+	nop
+// jumped away
+F1B13:
+// 	}
+// {
+// 	    putch('c');
+	call _putch
+	ldc 99,A0	// 99 -> A0
+// jumped away
+F1B17:
+// 	    cs.cancel = 1;
+	ldc _cs+13,I0	// ET3d
+	sub NULL,ONES,A0	// 1 -> 0 -> ET6
+	stx A0,(I0) ; and NULL,NULL,A0	// ET6 ==> ET3d
+// 	    player.pauseOn = 0;
+	ldc _player+4,I0	// ET12
+	j F1B59
+	stx A0,(I0)	// ET3 ==> ET12
+// jumped away
+F1B47:
+// 	}
+// {
+// 	    putword(cs.playTimeSeconds>>16);
+	ldc _cs+15,I0	// ET26
+	ldx (I0)-1,A1
+	mv A1,A1	// update guard bits
+	call _putword
+	add A1,NULL,A0	// ET27 >>> ET29
+// jumped away
+// 	    putword(cs.playTimeSeconds);
+	ldx (I0)+1,A0
+	call _putword
+	ldx (I0)-1,A1
+// jumped away
+// 	    putch(cs.fileLeft / ((cs.fileSize >> 8)+1));
+	ldc _cs+10,I0	// ET2d
+	ldc -8,A0	// -8 -> 0 -> ET33
+	ldx (I0)+1,B0
+	ldx (I0)-3,B1
+	ldx (I0)+1,C0
+	ldx (I0)-1,C1
+	ldc 0,C2	// clear guard bits
+	ashl C,A0,A	// ET31 <- ET33 -> ET34
+	call divide32unsigned
+	sub A,ONES,A	// ET34 - (-1) -> ET36
+// jumped away
+	call _putch
+	ldc F1B4,LR0
+// jumped away
+F1B43:
+// 	}
+// {
+// 	    putch('p');
+	call _putch
+	ldc 112,A0	// 112 -> A0
+// jumped away
+// 	    player.nextFile = player.currentFile - 1;
+	ldc _player+1,I0	// ET1d
+	ldx (I0)+1,A0	// ET1d ==> 1 -> ET1e
+	add A0,ONES,A0	// ET1e + (-1) -> ET23
+// 		goto cancelpauseoff;
+	j F1B17
+	stx A0,(I0)	// ET23 ==> ET1d
+// jumped away
+F1B39:
+// 	}
+// {
+// 	    putch('n');
+	call _putch
+	ldc 110,A0	// 110 -> A0
+// jumped away
+// 	    player.nextFile = player.currentFile + 1;
+	ldc _player+1,I0	// ET1d
+	ldx (I0)+1,A0	// ET1d ==> 1 -> ET1e
+	sub A0,ONES,A0	// ET1e - (-1) -> ET1f
+// 	    goto cancelpauseoff;
+	j F1B17
+	stx A0,(I0)	// ET1f ==> ET1d
+// jumped away
+F1B35:
+// 	}
+// {
+// 		++cs.fastForward;
+	ldc _cs+36,I0	// ET17
+	ldx (I0),A0	// ET17 ==> 36 -> ET19
+	sub A0,ONES,A0	// ET19 - (-1) -> ET1a
+// 	    putch(cs.fastForward);
+	stx A0,(I0)	// ET1a ==> ET17
+	call _putch
+	ldc F1B4,LR0
+// jumped away
+F1B32:
+// 	}
+// {
+// 	    cs.fastForward = 1;
+	ldc _cs+36,I0	// ET17
+	sub NULL,ONES,A1	// 1 -> 1 -> ET14
+	stx A1,(I0) ; and NULL,NULL,A1	// ET14 ==> ET17
+// 	    player.pauseOn = 0;
+	ldc _player+4,I0	// ET12
+// 	    goto echo;
+	j F1B31
+	stx A1,(I0)	// ET3 ==> ET12
+// jumped away
+F1B28:
+// 	}
+// {
+// 	    player.pauseOn = 1;
+	ldc _player+4,I0	// ET12
+	sub NULL,ONES,A1	// 1 -> 0 -> ET6
+// 	    goto echo;
+	j F1B31
+	stx A1,(I0)	// ET6 ==> ET12
+// jumped away
+F1B23:
+	ldc 17,A0	// 17 -> 0 -> ETb
+	ldx (I6)+1,NULL	// I6 += 1
+// 	}
+// {
+// 	    KeyEventHandler(ke_volumeDown2);
+	stx A0,(I6)	// ETb
+	call _KeyEventHandler
+// 	showvol:
+	ldc F1B22,LR0
+// jumped away
+F1B18:
+	ldc 16,A0	// 16 -> 0 -> ET9
+	ldx (I6)+1,NULL	// I6 += 1
+// 	}
+// {
+// 	    KeyEventHandler(ke_volumeUp2);
+	call _KeyEventHandler
+	stx A0,(I6)	// ET9
+// jumped away
+// 	    goto showvol;
+F1B22:
+	ldc _player+6,I0	// ETe
+// 	    putword(player.volume);
+	ldy (I6)-1,NULL ; ldx (I0),A0	// I6 += -1
+	call _putword
+	ldc F1B4,LR0
+// jumped away
+F1B10:
+// 	}
+// {
+// 	    playerMode = 1;
+	ldc _playerMode,I0	// ET4
+	sub NULL,ONES,A0	// 1 -> 0 -> ET6
+	j F1B4
+	stx A0,(I0)/*V*/	// ET6 ==> ET4
+// jumped away
+F1B7:
+// 	}
+// {
+// 	    playerMode = 0;
+	ldc _playerMode,I0	// ET4
+	ldc 0,A0	// 0 -> 0 -> ET3
+	j F1B4
+	stx A0,(I0)/*V*/	// ET3 ==> ET4
+// jumped away
+
+//_____________________________________________________________
+//
+	.sect code,UartInit	// 22 words
+	.export _UartInit
+_UartInit:
+	ldx (I6)+1,NULL	// I6 += 1
+	stx LR0,(I6)+1
+	stx A0,(I6) ; sty A1,(I6)+1
+//     Disable();
+	call _Disable
+	stx I0,(I6)
+// jumped away
+//     uartRxWrPtr = uartRxRdPtr = uartRxBuffer;
+	ldc _uartRxBuffer,A0	// ET0
+	ldc _uartRxRdPtr,I0	// ET1
+	sty A0,(I0)/*V*/	// ET0 ==> ET1
+	ldc _uartRxWrPtr,I0	// ET2
+	sty A0,(I0)/*V*/	// ET0 ==> ET2
+//     WriteIRam(0x20+ 5, ReadIRam((u_int16)MyRxIntCommand));
+	ldc _MyRxIntCommand,A0	// ET3
+	call _ReadIRam
+	mv A0,I0	// ET3 -> I0
+// jumped away
+	call _WriteIRam
+	ldc 37,I0	// 37 -> I0
+// jumped away
+//     Enable();
+	call _Enable
+	nop
+// jumped away
+	ldx (I6)-1,I0
+	ldy (I6),A1 ; ldx (I6)-1,A0
+	ldx (I6)-1,LR0
+	jr
+	nop
+// jumped away
+
+	.end

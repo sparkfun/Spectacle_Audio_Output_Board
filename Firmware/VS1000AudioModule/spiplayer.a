@@ -1,0 +1,2670 @@
+
+	.sect code,SpiWaitStatus	// 46 words
+	.export _SpiWaitStatus
+_SpiWaitStatus:	// PROLOGUE
+	ldc 47,A0
+	ldx (I6)+1,NULL	// Room for Sp and Fp
+	stx MR0,(I6)+1 ; sty I7,(I6)
+	stx LR0,(I6)+1 ; sty I5,(I6)	// return address
+	stx I6,(I6) ; sty I4,(I6)
+	ldx (I6)+2,I4	// FP' = SP, reserve space
+	ldc 512,MR0
+	stx A1,(I6)+1 ; sty I0,(I6)
+	ldc 32768,A1
+	ldc 49256,I0
+	stx I1,(I6)+1
+
+// extern int playerMode;
+// enum CodecError PlayWavOrOggFile(void);
+// enum CodecError PlayGaplessOggFile(void);
+// void CheckSd(void);
+// typedef short s_int16;
+// typedef unsigned short u_int16;
+// typedef long s_int32;
+// typedef unsigned long u_int32;
+// typedef __fract short f_int16;
+// typedef __fract long f_int32;
+// typedef unsigned int entry_u_int16;
+// void putstrp(register __i0 u_int16 *packedStr);
+// unsigned short atou(register __i2 const char *s);
+// typedef unsigned int size_t;
+// typedef signed int ptrdiff_t;
+// typedef short wchar_t;
+// typedef struct __sfpos {
+//     short _pos[4];
+// } fpos_t;
+// typedef void FILE;
+// __near FILE register __a0 *fopen(__near const char register __i0 *filename,
+//      __near const char register __i1 *mode);
+// __near FILE register __a0 *freopen(__near const char register __i0 *filename,
+//        __near const char register __i1 *mode,
+//        __near FILE register __a0 *stream);
+// int register __a0 fflush(__near FILE register __a0 *stream);
+// int register __a0 fclose(__near FILE register __a0 *stream);
+// int register __a0 remove(__near const char register __i0 *filename);
+// int register __a0 rename(__near const char register __i0 *oldname,
+//     __near const char register __i1 *newname);
+// int register __a0 fgetc(__near FILE register __a1 *stream);
+// __near char register __a0 *fgets(__near char register __i0 *s,
+//      int register __a0 n,
+//      __near FILE register __a1 *stream);
+// int register __a0 fputc(int register __a0 c,
+//    __near FILE register __a1 *stream);
+// int register __a0 fputs(__near const char register __i0 *s,
+//    __near FILE register __a1 *stream);
+// int register __a0 getc(__near FILE register __a1 *stream);
+// int register __a0 getchar(void);
+// __near char register __a0 *gets(__near char register __i0 *s);
+// int register __a0 putc(int register __a0 c, __near FILE register __a1 *stream);
+// int register __a0 putchar(int register __a0 c);
+// int register __a0 puts(__near const char register __i0 *s);
+// int register __a0 ungetc(int register __a0 c,
+//     __near FILE register __a1 *stream);
+// size_t register __a0 fread(__near void register __i0 *ptr,
+//       size_t register __b0 size,
+//       size_t register __b1 nobj,
+//       __near FILE register __a1 *stream);
+// size_t register __a0 fwrite(__near const void register __i0 *ptr,
+//        size_t register __b0 size,
+//        size_t register __b1 nobj,
+//        __near FILE register __a1 *stream);
+// int register __a0 fseek(__near FILE register __a0 *stream,
+//    long register __b offset,
+//    int register __a1 origin);
+// long register __a ftell(__near FILE register __a0 *stream);
+// void rewind(__near FILE register __a0 *stream);
+// int register __a0 fgetpos(__near FILE register __a0 *stream,
+//      __near fpos_t register __i0 *ptr);
+// int register __a0 fsetpos(__near FILE register __a0 *stream,
+//      __near const fpos_t register __i0 *ptr);
+// void clearerr(__near FILE register __a0 *stream);
+// int register __a0 feof(__near FILE register __a0 *stream);
+// int register __a0 ferror(__near FILE register __a0 *stream);
+// void perror(__near const char register __i0 *s);
+// int fprintf(__near FILE *stream, __near const char *fmt, ...);
+// int printf(__near const char *fmt, ...);
+// int sprintf(__near char *s, __near const char *fmt, ...);
+// int sscanf(const char *str, const char *fmt, ...);
+// int tinysprintf(char *str, const char *fmt, ...);
+// int tinyprintf(const char *fmt, ...);
+// int tinyfprintf(FILE *fp, const char *fmt, ...);
+// extern __y short rand_seed;
+// int rand(void);
+// void srand(register __a0 unsigned int seed);
+// void exit(register __a0 int exitValue);
+// __near int atoi(__near const char *s);
+// __near unsigned short atou(__near register __i2 const char *s);
+// __near long strtol(__near const char *s, __near char * __near *endp, int base);
+// __near double strtod(__near const char *nptr, __near char * __near *endptr);
+// extern __near long random_state;
+// __near long random(void);
+// __near void srandom(register __a unsigned long x);
+// unsigned short QsortLog2(register __a0 short x);
+// void qsort(void *base, int nmemb, int size,
+//     int (*compar)(const void *, const void *));
+// short CountBitsLong(register __a unsigned long val);
+// void SpiBoot(register __a0 short clkConf, register __i2 short addr,
+//       register __i0 short m24);
+// void SpiLoad(register __i2 short startAddr, register __i0 short m24);
+// void SpiDelay(register __a0 u_int16 wait);
+// auto u_int16 SpiSendReceive(register __a0 u_int16 data);
+// void Restart(void);
+// void IdleHook(void);
+// auto u_int16 InitFileSystem(void);
+// auto s_int16 OpenFile(register __c0 u_int16 fileNum);
+// auto s_int16 ReadFile(register __i3 u_int16 *buf,
+//         register __c1 s_int16 byteOff,
+//         register __c0 s_int16 byteSize
+//                                                     );
+// u_int32 Seek(register __a u_int32 pos);
+// u_int32 Tell(void);
+// auto u_int16 ReadDiskSector(register __i0 u_int16 *buffer,
+//        register __a u_int32 sector);
+// auto u_int16 MapperReadDiskSector(register __i0 u_int16 *buffer,
+//       register __a u_int32 sector);
+// void Disable(void);
+// void Enable(void);
+// void Sleep(void);
+// void NullHook(void);
+// void *SetHookFunction(register __i0 u_int16 hook, register __a0 void *newFunc);
+// register __b0 u_int16 BootFromX(register __i0 u_int16 *start);
+// void SinTest(void);
+// void MemTests(register short __b0 muxTestResult);
+// enum voltIdx {
+//     voltCorePlayer = 0,
+//     voltIoPlayer,
+//     voltAnaPlayer,
+//     voltCoreUSB,
+//     voltIoUSB,
+//     voltAnaUSB,
+//     voltCoreSuspend,
+//     voltIoSuspend,
+//     voltAnaSuspend,
+//     voltCoreUser,
+//     voltIoUser,
+//     voltAnaUser,
+//     voltEnd
+// };
+// extern u_int16 voltages[voltEnd];
+// void BusyWait10(void);
+// void BusyWait1(void);
+// void PowerSetVoltages(u_int16 volt[3]);
+// void PowerOff(void);
+// void RealPowerOff(void);
+// u_int16 PlayCurrentFile(void);
+// u_int16 RealPlayCurrentFile(void);
+// void LoadCheck(struct CodecServices *cs, s_int16 n);
+// void RealLoadCheck(struct CodecServices *cs, s_int16 n);
+// u_int16 UnsupportedFile(struct CodecServices *cs);
+// u_int16 DefUnsupportedFile(struct CodecServices *cs);
+// extern u_int16 g_dctlo[2048];
+// extern __y u_int16 g_dcthi[2048];
+// extern s_int16 g_others[2048];
+// extern s_int16 g_yprev0[1024];
+// extern s_int16 g_yprev1[1024];
+// struct FsMapper *FsMapRamCreate(struct FsPhysical *physical,
+//     u_int16 cacheSize);
+// void putch(register __a0 s_int16 ch);
+// s_int16 getch(void);
+// void putword(register __a0 s_int16 ch);
+// s_int16 getword(void);
+// auto void RingBufCopyX(register __i2 u_int16 *d,
+//         register __i0 const u_int16 *s,
+//         register __a0 u_int16 n);
+// typedef struct usbpkt {
+//   u_int16 length;
+//   u_int16 payload[(512 +1)>>1];
+// } USBPacket;
+// extern struct USBVARS {
+//   const u_int16 *descriptorTable[6];
+//   u_int16 configurationDescriptorSize;
+//   USBPacket pkt;
+//   u_int32 totbytes;
+//   u_int16 ExtraZeroLengthPacketNeeded[4];
+//   const u_int16 *XmitBuf[4];
+//   u_int16 XmitLength[4];
+//   u_int16 EPReady[4];
+//   u_int16 lastSofTimeout;
+//   u_int16 configuration;
+//   u_int16 interfaces;
+//   u_int16 lastSofFill;
+//   u_int32 lastSofTime;
+// } USB;
+// int USBStartTransmission(u_int16 ep, const void *buf,
+//     u_int16 length, u_int16 requestedLength);
+// void USBContinueTransmission(u_int16 ep);
+// void InitUSBDescriptors(u_int16 initDescriptors);
+// void RealInitUSBDescriptors(u_int16 initDescriptors);
+// void InitUSB(u_int16 initDescriptors);
+// void USBResetEndpoint(register __c0 int ep);
+// u_int16 USBReceivePacket(USBPacket *packet);
+// void USBSendZeroLengthPacketToEndpoint0(void);
+// void USBHandler(void);
+// void RealUSBHandler();
+// void DecodeSetupPacket(void);
+// void RealDecodeSetupPacket(void);
+// void USBCheckForSetupPacket(void);
+// u_int16 USBXmitLeft(u_int16 endpoint);
+// void USBSingleStallEndpoint(register __c0 u_int16 ep);
+// void USBStallEndpoint(register __c0 int ep);
+// void USBResetStall(register __c0 int ep);
+// u_int16 USBIsEndpointStalled(register int ep);
+// u_int16 SwapWord(register __a1 u_int16 d);
+// auto u_int16 USBIsAttached(void);
+// auto u_int16 USBIsDetached(void);
+// auto u_int16 USBWantsSuspend(void);
+// void MSCPacketFromPC(USBPacket *setupPacket);
+// void RealMSCPacketFromPC(USBPacket *setupPacket);
+// u_int16 MscSendCsw(u_int16 status);
+// void DiskProtocolError(char errorcode);
+// void AudioPacketFromUSB(u_int16 *data, s_int16 words);
+// void USBHandler(void);
+// void RealUSBHandler(void);
+// void DecodeSetupPacket(void);
+// void RealDecodeSetupPacket(void);
+// void MSCPacketFromPC(USBPacket *inPacket);
+// void RealMSCPacketFromPC(USBPacket *inPacket);
+// struct FATINFO {
+//     u_int16 IS_FAT_32;
+//     u_int32 fatStart;
+//     u_int32 rootStart;
+//     u_int32 dataStart;
+//     u_int32 currentSector;
+//     u_int32 fileSize;
+//     u_int16 fatSectorsPerCluster;
+//     u_int16 BPB_RootEntCnt;
+//     u_int16 FilSysType;
+//     s_int32 totSize;
+//     u_int16 fileName[6];
+//     u_int16 gFileNum[2];
+//     s_int32 filePos;
+//     s_int32 parentDir;
+//     const u_int32 *supportedSuffixes;
+//     u_int16 longFileName[(2*13 *2)/2];
+// };
+// struct FRAGMENT {
+//     u_int32 start;
+//     u_int16 size;
+// };
+// extern __y struct FRAGMENT minifatFragments[35];
+// extern __y struct FATINFO minifatInfo;
+// extern u_int16 minifatBuffer[256];
+// auto u_int16 FatGetByte(register __c0 u_int16 n);
+// auto u_int16 FatGetWord(register __c0 u_int16 n);
+// auto u_int32 FatGetLong(register __c0 u_int16 n);
+// auto u_int16 FatInitFileSystem(void);
+// auto __y struct FRAGMENT *FatFragmentList(
+//     register __i2 __y struct FRAGMENT *frag,
+//     register __b u_int32 fatCluster);
+// auto s_int16 FatHandleDir(register __y struct FRAGMENT *curFragment,
+//      __y struct FRAGMENT *nextFragment);
+// auto s_int16 FatOpenFile(register __c0 u_int16 fileNum);
+// auto s_int16 FatReadFile(register __i3 u_int16 *buf,
+//     register __c1 s_int16 byteOff,
+//     register __c0 s_int16 byteSize);
+// u_int32 FatTell(void);
+// u_int32 FatSeek(register __a u_int32 pos);
+// auto u_int32 FatFindSector(register __d u_int32 pos);
+// auto s_int16 FatCheckFileType(register __a u_int32 suffix);
+// void MemCopyPackedBigEndian(register __i0 u_int16 *dst,
+//        register __a0 u_int16 dstidx,
+//        register __i1 u_int16 *src,
+//        register __a1 u_int16 srcidx,
+//        register __b0 u_int16 byteSize);
+// void MemCopyPackedLittleEndian(register __i0 u_int16 *dst,
+//           register __a0 u_int16 dstidx,
+//           register __i1 u_int16 *src,
+//           register __a1 u_int16 srcidx,
+//           register __b0 u_int16 byteSize);
+// void MemWritePacked(register __a0 void *dst, register __a1 u_int16 dstidx,
+//       register __b0 u_int16 dat);
+// u_int16 MemReadPacked(register __a0 const void *src,
+//         register __a1 u_int16 srcidx);
+// void MemWritePackedY(register __a0 __y void *dst, register __a1 u_int16 dstidx,
+//       register __b0 u_int16 dat);
+// u_int16 MemReadPackedY(register __a0 __y const void *src,
+//         register __a1 u_int16 srcidx);
+// typedef s_int16 (*freeSectorCallback)(void *private, u_int32 sector, u_int32 numSecs);
+// s_int16 FatIterateOverFreeSectors(freeSectorCallback callBackFunction,
+//       void *private);
+// auto u_int16 ReadDiskSector(register __i0 u_int16 *buffer,
+//        register __a u_int32 sector);
+// struct FsPhysical;
+// struct FsMapper {
+//   u_int16 version;
+//   u_int16 blockSize;
+//   u_int32 blocks;
+//   u_int16 cacheBlocks;
+//   struct FsMapper *(*Create)(struct FsPhysical *physical, u_int16 cacheSize);
+//   s_int16 (*Delete)(struct FsMapper *map);
+//   s_int16 (*Read)(struct FsMapper *map, u_int32 firstBlock, u_int16 blocks,
+//     u_int16 *data);
+//   s_int16 (*Write)(struct FsMapper *map, u_int32 firstBlock, u_int16 blocks,
+//      u_int16 *data);
+//   s_int16 (*Free)(struct FsMapper *map, u_int32 firstBlock, u_int32 blocks);
+//   s_int16 (*Flush)(struct FsMapper *map, u_int16 hard);
+//   struct FsPhysical *physical;
+// };
+// __near char register __i0 *strcpy(__near char register __i0 *s,
+//       __near const char register __i1 *ct);
+// __near char register __i0 *strncpy(__near char register __i0 *s,
+//        __near const char register __i1 *ct,
+//        size_t register __a0 n);
+// __near char register __i0 *strcat(__near char register __i0 *s,
+//       __near const char register __i1 *ct);
+// __near char register __i0 *strncat(__near char register __i0 *s,
+//        __near const char register __i1 *ct,
+//        size_t register __a0 n);
+// int register __a0 strcmp(__near const char register __i0 *cs,
+//     __near const char register __i1 *ct);
+// int register __a0 strncmp(__near const char register __i0 *cs,
+//      __near const char register __i1 *ct,
+//      size_t register __a0 n);
+// __near char register __i0 *strchr(__near const char register __i0 *cs,
+//       int register __a0 c);
+// __near char register __i0 *strrchr(__near const char register __i0 *cs,
+//        int register __a0 c);
+// size_t register __a0 strspn(__near const char register __i0 *cs,
+//        __near const char register __i1 *ct);
+// size_t register __a0 strcspn(__near const char register __i0 *cs,
+//         __near const char register __i1 *ct);
+// __near char register __i0 *strpbrk(__near const char register __i0 *cs,
+//        __near const char register __i1 *ct);
+// __near char register __i0 *strstr(__near const char register __i0 *cs,
+//       __near const char register __i1 *ct);
+// size_t register __a0 strlen(__near const char register __i0 *cs);
+// __near char register __i0 *strerror(int register __a0 n);
+// __near char register __i0 *strtok(__near char register __i0 *s,
+//       __near const char register __i1 *ct);
+// __near void register __i0 *memcpy(__near void register __i0 *d,
+//       __near const void register __i1 *s,
+//       size_t register __a0 n);
+// __near __y void register __i0 *memcpyXY(__near __y void register __i0 *d,
+//           __near const void register __i1 *s,
+//           size_t register __a0 n);
+// __near void register __i0 *memcpyYX(__near void register __i0 *d,
+//         __near __y const void register __i1 *s,
+//         size_t register __a0 n);
+// __near __y void register __i0 *memcpyYY(__near __y void register __i0 *d,
+//      __near __y const void register __i1 *s,
+//      size_t register __a0 n);
+// __near void memcpyii(__near void register __i0 *d,
+//        __near const void register __i1 *s,
+//        size_t register __a0 n);
+// __near void memmoveii(__near void register __i0 *d,
+//        __near const void register __i1 *s,
+//        size_t register __a0 n);
+// __near void register __i0 *memmove(__near void register __i0 *s,
+//        const __near void register __i1 *ct,
+//        unsigned short register __a0 n);
+// int register __a0 memcmp(__near const void register __i0 *cs,
+//     __near const void register __i1 *ct,
+//     size_t register __a0 n);
+// int register __a0 memcmpY(__y __near const void register __i0 *cs,
+//      __y __near const void register __i1 *ct,
+//     size_t register __a0 n);
+// int register __a0 memcmpXY(__near const void register __i0 *cs,
+//       __y __near const void register __i1 *ct,
+//       size_t register __a0 n);
+// __near void register __i0 *memchr(__near const void register __i0 *cs,
+//       int register __a0 c,
+//       size_t register __a1 n);
+// __near void register __i0 *memset(__near void register __i0 *s,
+//       int register __a1 c,
+//       size_t register __a0 n);
+// __near void register __i0 *memsetY(__near __y void register __i0 *s,
+//       int register __a1 c,
+//       size_t register __a0 n);
+// __near void register __i0 *memseti(__near void register __i0 *s,
+//       register __a unsigned long c,
+//       size_t register __c0 n);
+// __near void memclearXY(register __i0 unsigned short *p, register __a0 short c);
+// size_t register __a0 strxfrm(__near char register __i0 *s1,
+//         __near const char register __i1 *s2,
+//         size_t register __a0 n);
+// void memswap(register __i0 void *a, register __i1 void *b,
+//       register __a0 size_t size);
+// void memswapy(register __i0 __y void *a, register __i1 __y void *b,
+//        register __a0 size_t size);
+// void memswapxy(register __i0 void *a, register __i1 __y void *b,
+//       register __a0 size_t size);
+// __near void MemCopyPackedBigEndian(register __i0 __near unsigned short *dst,
+//        register __a0 unsigned short dstbyteidx,
+//        register __i1 __near unsigned short *src,
+//        register __a1 unsigned short srcbyteidx,
+//        register __b0 unsigned short byteSize);
+// __near void MemCopyPackedBigEndianYX(register __i0 __near unsigned short *dst,
+//        register __a0 unsigned short dstbyteidx,
+//        register __i1 __near __y unsigned short *src,
+//        register __a1 unsigned short srcbyteidx,
+//        register __b0 unsigned short byteSize);
+// __near void MemCopyPackedBigEndianXY(register __i0 __near __y unsigned short *dst,
+//        register __a0 unsigned short dstbyteidx,
+//        register __i1 __near unsigned short *src,
+//        register __a1 unsigned short srcbyteidx,
+//        register __b0 unsigned short byteSize);
+// __near void MemCopyPackedBigEndianYY(register __i0 __near __y unsigned short *dst,
+//        register __a0 unsigned short dstbyteidx,
+//        register __i1 __near __y unsigned short *src,
+//        register __a1 unsigned short srcbyteidx,
+//        register __b0 unsigned short byteSize);
+// void ShiftSatVector(register __i0 short *vector, register __a0 short elements, register __a1 short shift);
+// void putch(register __a0 short dat);
+// extern s_int16 tmpBuf[2*32];
+// extern struct Player {
+//     s_int16 totalFiles;
+//     s_int16 currentFile;
+//     s_int16 nextFile;
+//     s_int16 nextStep;
+//     s_int16 pauseOn;
+//     s_int16 randomOn;
+//     s_int16 volume;
+//     s_int16 volumeOffset;
+//     u_int16 offDelay;
+//     u_int16 ffCount;
+//     u_int16 maxClock;
+// } player;
+// enum keyEvent {
+//   ke_null = 0,
+//   ke_previous,
+//   ke_next,
+//   ke_rewind,
+//   ke_forward,
+//   ke_volumeUp,
+//   ke_volumeDown,
+//   ke_earSpeaker,
+//   ke_earSpeakerToggle,
+//   ke_randomToggle,
+//   ke_randomToggleNewSong,
+//   ke_pauseToggle,
+//   ke_powerOff,
+//   ke_ff_faster,
+//   ke_ff_slower,
+//   ke_ff_off,
+//   ke_volumeUp2,
+//   ke_volumeDown2,
+// };
+// struct KeyMapping {
+//   u_int16 key;
+//   enum keyEvent event;
+// };
+// extern const struct KeyMapping *currentKeyMap;
+// extern const struct KeyMapping sixKeyMap[];
+// extern const struct KeyMapping fiveKeyMap[];
+// extern const struct KeyMapping shiftFourKeyMap[];
+// extern const struct KeyMapping threeKeyMap[];
+// extern u_int16 keyOld;
+// extern s_int16 keyOldTime;
+// extern __y u_int16 mallocAreaY[];
+// extern u_int16 mallocAreaX[];
+// extern const u_int32 *supportedFiles;
+// extern const u_int32 defSupportedFiles[];
+// extern u_int16 keyCheck;
+// void KeyScan(void);
+// auto void CleanDisk(register __c1 u_int16 tryBoot);
+// void PlayerVolume(void);
+// auto u_int16 USBIsAttached(void);
+// auto void MassStorage(void);
+// auto void RealMassStorage(void);
+// void KeyEventHandler(enum keyEvent event);
+// void RealKeyEventHandler(enum keyEvent event);
+// auto u_int16 ReadGPIO(void);
+// void USBSuspend(u_int16 timeOut);
+// void RealUSBSuspend(u_int16 timeOut);
+// void KeyScan(void);
+// void UserInterfaceIdleHook(void);
+// u_int16 CsRead(struct CodecServices *cs, u_int16 *data,
+//         u_int16 firstOdd, u_int16 bytes);
+// s_int16 CsSeek(struct CodecServices *cs, s_int32 offset, s_int16 whence);
+// s_int16 CsOutput(struct CodecServices *cs, s_int16 *data, s_int16 n);
+// extern __y u_int16 vs1000d_BitReverse[256];
+// extern __y u_int16 vs1000d_Latin1[256*3];
+// extern __y volatile u_int32 timeCount;
+// u_int32 ReadTimeCount(void);
+// extern s_int16 (*applAddr)(s_int16 register __i0 **d,
+//       s_int16 register __a1 mode,
+//       s_int16 register __a0 n);
+// extern __y s_int16 audioBuffer[2*2048];
+// struct AUDIOPTR {
+//     __y s_int16 *wr;
+//     __y s_int16 *rd;
+//     u_int16 forwardModulo;
+//     s_int16 leftVol;
+//     s_int16 rightVol;
+//     s_int16 underflow;
+// };
+// extern __y struct AUDIOPTR audioPtr;
+// extern u_int16 earSpeakerReg;
+// extern __y u_int16 earSpeakerDisable;
+// extern u_int16 volumeReg;
+// extern u_int16 bassReg;
+// extern __y u_int16 extClock4KHz;
+// extern __y u_int16 clockX;
+// extern u_int32 __y curFctl;
+// extern __y u_int16 hwSampleRate;
+// extern __y u_int16 uiTime;
+// extern __y u_int16 uiTrigger;
+// extern s_int16 __y timeToRemovePDown2;
+// extern u_int32 __y haltTime;
+// extern __y u_int16 uartByteSpeed;
+// extern u_int16 bassTrebleFreq;
+// extern __y struct EARSPEAKER {
+//     u_int16 Freq;
+//     u_int16 Disable;
+//     u_int16 Setting;
+//     s_int16 Old;
+//     u_int16 longFrames;
+// } earSpeaker;
+// void InitAudio(void);
+// auto void StereoCopy(register __i2 s_int16 *s, register __a0 u_int16 n);
+// s_int16 AudioBufFill(void);
+// s_int16 AudioBufFree(void);
+// auto void SetRate(register __c1 u_int16 rate);
+// auto void RealSetRate(register __c1 u_int16 rate);
+// auto void SetVolume(void);
+// auto void RealSetVolume(void);
+// auto void AudioOutputSamples(s_int16 *p, s_int16 samples);
+// u_int16 UartDiv(void);
+// struct CodecServices {
+//   u_int16 version;
+//   u_int16 (*Read)(struct CodecServices *cs, u_int16 *ptr,
+//     u_int16 firstOdd, u_int16 bytes);
+//   u_int32 (*Skip)(struct CodecServices *cs, u_int32 bytes);
+//   s_int16 (*Seek)(struct CodecServices *cs, s_int32 offset, s_int16 whence);
+//   s_int32 (*Tell)(struct CodecServices *cs);
+//   s_int16 (*Output)(struct CodecServices *cs, s_int16 *data, s_int16 n);
+//   void (*Comment)(struct CodecServices *cs, u_int16 c);
+//   void (*Spectrum)(struct CodecServices *cs, s_int16 __y *data, s_int16 n,
+//      s_int16 ch);
+//   u_int32 fileSize;
+//   u_int32 fileLeft;
+//   u_int16 goTo;
+//   s_int16 cancel;
+//   s_int32 playTimeSeconds;
+//   s_int32 playTimeSamples;
+//   u_int32 playTimeTotal;
+//   u_int32 sampleRate;
+//   u_int16 channels;
+//   enum ChannelMatrix matrix[6];
+//   u_int32 avgBitRate;
+//   u_int32 currBitRate;
+//   u_int32 peakBitRate;
+//   s_int16 gain;
+//   u_int16 fastForward;
+// };
+// enum CodecError {
+//   ceFastForward = -1,
+//   ceOk = 0,
+//   ceFormatNotFound,
+//   ceFormatNotSupported,
+//   ceUnexpectedFileEnd,
+//   ceCancelled,
+//   ceOtherError
+// };
+// struct Codec {
+//   u_int16 version;
+//   struct Codec *(*Create)(void);
+//   enum CodecError (*Decode)(struct Codec *cod, struct CodecServices *cs,
+//        const char **errorString);
+//   void (*Delete)(struct Codec *cod);
+//   struct CodecServices *cs;
+// };
+// struct FsPhysical {
+//   u_int16 version;
+//   u_int16 pageSize;
+//   u_int16 eraseBlockSize;
+//   u_int16 eraseBlocks;
+//   struct FsPhysical *(*Create)(u_int16 param);
+//   s_int16 (*Delete)(struct FsPhysical *p);
+//   s_int16 (*Read)(struct FsPhysical *p, s_int32 firstPage, u_int16 pages,
+//     u_int16 *data, u_int16 *meta);
+//   s_int16 (*Write)(struct FsPhysical *p, s_int32 firstPage, u_int16 pages,
+//      u_int16 *data, u_int16 *meta);
+//   s_int16 (*Erase)(struct FsPhysical *p, s_int32 page);
+//   s_int16 (*FreeBus)(struct FsPhysical *p);
+//   s_int16 (*Reinitialize)(struct FsPhysical *p);
+// };
+// struct FsNandPhys {
+//   struct FsPhysical p;
+//   u_int16 nandType;
+//   u_int16 waitns;
+// };
+// s_int16 FsPhNandErase(struct FsPhysical *p, s_int32 block);
+// struct FsPhysical *FsPhNandCreate(u_int16 param);
+// s_int16 FsPhNandDelete(struct FsPhysical *p);
+// s_int16 FsPhNandFreeBus(struct FsPhysical *p);
+// s_int16 FsPhNandReinitialize(struct FsPhysical *p);
+// s_int16 FsPhNandRead(struct FsPhysical *p, s_int32 firstPage,
+//        u_int16 pages, u_int16 *data, u_int16 *meta);
+// s_int16 FsPhNandWrite(struct FsPhysical *p, s_int32 firstPage,
+//         u_int16 pages, u_int16 *data, u_int16 *meta);
+// s_int16 NandCountBits(register __a u_int32 val);
+// s_int16 NandMingle(register __a u_int32 val);
+// void NandSwapBad(register __i0 u_int16 *spare);
+// void NandWaitIdle(void);
+// struct FsPhysical;
+// struct FmfMeta {
+//   u_int16 ecc01;
+//   u_int16 ecc2AndType;
+//   u_int16 reservedAndBadBlock;
+//   u_int16 unused;
+//   u_int32 logicalPageNo;
+//   s_int32 newBranch;
+// };
+// struct FsMapperFlash {
+//   struct FsMapper m;
+//   u_int32 root;
+//   s_int16 blocksPerErase;
+//   s_int32 lastUsed;
+//   struct FmfCache *cache;
+//   s_int32 physPages;
+//   s_int32 emptyBlock[4];
+//   s_int16 nonFullLimit;
+//   s_int32 skipped;
+//   s_int32 freed;
+// };
+// struct FsMapper *FsMapFlCreate(struct FsPhysical *physical, u_int16 format);
+// s_int16 FsMapFlDelete(struct FsMapper *map);
+// s_int16 FsMapFlRead(struct FsMapper *map, u_int32 firstLogicalBlock,
+//       u_int16 logicalBlocks, u_int16 *data);
+// s_int16 FsMapFlWrite(struct FsMapper *map, u_int32 firstLogicalBlock,
+//        u_int16 logicalBlocks, u_int16 *data);
+// s_int16 FsMapFlFlush(struct FsMapper *map, u_int16 hard);
+// s_int16 FsMapFlFree(struct FsMapper *m, u_int32 logicalBlockNo,
+//       u_int32 logicalBlocks);
+// void FsMapFlDump(struct FsMapper *map, s_int32 maxBlocks);
+// void FsMapFlCacheDump(struct FsMapper *map);
+// void FsMapFlPrint(s_int32 page);
+// struct FsPhysical;
+// struct FsMapperTiny {
+//   struct FsMapper m;
+//   s_int32 root;
+//   s_int16 blocksPerErase;
+//   s_int32 firstBlock;
+//   s_int32 lastBlock;
+//   s_int32 logToPhys;
+//   struct FmfMeta meta;
+// };
+// struct FsMapper *FsMapTnCreate(struct FsPhysical *physical,
+//           u_int16 cacheSize);
+// s_int16 FsMapTnDelete(struct FsMapper *map);
+// s_int16 FsMapTnRead(struct FsMapper *map, u_int32 firstLogicalBlock,
+//       u_int16 logicalBlocks, u_int16 *data);
+// s_int16 FsMapTnWrite(struct FsMapper *map, u_int32 firstLogicalBlock,
+//        u_int16 logicalBlocks, u_int16 *data);
+// s_int16 FsMapTnFlush(struct FsMapper *map, u_int16 hard);
+// s_int16 FsMapTnFree(struct FsMapper *m, u_int32 logicalBlockNo,
+//       u_int32 logicalBlocks);
+// s_int16 FsMapFlNullFail();
+// s_int16 FsMapFlNullOk();
+// auto u_int16 SpiSendReceiveMmc(register __a0 u_int16 dataTopAligned,
+//           register __a1 s_int16 bits);
+// auto void SpiSendBlockMmc(register __i0 u_int16 *data, register __c0 s_int16 words);
+// auto void SpiSendClocks(void);
+// auto u_int16 MmcCommand(register __b0 s_int16 cmd, register __d u_int32 arg);
+// void PatchMSCPacketFromPC(void *);
+// void ScsiTestUnitReady(void);
+// auto u_int16 Fat12OpenFile(register __c0 u_int16 fileNum);
+// auto u_int16 FatFastOpenFile(register __c0 u_int16 fileNum);
+// auto u_int16 FatFastOpenFileD(register __c0 u_int16 fileNum);
+// auto u_int16 OpenFileBaseName(register __i2 const u_int16 *packedName);
+// auto void IterateFiles(void);
+// void IterateFilesCallback(register __b0 u_int16 *name);
+// auto s_int16 OpenFileNamed(const u_int16 *fname, u_int32 suffix);
+// void PlayRangeSet(u_int32 start, u_int32 end);
+// void PlayRange(void);
+// void puthex(u_int16 d);
+// void KeyScanNoUSB(register __a1 u_int16 gpioMask);
+// void KeyScan9(void);
+// void KeyScan7(void);
+// void Suspend7(u_int16 timeOut);
+// void Suspend7WithPower(u_int16 timeOut);
+// void Suspend8WithPower(u_int16 timeOut);
+// void KeyScanMatrix(register __i2 const u_int16 *matrix);
+// void SuspendMatrix(void);
+// auto u_int16 MapperlessReadDiskSector(register __i0 u_int16 *buffer,
+//           register __a u_int32 sector);
+// void NandPutCommand(register __a0 u_int16 command);
+// void NandPutAddressOctet(register __a0 u_int16 address);
+// void NandGetOctets(register __c0 s_int16 length, register __i2 u_int16 *buf);
+// void NandPutOctets(register __c0 s_int16 length, register __i2 u_int16 *buf);
+// void NandSetWaits(register __a0 u_int16 waitns);
+// u_int32 ReadIRam(register __i0 u_int16 addr);
+// void WriteIRam(register __i0 u_int16 addr, register __a u_int32 ins);
+// void InterruptStub0(void);
+// void InterruptStub1(void);
+// void InterruptStub2(void);
+// void InterruptStub3(void);
+// auto void Interrupt0(void);
+// auto void Interrupt1(void);
+// auto void Interrupt2(void);
+// auto void Interrupt3(void);
+// void Rc5Init(u_int16 vector);
+// u_int16 Rc5GetFIFO(void);
+// struct FIFOX {
+//     u_int16 *wr;
+//     u_int16 *rd;
+//     u_int16 *start;
+//     u_int16 *lastPlusOne;
+//     u_int16 size;
+// };
+// extern struct IR_RECEIVE {
+//     u_int16 lastTime;
+//     int count;
+//     u_int16 mode;
+//     u_int16 timeCountLo;
+//     u_int32 data;
+//     struct FIFOX fifo;
+// } irReceive;
+// extern u_int32 irReceiveFIFO[8];
+// extern void IrReceiveInt(void);
+// void IrReceiveInit(u_int16 vector, u_int16 mode);
+// void PatchDiskProtocolCommandC( void *inPacket);
+// void PatchDiskProtocolCommandDE( void *inPacket);
+// auto u_int16 NewDiskProtocolCommand(register __i2 u_int16 *cmd);
+// extern __y u_int32 shuffleSeeds;
+// u_int16 Shuffle(register __c0 u_int16 numFiles, register __c1 u_int16 oldFile);
+// void LowClock(register __a1 u_int16 wakeupIoKeys, register __c u_int32 wakeupTime);
+// struct lcdControl {
+//     u_int16 X, Y, invertMask, options;
+// };
+// extern struct lcdControl lcdControl;
+// void LcdInit(register __i0 const unsigned char *init);
+// void LcdClear(void);
+// void LcdLocate(register __b0 int x, register __b1 int y);
+// void LcdPutData(register __a1 u_int16 c);
+// void LcdPutChar(register __c0 u_int16 c);
+// u_int16 LcdPutCharNoWrap(register __c0 u_int16 c);
+// auto void LcdPutGfx(register __i1 const u_int16 *d,
+//       register __c0 u_int16 words);
+// auto void LcdPutGfxDouble(register __i1 const u_int16 *d,
+//      register __c0 u_int16 words);
+// auto void LcdPutGfxShifted(register __i1 const u_int16 *s1,
+//       register __c0 u_int16 words,
+//       register __c1 s_int16 shift);
+// auto void LcdPutPackedX(register __i1 const u_int16 *p,
+//    register __c0 u_int16 maxWords,
+//    register __c1 u_int16 xEnd);
+// auto void LcdContrast(register __c0 u_int16 contrast);
+// void LcdPutNum(register __c1 u_int16 c);
+// void LcdPutLong(register __b u_int32 c);
+// auto int LcdRenderPackedX(register __i0 u_int16 *buf,
+//      register __c0 u_int16 bIdx,
+//      register __i1 const u_int16 *str,
+//      register __c1 u_int16 sIdx);
+// auto void LcdRenderDoubled(register __i0 u_int16 *buf1,
+//       register __i2 u_int16 *buf2);
+// void LcdEol(void);
+// void ResetIRAMVectors(void);
+// s_int16 LargePageWrite(u_int32 page, u_int16 *data, u_int16 *meta);
+// s_int16 LargePageRead(s_int32 page, u_int16 *data, u_int16 *meta);
+// s_int16 FsMlcMapRead1(struct FsMapper *map, u_int32 sector,
+//         u_int16 logicalBlocks, u_int16 *data);
+// s_int16 FsMlcMapRead(struct FsMapper *map, u_int32 sector,
+//         u_int16 logicalBlocks, u_int16 *data);
+// u_int16 GetBitArray(register __i0 u_int16 *array, register __a0 int bit);
+// void SetBitArray(register __i0 u_int16 *array, register __a0 int bit);
+// void ClearBitArray(register __i0 u_int16 *array, register __a0 int bit);
+// u_int32 CheckSumBlock(register u_int32 __a accu, register __i0 u_int16 *p,
+//          register __c0 s_int16 words);
+// int stricmppacked(__near const u_int16 register __i0 *cs,
+//     __near const u_int16 register __i1 *ct);
+// void FIFOInit(register __i2 struct FIFOX *f, register __a1 void *fifoBuf, register __a0 s_int16 size);
+// void FIFOPut(register __i2 struct FIFOX *f, register __a0 u_int16 data);
+// u_int16 FIFOGet(register __i2 struct FIFOX *f);
+// s_int16 FIFOEmpty(register __i2 struct FIFOX *f);
+// s_int16 FIFOFill(register __i2 struct FIFOX *f);
+// s_int16 FIFOSpace(register __i2 struct FIFOX *f);
+// u_int16 PlayCurrentFileFast(void);
+// u_int32 CalcECCBySoftware(register __i2 s_int16 *dp);
+// void VorbisSkip(s_int16 secs);
+// auto s_int16 PatchFatReadFile(register __i3 u_int16 *buf,
+//          register __c1 s_int16 byteOff,
+//          register __c0 s_int16 byteSize
+//                                        );
+// auto void SpeedShift(register __i2 s_int16 *p, register __a0 u_int16 n);
+// void InitSpeedShift(double speed);
+// void NewSpeedShift(double speed);
+// auto void SpeedShiftFract(register __i2 s_int16 *p, register __a0 u_int16 n);
+// void InitSpeedShiftFract(f_int16 speedP2);
+// void NewSpeedShiftFract(f_int16 speedP2);
+// auto void SpeedShiftMono(register __i2 s_int16 *p, register __a0 u_int16 n);
+// void InitSpeedShiftMono(f_int16 speedP2);
+// void NewSpeedShiftMono(f_int16 speedP2);
+// auto u_int16 FatOpenFileNoSubdirs(register __c0 u_int16 fileNum);
+// u_int16 PatchPlayCurrentFile(void);
+// s_int16 Large8kPageReadSingle(struct FsPhysical *ph, u_int32 page,
+//           u_int16 sectors, u_int16 *data, u_int16 *meta);
+// void NandPut8kPageSpareAddress(register __c u_int32 addr);
+// void NandPut8kDataAddress(register __c u_int32 addr);
+// s_int16 Large8kPageRead(u_int32 page, u_int16 *data, u_int16 *meta);
+// s_int16 Large8kPageReadForCopyBack(u_int32 page, u_int16 *data, u_int16 *meta);
+// s_int16 Large8kPageWrite(u_int32 page, u_int16 *data, u_int16 *meta);
+// auto u_int16 PatchOpenFile(register __c0 u_int16 fileNum);
+// u_int16 ControlAdc(register __c0 u_int16 gpio, register __c1 u_int16 maxTime);
+// void SpiReadData(register __i2 u_int16 *data, register __a1 s_int16 words);
+// u_int16 SpiReadDataDiscardOne(register __i2 u_int16 *data, register __a1 s_int16 words);
+// s_int16 Large4kPageReadSingle(struct FsPhysical *ph, u_int32 page,
+//           u_int16 sectors, u_int16 *data, u_int16 *meta);
+// void NandPut4kPageSpareAddress(register __c u_int32 addr);
+// void NandPut4kDataAddress(register __c u_int32 addr);
+// s_int16 Large4kPageRead(u_int32 page, u_int16 *data, u_int16 *meta);
+// s_int16 Large4kPageReadForCopyBack(u_int32 page, u_int16 *data, u_int16 *meta);
+// s_int16 Large4kPageWrite(u_int32 page, u_int16 *data, u_int16 *meta);
+// u_int32 EccHw(register __i2 u_int16 *data, register __c0 u_int16 mask);
+// u_int16 EccFixError(register __i2 u_int16 *data, register __c u_int32 xored);
+// s_int16 Large4kPageRead2(u_int32 page, u_int16 *data, u_int16 *meta);
+// s_int16 Large4kPageReadSingle2(struct FsPhysical *ph, u_int32 page,
+//           u_int16 sectors, u_int16 *data, u_int16 *meta);
+// auto u_int32 WavSwap32(register __c u_int32 n);
+// enum CodecError PatchCodVorbisDecode(struct Codec *cod, struct CodecServices *cs,
+//       const char **errorString, int dummy);
+// u_int32 PlayTimeFile(s_int16 sc );
+// auto s_int16 OpenFileNamedSupported(const u_int16 *fname, u_int32 suffix);
+// s_int16 VS1000D_RomTest(void);
+// extern __y u_int16 uartRxBuffer[16];
+// extern volatile __y u_int16 * __y uartRxWrPtr;
+// extern __y u_int16 * __y uartRxRdPtr;
+// int UartFill(void);
+// int UartGetByte(void);
+// void MyRxIntCommand(void);
+// void UartLoadCheck(struct CodecServices *cs, s_int16 n);
+// void UartIdleHook(void);
+// void UartInit(void);
+// extern struct FsNandPhys fsNandPhys;
+// extern struct FsPhysical *ph;
+// extern struct FsMapper *map;
+// extern struct Codec *cod;
+// extern struct CodecServices cs;
+// u_int16 SpiWaitStatus(void) {
+//   u_int16 status;
+
+
+//   (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (7<<1) | (1<<0);
+
+	stx A0,(I0)/*V*/
+
+//   (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (7<<1) | (0<<0);
+
+	ldc 46,A0
+	stx A0,(I0)/*V*/
+
+//   SpiSendReceive(0x05);
+
+	// Register parameter: A0, pass by value
+	.import _SpiSendReceive
+	call _SpiSendReceive
+	ldc 5,A0
+// jumped away
+	// safe: I0
+
+//   do {
+//     status = SpiSendReceive(0);
+
+	// Register parameter: A0, pass by value
+L2:
+	ldc 49282,I0
+	and NULL,NULL,A0 ; ldx (I6)+1,NULL
+	call _SpiSendReceive
+	ldy (I4)+1,NULL
+// jumped away
+	stx A0,(I4)-1	// status
+
+//     if ((*(__x volatile u_int16 *)(u_int16)((0xC080U +2))) & (1<<15))
+
+	ldx (I0),A0/*V*/
+	and A0,A1,A0
+	ldc 49256,I1
+	jzs L5
+	nop
+// jumped away
+// {
+//       USBHandler();
+
+	.import _USBHandler
+	call _USBHandler
+	ldc 47,A0
+// jumped away
+	// safe: I0
+
+//       (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (7<<1) | (1<<0);
+
+	stx A0,(I1)/*V*/
+
+//       return (u_int16)-1;
+
+	j RET_SpiWaitStatus1
+	ldc 65535,A0
+// jumped away
+L5:
+
+//     }
+//   } while (status & 0x01);
+
+	ldx (I4)+1,NULL ; sub NULL,ONES,A1
+	ldx (I4)-1,A0	// status
+	and A0,A1,A0
+	ldc 47,A0
+	jzc L2
+	ldc 32768,A1
+// jumped away
+
+//     ;
+//   (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (7<<1) | (1<<0);
+
+	stx A0,(I1)/*V*/ ; ldy (I4)+1,NULL
+
+//   return status;
+
+	ldx (I4)-1,A0	// status
+RET_SpiWaitStatus1:	// EPILOGUE
+	ldx (I6)-1,I1
+	ldx (I6)-1,A1 ; ldy (I6),I0
+	ldx (I4),I6 ; ldy (I4),I4	// Read Sp and Fp
+	ldx (I6)-1,NULL
+	ldx (I6)-1,LR0 ; ldy (I6),I5
+	jr
+	ldx (I6)-1,MR0 ; ldy (I6),I7
+// jumped away
+	// FUNCTION SpiWaitStatus(): stack usage ~ 2 x (7 + 0) = 2 x 7 words
+
+
+	.sect code,EeReadBlock	// 55 words
+	.export _EeReadBlock
+_EeReadBlock:	// PROLOGUE
+	ldx (I6)+1,NULL	// Room for Sp and Fp
+	stx MR0,(I6)+1 ; sty I7,(I6)
+	stx LR0,(I6)+1 ; sty I5,(I6)	// return address
+	stx I6,(I6) ; sty I4,(I6)
+	ldx (I6)+2,I4	// FP' = SP, reserve space
+	ldc 512,MR0
+	stx A1,(I6)+1 ; sty I0,(I6)
+	ldc 49256,I0
+	ldc 512,A1
+	stx LE,(I6)+1 ; sty LS,(I6)
+
+// }
+// u_int16 EeReadBlock(u_int16 blockn, u_int16 *dptr) {
+//   SpiWaitStatus();
+
+	call _SpiWaitStatus
+	stx LC,(I6)
+// jumped away
+
+//   (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (7<<1) | (0<<0);
+
+	ldc 46,A0
+	stx A0,(I0)/*V*/ ; ldy (I6)+1,NULL
+
+//   SpiSendReceive(0x03);
+
+	// Register parameter: A0, pass by value
+	call _SpiSendReceive
+	ldc 3,A0
+// jumped away
+	// safe: I0
+
+//   SpiSendReceive(blockn>>7);
+
+	// Register parameter: A0, pass by value
+	ldx (I4)-3,NULL ; ldy (I6)+1,NULL
+	ldx (I4)+3,A0	// blockn
+	muluu A1,A0	// >> 7
+	add NULL,P,A
+	call _SpiSendReceive
+	add A1,NULL,A0
+// jumped away
+	// safe: I0
+
+//   SpiSendReceive((blockn<<1)&0xff);
+
+	// Register parameter: A0, pass by value
+	ldc 255,A1
+	ldx (I4)-3,NULL ; ldy (I6)+1,NULL
+	ldx (I4)+3,A0	// blockn
+	add A0,A0,A0
+	call _SpiSendReceive
+	and A0,A1,A0
+// jumped away
+	// safe: A1 I0
+
+//   SpiSendReceive(0);
+
+	// Register parameter: A0, pass by value
+	call _SpiSendReceive
+	ldx (I6)+1,NULL ; and NULL,NULL,A0
+// jumped away
+	// safe: A1 I0
+
+//   (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (15<<1) | (0<<0);
+
+	ldc 62,A0
+	ldc 255,LS
+
+//   {
+//     int n;
+
+
+//     for (n=0; n<256; n++)
+
+	// 256 loops
+	loop LS,LE12-1
+	stx A0,(I0)/*V*/
+//loop resumes
+// {
+//       *dptr++ = ~SpiSendReceive(0);
+
+	// Register parameter: A0, pass by value
+	call _SpiSendReceive
+	ldx (I6)+1,NULL ; and NULL,NULL,A0
+// jumped away
+	xor A0,ONES,A0 ; ldx (I4)-4,NULL
+	mv I4,I0	// dptr
+	ldx (I4)+4,I7
+	stx A0,(I7)+1
+	stx I7,(I0)
+	// I0 not because register
+	// I7 yes kind 1
+// 0 NOP's needed
+// loop end
+LE12:
+	// loop end value 256
+	ldc 256,A0
+	ldc 49256,I0
+	ldx (I4)+1,NULL
+	stx A0,(I4)-1	// n
+
+//     }
+//   }
+//   (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (7<<1) | (1<<0);
+
+	ldc 47,A0
+	stx A0,(I0)/*V*/ ; and NULL,NULL,A0
+
+//   return 0;
+
+	// EPILOGUE
+	ldx (I6)-1,LC
+	ldx (I6)-1,LE ; ldy (I6),LS
+	ldx (I6)-1,A1 ; ldy (I6),I0
+	ldx (I4),I6 ; ldy (I4),I4	// Read Sp and Fp
+	ldx (I6)-1,NULL
+	ldx (I6)-1,LR0 ; ldy (I6),I5
+	jr
+	ldx (I6)-1,MR0 ; ldy (I6),I7
+// jumped away
+	// FUNCTION EeReadBlock(): stack usage ~ 2 x (8 + 0) = 2 x 8 words
+
+
+	.sect code,FsMapSpiFlashCreate	// 25 words
+	.export _FsMapSpiFlashCreate
+_FsMapSpiFlashCreate:	// PROLOGUE
+	ldc 47,A0
+	ldx (I6)+1,NULL	// Room for Sp and Fp
+	stx MR0,(I6)+2 ; sty I5,(I6)
+	stx I6,(I6) ; sty I4,(I6)
+	ldx (I6)+1,I4	// FP' = SP, reserve space
+	ldc 512,MR0
+	stx A1,(I6)+1 ; sty I0,(I6)
+	ldc 31,A1
+	ldc 49256,I0
+	stx I1,(I6)
+
+// }
+// struct FsMapper *FsMapSpiFlashCreate(struct FsPhysical *physical,
+//                                 u_int16 cacheSize);
+// s_int16 FsMapSpiFlashRead(struct FsMapper *map, u_int32 firstBlock,
+//                      u_int16 blocks, u_int16 *data);
+// const struct FsMapper spiFlashMapper = {
+//     0x010c,
+//     256,
+//     (1024 -64),
+//     0,
+//     FsMapSpiFlashCreate,
+//     FsMapFlNullOk,
+//     FsMapSpiFlashRead,
+//     FsMapFlNullOk,
+//     0,
+//     FsMapFlNullOk,
+//     0
+// };
+// struct FsMapper *FsMapSpiFlashCreate(struct FsPhysical *physical,
+//                                      u_int16 cacheSize) {
+//   (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (7<<1) | (1<<0);
+
+	ldc 49169,I1
+	stx A0,(I0)+4/*V*/ ; and NULL,NULL,A0
+
+//   (*(__x volatile u_int16 *)(u_int16)(0xC06C)) = 0;
+
+	// const -4 in I0
+	stx A0,(I0)-3/*V*/
+
+//   (*(__x volatile u_int16 *)(u_int16)(0xC069)) = (1<<2) * (3 -1);
+
+	ldc 8,A0
+	// const +3 in I0
+	stx A0,(I0)/*V*/
+
+//   (*(__x volatile u_int16 *)(u_int16)(0xC011)) |= 0x1f;
+
+	ldx (I1),A0/*V*/
+	or A0,A1,A1
+	ldc _spiFlashMapper,A0
+	stx A1,(I1)/*V*/
+
+//   return &spiFlashMapper;
+
+	// EPILOGUE
+	ldx (I6)-1,I1
+	ldx (I6)-1,A1 ; ldy (I6),I0
+	ldx (I4),I6 ; ldy (I4),I4	// Read Sp and Fp
+	ldx (I6)-2,NULL
+	jr
+	ldx (I6)-1,MR0 ; ldy (I6),I5
+// jumped away
+	// FUNCTION FsMapSpiFlashCreate(): stack usage ~ 2 x (6 + 0) = 2 x 6 words
+
+
+	.sect code,FsMapSpiFlashRead	// 46 words
+	.export _FsMapSpiFlashRead
+_FsMapSpiFlashRead:	// PROLOGUE
+	ldc lo(64),A0
+	ldx (I6)+1,NULL	// Room for Sp and Fp
+	stx MR0,(I6)+1 ; sty I7,(I6)
+	stx LR0,(I6)+1 ; sty I5,(I6)	// return address
+	stx I6,(I6) ; sty I4,(I6)
+	ldx (I6)+1,I4	// FP' = SP, reserve space
+	ldc 512,MR0
+	stx A1,(I6)+1 ; sty B0,(I6)
+	stx B1,(I6)+1 ; sty C0,(I6)
+	stx I0,(I6) ; and NULL,NULL,C0
+	ldy (I4)-5,NULL ; and NULL,NULL,A1
+	mv I4,I0	// firstBlock
+
+// }
+// s_int16 FsMapSpiFlashRead(struct FsMapper *map, u_int32 firstBlock,
+//                           u_int16 blocks, u_int16 *data) {
+//   register s_int16 bl = 0;
+
+	// C0
+	// allocated C0 as bl
+
+//   firstBlock += 64;
+
+	ldx (I0)+1,B0 ; ldy (I4)+5,NULL
+	ldx (I0)-1,B1
+	add B,A,A
+	stx A0,(I0)+1
+
+//   while (bl < blocks)
+
+	j LU14
+	stx A1,(I0)-1
+// jumped away
+L14:
+//  {
+//     EeReadBlock(firstBlock, data);
+
+	stx A0,(I6)+1 ; ldy (I4)+2,NULL
+	// cast int2 -> int1 (A0/NULL)
+	ldx (I4)+5,A0	// firstBlock
+	call _EeReadBlock
+	stx A0,(I6)
+// jumped away
+	ldy (I4)-7,NULL ; ldx (I6)-2,NULL
+
+//     data += 256;
+
+	mv I4,I0 ; sub C0,ONES,C0	// data
+	ldx (I4)+7,A0 ; ldy (I0)+2,NULL
+	add A0,A1,A1 ; ldx (I0)-2,B0
+	stx A1,(I0)+3
+
+//     firstBlock++;
+
+	// stack variable firstBlock address -2 in I0
+	ldx (I0)-1,B1
+	sub B,ONES,B
+	stx B0,(I0)+1
+	stx B1,(I0)-1
+
+//     bl++;
+
+LU14:
+	ldx (I4)-6,NULL ; ldy (I6)+1,NULL
+	ldx (I4)-1,A0	// blocks
+	sub C0,A0,A1 ; ldx (I4),A0
+	ldc 256,A1
+	jcc L14	// <
+	nop	// data
+// jumped away
+	ldx (I4)+7,NULL ; ldy (I6)-1,NULL
+
+//   }
+//   return bl;
+
+	// expression in C0
+	ldx (I6)-1,I0 ; add C0,NULL,A0
+	// freed register variable C0
+	// EPILOGUE
+	ldx (I6)-1,B1 ; ldy (I6),C0
+	ldx (I6)-1,A1 ; ldy (I6),B0
+	ldx (I4),I6 ; ldy (I4),I4	// Read Sp and Fp
+	ldx (I6)-1,NULL
+	ldx (I6)-1,LR0 ; ldy (I6),I5
+	jr
+	ldx (I6)-1,MR0 ; ldy (I6),I7
+// jumped away
+	// FUNCTION FsMapSpiFlashRead(): stack usage ~ 2 x (7 + 2) = 2 x 9 words
+
+
+	.sect code,CheckSd	// 49 words
+	.export _CheckSd
+_CheckSd:	// PROLOGUE
+	ldx (I6)+1,NULL	// Room for Sp and Fp
+	stx MR0,(I6)+1 ; sty I7,(I6)
+	stx LR0,(I6)+1 ; sty I5,(I6)	// return address
+	stx I6,(I6) ; sty I4,(I6)
+	ldx (I6)+1,I4	// FP' = SP, reserve space
+	ldc 512,MR0
+	stx A0,(I6)+1 ; sty A1,(I6)
+	ldc 16384,A1
+	stx I0,(I6)+1 ; sty I1,(I6)
+	ldc 49216,I0
+	stx I2,(I6)
+
+// }
+// void CheckSd(void) {
+//     if (((*(__x volatile u_int16 *)(u_int16)(0xC040)) & (1<<14)) == 0 &&
+//         ((*(__x volatile u_int16 *)(u_int16)(0xC042)) & (1<<14)))
+
+	ldx (I0)+2,A0/*V*/
+	and A0,A1,A0
+	nop
+	jzc L17	// !=
+	nop
+// jumped away
+	// const -2 in I0
+	ldx (I0),A0/*V*/
+	and A0,A1,A0
+	nop
+	jzc LE16
+	nop
+// jumped away
+L17:
+//  {
+//     } else {
+//         putch('S');
+
+	// Register parameter: A0, pass by value
+	.import _putch
+	call _putch
+	ldc 83,A0
+// jumped away
+
+//         putch('D');
+
+	// Register parameter: A0, pass by value
+	ldc 49264,I0
+	call _putch
+	ldc 68,A0
+// jumped away
+
+//         putch('\n');
+
+	// Register parameter: A0, pass by value
+	call _putch
+	ldc 10,A0
+// jumped away
+
+//         Disable();
+
+	ldc 96,A0
+	.import _Disable
+	call _Disable
+	ldc 49256,I1
+// jumped away
+
+//         ResetIRAMVectors();
+
+	.import _ResetIRAMVectors
+	call _ResetIRAMVectors
+	ldc 16388,I2
+// jumped away
+
+//         (*(__x volatile u_int16 *)(u_int16)(0xC070)) = (1<<5) | (1<<6);
+
+	stx A0,(I0)+2/*V*/ ; sub NULL,ONES,A0
+
+//         (*(__x volatile u_int16 *)(u_int16)(0xC072)) = (1<<0);
+
+	// const -2 in I0
+	stx A0,(I0)/*V*/
+
+//         (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (7<<1) | (1<<0);
+
+	ldc 47,A0
+	ldc 1,I0
+
+//         SpiLoad(16384 +4, 1 );
+
+	// Register parameter: I0, pass by value
+	// Register parameter: I2, pass by value
+	.import _SpiLoad
+	call _SpiLoad
+	stx A0,(I1)/*V*/
+// jumped away
+	// safe: I1
+
+//         while (1)
+
+L24:
+	j L24
+	nop
+// jumped away
+LE16:
+	// EPILOGUE
+	ldx (I6)-1,I2
+	ldx (I6)-1,I0 ; ldy (I6),I1
+	ldx (I6)-1,A0 ; ldy (I6),A1
+	ldx (I4),I6 ; ldy (I4),I4	// Read Sp and Fp
+	ldx (I6)-1,NULL
+	ldx (I6)-1,LR0 ; ldy (I6),I5
+	jr
+	ldx (I6)-1,MR0 ; ldy (I6),I7
+// jumped away
+	// FUNCTION CheckSd(): stack usage ~ 2 x (7 + 0) = 2 x 7 words
+
+
+	.sect code,IterateFilesCallback	// 23 words
+	.export _IterateFilesCallback
+_IterateFilesCallback:	// PROLOGUE
+	ldx (I6)+1,NULL	// Room for Sp and Fp
+	stx MR0,(I6)+1 ; sty I7,(I6)
+	stx LR0,(I6)+1 ; sty I5,(I6)	// return address
+	stx I6,(I6) ; sty I4,(I6)
+	ldx (I6)+1,I4	// FP' = SP, reserve space
+	ldc 512,MR0
+	stx A0,(I6)+1 ; sty C0,(I6)
+	stx LE,(I6)+1 ; sty LS,(I6)
+	ldc 15,LS
+	stx LC,(I6)
+
+//             ;
+//     }
+// }
+// void IterateFilesCallback(register __b0 u_int16 *name) {
+//     register int i;
+
+	// register parameter to function: B0
+	// C0
+	// allocated C0 as i
+
+//     for (i=0;i<32/2;i++)
+
+	// 16 loops
+	loop LS,LE25-1
+	nop
+//loop resumes
+	mv B0,I5 ; sub B0,ONES,B0
+//  {
+//         putword(*name++);
+
+	// Register parameter: A0, pass by value
+	.import _putword
+	call _putword
+	ldx (I5),A0
+// jumped away
+// 1 NOP's needed
+	nop
+// loop end
+LE25:
+	// loop end value 16
+	// freed register variable C0
+	// EPILOGUE
+	ldx (I6)-1,LC
+	ldx (I6)-1,LE ; ldy (I6),LS
+	ldx (I6)-1,A0 ; ldy (I6),C0
+	ldx (I4),I6 ; ldy (I4),I4	// Read Sp and Fp
+	ldx (I6)-1,NULL
+	ldx (I6)-1,LR0 ; ldy (I6),I5
+	jr
+	ldx (I6)-1,MR0 ; ldy (I6),I7
+// jumped away
+	// FUNCTION IterateFilesCallback(): stack usage ~ 2 x (7 + 0) = 2 x 7 words
+
+
+	.sect data_x,const_x	// 42 words
+L48:
+	.word 0x6669
+	.word 0x6c65
+	.word 0x7300
+
+	.word 0
+L68:
+	.word "OFF"
+
+	.word 0
+L79:
+	.word 0x6e6f
+	.word 0x7420
+	.word 0x666f
+	.word 0x756e
+	.word 0x640a
+
+	.word 0
+L88:
+	.word 0x7365
+	.word 0x636f
+	.word 0x6e64
+	.word 0x730a
+
+	.word 0
+L103:
+	.word 0x706c
+	.word 0x6179
+
+	.word 0
+L123:
+	.word 0x646f
+	.word 0x6e65
+	.word 0x0a00
+
+	.word 0
+L125:
+	.word 0x6e6f
+	.word 0x6661
+	.word 0x740a
+
+	.word 0
+	.export _spiFlashMapper
+_spiFlashMapper:	// spiFlashMapper, spiplayer.c:138
+	.uword 0x10c, 0x100
+	.word lo(960), hi(960)
+	.uword 0x0
+	.word _FsMapSpiFlashCreate
+	.import _FsMapFlNullOk
+	.word _FsMapFlNullOk, _FsMapSpiFlashRead, _FsMapFlNullOk
+	.uword 0x0
+	.word _FsMapFlNullOk
+	.uword 0x0
+
+	.sect data_x,bss_x	// 80 words
+_27buffer:	// buffer, spiplayer.c:370
+	.bss 80
+
+	.sect code,main	// 402 words
+	.export _main
+_main:	// PROLOGUE
+	ldc 96,A1
+	ldc 49153,I1
+	ldc 49280,I2
+	.import _player
+	ldc _player+7,I3
+	ldc 49264,I0
+	ldx (I6)+1,NULL	// Room for Sp and Fp
+	stx I6,(I6) ; sty I4,(I6)
+	ldx (I6)+7,I4	// FP' = SP, reserve space
+	ldx (I6)+2,NULL
+	// Register save omitted
+
+//     }
+// }
+// void main(void) {
+//   InitAudio();
+
+	.import _InitAudio
+	call _InitAudio
+	ldc 512,MR0
+// jumped away
+
+//   (*(__x volatile u_int16 *)(u_int16)(0xC070)) |= (1<<5) | (1<<6);
+
+	ldx (I0),A0/*V*/
+	or A0,A1,A1
+	stx A1,(I0)+2/*V*/ ; sub NULL,ONES,A0
+
+//   (*(__x volatile u_int16 *)(u_int16)(0xC072)) = (1<<0);
+
+	ldc 65471,A1
+	// const -2 in I0
+	stx A0,(I0)/*V*/
+
+//   (*(__x volatile u_int16 *)(u_int16)(0xC001)) &= ~(1<<6);
+
+	.import _keyOld
+	ldc _keyOld,I0
+	ldx (I1),A0/*V*/
+	and A0,A1,A1
+	ldc 32768,A0
+	stx A1,(I1)/*V*/
+
+//   (*(__x volatile u_int16 *)(u_int16)((0xC080U))) = 0x8000U;
+
+	stx A0,(I2)/*V*/ ; and NULL,NULL,A0
+
+//   player.volumeOffset = 0;
+
+	// field volumeOffset, offset 7
+	stx A0,(I3)-3
+
+//   player.pauseOn = 0;
+
+	// field pauseOn, offset 4
+	// variable player address +3 in I3
+	stx A0,(I3)+4
+
+//   player.offDelay = 60;
+
+	ldc 60,A0
+	// field offDelay, offset 8
+	// variable player address -4 in I3
+	stx A0,(I3)
+
+//   keyOld = 256;
+
+	ldc 256,A0
+	stx A0,(I0)
+
+//   keyOldTime = -32767;
+
+	ldc 32769,A0
+	.import _keyOldTime
+	ldc _keyOldTime,I0
+	stx A0,(I0)
+
+//   SetHookFunction((u_int16)OpenFile, Fat12OpenFile);
+
+	// Register parameter: A0, pass by ref
+	.import _OpenFile
+	ldc _OpenFile,I0
+	// Register parameter: I0, pass by value
+	ldc lo(8000),C0
+	.import _SetHookFunction
+	call _SetHookFunction
+	.import _Fat12OpenFile
+	ldc _Fat12OpenFile,A0
+// jumped away
+	// safe: I1 I2
+
+//   SetHookFunction((u_int16)IdleHook, NullHook);
+
+	// Register parameter: A0, pass by ref
+	.import _IdleHook
+	ldc _IdleHook,I0
+	// Register parameter: I0, pass by value
+	call _SetHookFunction
+	.import _NullHook
+	ldc _NullHook,A0
+// jumped away
+	// safe: I1 I2
+
+//   SetHookFunction((u_int16)USBSuspend, NullHook);
+
+	// Register parameter: A0, pass by ref
+	.import _USBSuspend
+	ldc _USBSuspend,I0
+	// Register parameter: I0, pass by value
+	call _SetHookFunction
+	ldc _NullHook,A0
+// jumped away
+	// safe: I1 I2
+
+//   SetHookFunction((u_int16)LoadCheck, UartLoadCheck);
+
+	// Register parameter: A0, pass by ref
+	.import _LoadCheck
+	ldc _LoadCheck,I0
+	// Register parameter: I0, pass by value
+	call _SetHookFunction
+	.import _UartLoadCheck
+	ldc _UartLoadCheck,A0
+// jumped away
+	// safe: I1 I2
+
+//   supportedFiles = defSupportedFiles;
+
+	.import _defSupportedFiles
+	ldc _defSupportedFiles,I0
+	.import _supportedFiles
+	ldc _supportedFiles,I1
+	.import _PlayWavOrOggFile
+	ldc _PlayWavOrOggFile,A0
+	stx I0,(I1)
+
+//   SetHookFunction((u_int16)PlayCurrentFile, PlayWavOrOggFile);
+
+	// Register parameter: A0, pass by ref
+	// Register parameter: I0, pass by value
+	call _SetHookFunction
+	.import _PlayCurrentFile
+	ldc _PlayCurrentFile,I0
+// jumped away
+	// safe: I2
+
+//   map = FsMapSpiFlashCreate(0, 0);
+
+	.import _map
+	ldc _map,I0
+	ldx (I6)+1,NULL ; and NULL,NULL,A0
+	stx A0,(I6)+1
+	call _FsMapSpiFlashCreate
+	stx A0,(I6)
+// jumped away
+	ldy (I6)-1,NULL ; stx A0,(I0)
+	// safe: I2
+
+//   SetRate(cs.sampleRate = 8000U);
+
+	// Register parameter: C1, pass by value
+	// cast int2 -> int1 (C1/NULL)
+	.import _cs
+	ldc _cs+20,I0
+	ldc 11,A0
+	stx C0,(I0)+1 ; and NULL,NULL,C1
+	// field sampleRate, offset 20
+	.import _SetRate
+	call _SetRate
+	stx C1,(I0)-1 ; add C0,NULL,C1
+// jumped away
+	// safe: I2
+
+//   voltages[voltCoreSuspend] = 11;
+
+	.import _voltages
+	ldc _voltages+6,I0
+	// constant index 6, element size 1
+	stx A0,(I0)+1 ; and NULL,NULL,A0
+
+//   voltages[voltIoSuspend] = 0;
+
+	// constant index 7, element size 1
+	// variable voltages address -1 in I0
+	stx A0,(I0)+1
+
+//   voltages[voltAnaSuspend] = 0;
+
+	// constant index 8, element size 1
+	// variable voltages address -1 in I0
+
+//   UartInit();
+
+	.import _UartInit
+	call _UartInit
+	stx A0,(I0)
+// jumped away
+	// safe: I2
+	// not safe: A0
+
+//   while (1)
+
+L36:
+//  {
+//     CheckSd();
+
+	call _CheckSd
+	nop
+// jumped away
+
+//     if (InitFileSystem() == 0)
+
+	.import _InitFileSystem
+	call _InitFileSystem
+	ldx (I6)+1,NULL
+// jumped away
+	add A0,NULL,A0	// compare 0
+	.import _minifatInfo
+	ldc _minifatInfo+15,I0
+	jzc L39	// !=
+	nop
+// jumped away
+//  {
+//         putch('f');
+
+	// Register parameter: A0, pass by value
+	ldc _supportedFiles,I1
+	ldc _player,I2
+	call _putch
+	ldc 102,A0
+// jumped away
+
+//         putch('a');
+
+	// Register parameter: A0, pass by value
+	ldc 65535,C0
+	call _putch
+	ldc 97,A0
+// jumped away
+
+//         putch('t');
+
+	// Register parameter: A0, pass by value
+	call _putch
+	ldc 116,A0
+// jumped away
+
+//         putword(minifatInfo.totSize>>16);
+
+	// Register parameter: A0, pass by value
+	// cast int2 -> int1 (A0/NULL)
+	// field totSize, offset 14
+	ldy (I0)-1,A1
+	call _putword
+	add A1,NULL,A0
+// jumped away
+
+//         putword(minifatInfo.totSize);
+
+	// Register parameter: A0, pass by value
+	// cast int2 -> int1 (A0/NULL)
+	// field totSize, offset 14
+	// variable minifatInfo address +0 in I0
+	ldy (I0)+1,A0
+	call _putword
+	ldy (I0)-1,A1
+// jumped away
+
+//         putch('\n');
+
+	// Register parameter: A0, pass by value
+	call _putch
+	ldc 10,A0
+// jumped away
+
+//         minifatInfo.supportedSuffixes = supportedFiles;
+
+	ldx (I1),A0 ; ldy (I0)+7,NULL
+	// field supportedSuffixes, offset 28
+	// variable minifatInfo address -14 in I0
+	ldx (I0)+7,NULL ; ldy (I6)+1,NULL
+
+//         player.totalFiles = OpenFile(0xffffU);
+
+	// Register parameter: C0, pass by value
+	call _OpenFile
+	sty A0,(I0)
+// jumped away
+	// field totalFiles, offset 0
+	ldc L48,I0
+
+//         putstrp("\pfiles");
+
+	// Register parameter: I0, pass by value
+	.import _putstrp
+	call _putstrp
+	stx A0,(I2)
+// jumped away
+
+//         putword(player.totalFiles);
+
+	// Register parameter: A0, pass by value
+	// field totalFiles, offset 0
+	// variable player address +0 in I2
+	call _putword
+	ldx (I2),A0
+// jumped away
+
+//         putch('\n');
+
+	// Register parameter: A0, pass by value
+	call _putch
+	ldc 10,A0
+// jumped away
+
+//         if (player.totalFiles == 0)
+
+	// field totalFiles, offset 0
+	// variable player address +0 in I2
+	ldx (I2),A0
+	add A0,NULL,A0	// compare 0
+	nop
+	jzs _main_noFSnorFiles	// !=
+	nop
+// jumped away
+//  {
+//             goto noFSnorFiles;
+
+
+//         }
+//         player.nextFile = 0;
+
+	and NULL,NULL,A0 ; ldx (I2)+2,NULL
+	// field nextFile, offset 2
+	// variable player address -2 in I2
+	stx A0,(I2)
+
+//         while (1)
+
+L54:
+//  {
+//             CheckSd();
+
+	call _CheckSd
+	.import _playerMode
+	ldc _playerMode,I0
+// jumped away
+
+//             if (playerMode == 0
+//                 )
+
+	ldx (I0),A0
+	add A0,NULL,A0	// compare 0
+	ldc _27buffer,I2
+	jzc LE58	// !=
+	ldc _player+1,I0
+// jumped away
+//  {
+//                 static u_int16 buffer[80];
+//                 register u_int16 *bf = buffer;
+
+	// I2
+	// allocated I2 as bf
+
+//                 while (1)
+
+//  {
+//                     player.currentFile = -1;
+
+	or NULL,ONES,A0
+L58:
+	// field currentFile, offset 1
+
+//                     if (UartFill())
+
+	.import _UartFill
+	call _UartFill
+	stx A0,(I0)
+// jumped away
+	add A0,NULL,A0	// update flags
+	nop
+	jzs LE63
+	nop
+// jumped away
+//  {
+//                         int cmd = UartGetByte();
+
+	ldx (I4)+1,NULL
+	.import _UartGetByte
+	call _UartGetByte
+	ldc 10,A1
+// jumped away
+	stx A0,(I4) ; and NULL,NULL,A0	// cmd
+
+//                         *bf = 0;
+
+	stx A0,(I2)
+	// I0 not because register
+
+//                         if (cmd == '\n' || bf == &buffer[79])
+
+	ldx (I4)-1,A0	// cmd
+	sub A0,A1,A1 ; mv I2,A0
+	ldc _27buffer,I0
+	jzs L65	// ==
+	ldc _27buffer+79,A1
+// jumped away
+	// constant index 79, element size 1
+	sub A0,A1,B0 ; ldx (I4)+1,NULL
+	ldx (I4)-1,A0	// cmd
+	jzc L64	// !=
+	nop
+// jumped away
+//  {
+//                             u_int16 fName[10/2];
+//                             __y u_int32 fSuffix =
+//                                 ((buffer[9])|((buffer[10])<<8)|((u_int32)(buffer[11])<<16));
+
+	// cast int1 -> int2 (A/NULL)
+	// constant index 9, element size 1
+L65:
+	ldc 8,B1
+	ldc _27buffer+9,I1
+	ldx (I1)+1,A0 ; ldy (I4)+2,NULL
+	// constant index 10, element size 1
+	// variable buffer address -1 in I1
+	ldx (I1)+1,B0 ; and A1,NULL,A1
+	ashl B0,B1,B0 ; ldx (I1)-7,C0
+	mv C0,C1
+	ldc 0,C0
+	or A0,B0,A0 ; ldx (I1)-3,NULL
+	// cast int1 -> int2 (C/NULL)
+	// constant index 11, element size 1
+	// variable buffer address -1 in I1
+	or A,C,A
+	sty A0,(I4)+1 ; ldx (I1)+1,A0	// fSuffix
+	sty A1,(I4)-1 ; ldx (I1)+1,A1
+
+//                             fName[0] = (buffer[1]<<8) | buffer[2];
+
+	// constant index 1, element size 1
+	// variable buffer address +10 in I1
+	ashl A0,B1,A0 ; mv I4,I3
+	// constant index 2, element size 1
+	// variable buffer address -1 in I1
+	or A0,A1,A0 ; ldy (I4)-2,NULL
+	// constant index 0, element size 1
+	// fName
+	stx A0,(I3)+1
+
+//                             fName[1] = (buffer[3]<<8) | buffer[4];
+
+	// constant index 3, element size 1
+	// variable buffer address -1 in I1
+	ldx (I1)+1,A0
+	ashl A0,B1,A0 ; ldx (I1)+1,A1
+	// constant index 4, element size 1
+	// variable buffer address -1 in I1
+	or A0,A1,A0
+	// constant index 1, element size 1
+	// stack variable fName address -1 in I3
+	stx A0,(I3)+1
+
+//                             fName[2] = (buffer[5]<<8) | buffer[6];
+
+	// constant index 5, element size 1
+	// variable buffer address -1 in I1
+	ldx (I1)+1,A0
+	ashl A0,B1,A0 ; ldx (I1)+1,A1
+	// constant index 6, element size 1
+	// variable buffer address -1 in I1
+	or A0,A1,A0
+	// constant index 2, element size 1
+	// stack variable fName address -1 in I3
+	stx A0,(I3)+1
+
+//                             fName[3] = (buffer[7]<<8) | buffer[8];
+
+	// constant index 7, element size 1
+	// variable buffer address -1 in I1
+	ldx (I1)+1,A0
+	ashl A0,B1,A0 ; ldx (I1),A1
+	// constant index 8, element size 1
+	// variable buffer address -1 in I1
+	ldc L68,I1
+	or A0,A1,A0
+	// constant index 3, element size 1
+	// stack variable fName address -1 in I3
+	stx A0,(I3)+1
+
+//                             fName[4] = ('\n'<<8)|0;
+
+	ldc 2560,A0
+	// constant index 4, element size 1
+	// stack variable fName address -1 in I3
+	stx A0,(I3)
+
+//                             if (!memcmp(buffer, "OFF", 3))
+
+	// Register parameter: A0, pass by value
+	// Register parameter: I0, pass by ref
+	// Register parameter: I1, pass by value
+	.import _memcmp
+	call _memcmp
+	ldc 3,A0
+// jumped away
+	// not safe: A1 B0 C
+	add A0,NULL,A0	// update flags
+	ldc 99,A1
+	jzc L67
+	ldc _27buffer,I0
+// jumped away
+//  {
+//                                 putch('o');
+
+	// Register parameter: A0, pass by value
+	call _putch
+	ldc 111,A0
+// jumped away
+
+//                                 RealPowerOff();
+
+	.import _RealPowerOff
+	call _RealPowerOff
+	ldc _27buffer,I0
+// jumped away
+
+//                             }
+//                             switch (buffer[0])
+
+	// constant index 0, element size 1
+L67:
+	ldx (I0),A0
+	// min 73 max 112 tot 40 cases 6 density 0.1500 table/if 62 / 40
+	sub A0,A1,A1
+	ldc 76,A1	// wait flags
+	jzs LCASE72_99
+	sub A0,A1,A1
+// jumped away
+	ldc 73,A1	// wait flags
+	jzs LCASE72_76
+	sub A0,A1,A1
+// jumped away
+	ldc 80,A1	// wait flags
+	jzs LCASE72_73
+	sub A0,A1,A1
+// jumped away
+	ldc 105,A1	// wait flags
+	jzs LCASE72_73
+	sub A0,A1,A1
+// jumped away
+	ldc 112,A1	// wait flags
+	jzs LCASE72_105
+	sub A0,A1,A1
+// jumped away
+	nop
+	jzs LCASE72_105
+	nop
+// jumped away
+	j L82
+	nop
+// jumped away
+//  {
+//                             case 'c':
+
+	// CASE 99
+LCASE72_99:
+
+//                                 playerMode = 1;
+
+	ldc _playerMode,I0
+	sub NULL,ONES,A0
+
+//                                 goto playloop;
+
+	j LE58
+	stx A0,(I0)
+// jumped away
+
+//                             case 'L':
+
+	// CASE 76
+LCASE72_76:
+
+//                                 minifatInfo.longFileName[0] = 0;
+
+	ldc _minifatInfo+29,I0
+	and NULL,NULL,A0 ; ldx (I6)+1,NULL
+	// constant index 0, element size 1
+	// field longFileName, offset 29
+
+//                                 IterateFiles();
+
+	sty A0,(I0)
+	.import _IterateFiles
+	call _IterateFiles
+	// not safe: A0
+
+//                                 break;
+
+	ldc L82,LR0
+// jumped away
+
+//                             case 'I':
+
+	// CASE 73
+LCASE72_73:
+
+//                             case 'P':
+
+	// CASE 80
+
+//                                 player.nextFile =
+//                                     OpenFileNamedSupported(fName,fSuffix);
+
+	ldc _player+2,I0
+	ldx (I4)+2,NULL ; ldy (I6)+1,NULL
+	ldy (I4)+1,B0	// fSuffix
+	ldy (I4)-1,B1 ; stx B0,(I6)+1
+	mv I4,A0	// fName
+	stx B1,(I6)+1 ; ldy (I4)-2,NULL
+	.import _OpenFileNamedSupported
+	call _OpenFileNamedSupported
+	stx A0,(I6)+1
+// jumped away
+	// safe: B
+	// field nextFile, offset 2
+
+//                                 goto checkvalidfile;
+
+	j _main_checkvalidfile
+	ldy (I6)-3,NULL ; stx A0,(I0)
+// jumped away
+
+//                             case 'i':
+
+	// CASE 105
+LCASE72_105:
+
+//                             case 'p':
+
+	// CASE 112
+
+//                                 player.nextFile = atou((void *)&buffer[1]);
+
+	ldc _player+2,I0
+	ldx (I6)+1,NULL	// I2 already allocated
+	sty I2,(I6)
+	// Register parameter: I2, pass by value
+	// constant index 1, element size 1
+	.import _atou
+	call _atou
+	ldc _27buffer+1,I2
+// jumped away
+	ldy (I6)-1,I2 ; stx A0,(I0)	// I2 restored
+	// field nextFile, offset 2
+
+//                             checkvalidfile:
+
+_main_checkvalidfile:
+
+//            if (player.nextFile >= player.totalFiles
+//                || player.nextFile < 0)
+
+	// field nextFile, offset 2
+	ldc _player+2,I0
+	ldx (I0)-2,A0
+	// field totalFiles, offset 0
+	// variable player address +2 in I0
+	ldx (I0),A1
+	sub A0,A1,B0
+	ldc L79,I0
+	jge L78	// >=
+	nop
+// jumped away
+	// expression already in A0
+	add A0,NULL,A0	// compare 0
+	ldc _27buffer,I0
+	jge L77	// >=
+	nop
+// jumped away
+//  {
+//                putstrp("\pnot found\n");
+
+	// Register parameter: I0, pass by value
+	ldc L79,I0
+L78:
+	call _putstrp
+	// not safe: A0 A1
+
+//                break;
+
+	ldc L82,LR0
+// jumped away
+L77:
+
+//            }
+//                                 if (buffer[0] == 'i' || buffer[0] == 'I')
+
+	// constant index 0, element size 1
+	ldc 105,A1
+	ldx (I0),A0
+	sub A0,A1,A1
+	ldc 73,A1
+	jzs L83	// ==
+	nop
+// jumped away
+	sub A0,A1,A1
+	nop
+	jzc LE58	// !=
+	nop
+// jumped away
+L83:
+//  {
+//                                     u_int32 secs;
+
+
+//                OpenFile(player.nextFile);
+
+	// Register parameter: C0, pass by value
+	// field nextFile, offset 2
+	ldc _player+2,I1
+	call _OpenFile
+	ldx (I1),C0 ; ldy (I6)+1,NULL
+// jumped away
+
+//                secs = PlayTimeFile(0);
+
+	and NULL,NULL,B0 ; ldx (I6)+1,NULL
+	.import _PlayTimeFile
+	call _PlayTimeFile
+	stx B0,(I6)
+// jumped away
+	ldy (I4)+7,NULL ; ldx (I6)-1,NULL
+	// safe: B0
+	stx A0,(I4)+1 ; add A1,NULL,A0	// secs
+
+//                putword(secs>>16);
+
+	// Register parameter: A0, pass by value
+	// cast int2 -> int1 (A0/NULL)
+	// secs
+	call _putword
+	stx A1,(I4)-1
+// jumped away
+	// safe: B0
+
+//                putword(secs);
+
+	// Register parameter: A0, pass by value
+	// cast int2 -> int1 (A0/NULL)
+	call _putword
+	ldx (I4)-7,A0	// secs
+// jumped away
+	// safe: B0
+
+//                putstrp("\pseconds\n");
+
+	// Register parameter: I0, pass by value
+	call _putstrp
+	ldc L88,I0
+// jumped away
+	// safe: B0
+
+//                break;
+
+L82:
+
+//                                 }
+//            goto playloop;
+
+
+//                             }
+//                             bf = buffer;
+
+	j LE63
+	ldc _27buffer,I2
+// jumped away
+L64:
+
+//                         } else {
+//                             *bf++ = cmd;
+
+	stx A0,(I2)+1
+	// I0 not because register
+LE63:
+
+//                         }
+//                     }
+//                     memset(tmpBuf, 0, sizeof(tmpBuf));
+
+	// Register parameter: I0, pass by ref
+	ldc 64,A0
+	and NULL,NULL,A1
+	// Register parameter: A0, pass by value
+	// Register parameter: A1, pass by value
+	.import _memset
+	call _memset
+	.import _tmpBuf
+	ldc _tmpBuf,I0
+// jumped away
+
+//                     AudioOutputSamples(tmpBuf, sizeof(tmpBuf)/2);
+
+	ldc 32,A0
+	ldc _tmpBuf,A1
+	ldx (I6)+1,NULL
+	stx A0,(I6)+1
+	.import _AudioOutputSamples
+	call _AudioOutputSamples
+	stx A1,(I6)+1
+// jumped away
+	// safe: A0
+
+//                     CheckSd();
+
+	call _CheckSd
+	ldx (I6)-2,NULL
+// jumped away
+	// safe: A0
+
+//                     if (USBIsAttached())
+
+//  {
+//                         break;
+
+	.import _USBIsAttached
+	call _USBIsAttached
+	ldx (I6)+1,NULL
+// jumped away
+	add A0,NULL,A0	// update flags
+	ldc _player+1,I0
+	jzs L58
+	or NULL,ONES,A0
+// jumped away
+LE58:
+	// freed register variable I2
+
+//                     }
+//                 }
+//             }
+//     playloop:
+
+
+//             player.currentFile = player.nextFile;
+
+	// field nextFile, offset 2
+	ldc _player+2,I0
+	ldx (I0)-1,A0
+	// field currentFile, offset 1
+	// variable player address +1 in I0
+	stx A0,(I0) ; add A0,NULL,A0
+
+//             if (player.currentFile < 0)
+
+	// expression already in A0
+	// compare 0
+	nop
+	jge L97	// >=
+	nop
+// jumped away
+
+//                 player.currentFile += player.totalFiles;
+
+	// field totalFiles, offset 0
+	// variable player address +1 in I0
+	ldc _player+1,I1
+	ldy (I0)-1,NULL ; ldx (I1),A1
+	ldx (I0),A0
+	// field currentFile, offset 1
+	add A1,A0,A0
+	stx A0,(I1)
+L97:
+
+//             if (player.currentFile >= player.totalFiles)
+
+	// field totalFiles, offset 0
+	ldc _player,I0
+	ldx (I0)+1,A1 ; ldy (I6)+1,NULL
+	sub A0,A1,B0 ; ldx (I0),A0
+	nop
+	jlt L99	// <
+	nop
+// jumped away
+
+//                 player.currentFile -= player.totalFiles;
+
+	// field currentFile, offset 1
+	ldc _player+1,I1
+	ldx (I1),A0
+	sub A0,A1,A1
+	stx A1,(I1)
+
+//             player.nextFile = player.currentFile + 1;
+
+	// field currentFile, offset 1
+	// variable player address -1 in I0
+	ldx (I0),A0
+L99:
+	sub A0,ONES,A0 ; ldx (I0)+1,C0
+	// field nextFile, offset 2
+	// variable player address -1 in I0
+
+//             if (OpenFile(player.currentFile) < 0)
+
+	// Register parameter: C0, pass by value
+	// field currentFile, offset 1
+	// variable player address +1 in I0
+	call _OpenFile
+	stx A0,(I0)-1
+// jumped away
+	add A0,NULL,A0 ; ldx (I0)+1,NULL	// compare 0
+	ldc _minifatInfo+10,I2
+	jge L101	// >=
+	and NULL,NULL,A0
+// jumped away
+
+//             {
+//             opened:
+
+
+//                 player.ffCount = 0;
+
+	ldc _cs+36,I3
+	ldc _player+9,I0
+	ldc _cs+13,I1
+	// field ffCount, offset 9
+	stx A0,(I0) ; ldy (I2)-1,A1
+
+//                 cs.cancel = 0;
+
+	// field cancel, offset 13
+	ldc L103,I0
+	stx A0,(I1)-1
+
+//                 cs.goTo = -1;
+
+	ldc 65535,A0
+	// field goTo, offset 12
+	// variable cs address +1 in I1
+	stx A0,(I1)-2 ; ldy (I2),A0
+
+//                 cs.fileSize = cs.fileLeft = minifatInfo.fileSize;
+
+	// field fileSize, offset 9
+	stx A0,(I1)+1
+	// field fileLeft, offset 10
+	// variable cs address +2 in I1
+	stx A1,(I1)-3
+	// field fileSize, offset 8
+	// variable cs address +2 in I1
+	stx A0,(I1)+1 ; sub NULL,ONES,A0
+	stx A1,(I1)-1
+
+//                 cs.fastForward = 1;
+
+	// field fastForward, offset 36
+
+//                 putstrp("\pplay");
+
+	// Register parameter: I0, pass by value
+	ldc 256,A1
+	call _putstrp
+	stx A0,(I3)
+// jumped away
+	// not safe: A0
+
+//                 putword(player.currentFile);
+
+	// Register parameter: A0, pass by value
+	// field currentFile, offset 1
+	ldc _player+1,I0
+	call _putword
+	ldx (I0),A0 ; ldy (I2)+7,NULL
+// jumped away
+
+//                 putword(minifatInfo.fileName[0]);
+
+	// Register parameter: A0, pass by value
+	// constant index 0, element size 1
+	// field fileName, offset 16
+	// variable minifatInfo address -7 in I2
+	ldc _IdleHook,I0
+	call _putword
+	ldy (I2)+1,A0
+// jumped away
+
+//                 putword(minifatInfo.fileName[1]);
+
+	// Register parameter: A0, pass by value
+	// constant index 1, element size 1
+	// field fileName, offset 16
+	// variable minifatInfo address -1 in I2
+	call _putword
+	ldy (I2)+1,A0
+// jumped away
+
+//                 putword(minifatInfo.fileName[2]);
+
+	// Register parameter: A0, pass by value
+	// constant index 2, element size 1
+	// field fileName, offset 16
+	// variable minifatInfo address -1 in I2
+	call _putword
+	ldy (I2)+1,A0
+// jumped away
+
+//                 putword(minifatInfo.fileName[3]);
+
+	// Register parameter: A0, pass by value
+	// constant index 3, element size 1
+	// field fileName, offset 16
+	// variable minifatInfo address -1 in I2
+	call _putword
+	ldy (I2)+1,A0
+// jumped away
+
+//                 putword(minifatInfo.fileName[4]);
+
+	// Register parameter: A0, pass by value
+	// constant index 4, element size 1
+	// field fileName, offset 16
+	// variable minifatInfo address -1 in I2
+	call _putword
+	ldy (I2)+1,A0
+// jumped away
+
+//                 putch(minifatInfo.fileName[5]>>8);
+
+	// Register parameter: A0, pass by value
+	// constant index 5, element size 1
+	// field fileName, offset 16
+	// variable minifatInfo address -1 in I2
+	ldy (I2),A0
+	muluu A1,A0	// >> 8
+	add NULL,P,A
+	call _putch
+	add A1,NULL,A0
+// jumped away
+
+//                 putch('\n');
+
+	// Register parameter: A0, pass by value
+	call _putch
+	ldc 10,A0
+// jumped away
+
+//                 SetHookFunction((u_int16)IdleHook, UartIdleHook);
+
+	// Register parameter: A0, pass by ref
+	// Register parameter: I0, pass by value
+	call _SetHookFunction
+	.import _UartIdleHook
+	ldc _UartIdleHook,A0
+// jumped away
+
+//                 PlayerVolume();
+
+	.import _PlayerVolume
+	call _PlayerVolume
+	nop
+// jumped away
+
+//                 PlayCurrentFile();
+
+	call _PlayCurrentFile
+	nop
+// jumped away
+
+//                 if (USBIsAttached())
+
+	call _USBIsAttached
+	ldx (I6)+1,NULL
+// jumped away
+	add A0,NULL,A0	// update flags
+	ldc _IdleHook,I0
+	jzs L117
+	nop
+// jumped away
+//  {
+//          gotusb:
+
+
+//              ResetIRAMVectors();
+
+	call _ResetIRAMVectors
+	nop
+// jumped away
+_main_gotusb:
+
+//              (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (7<<1) | (1<<0);
+
+	ldc 47,A0
+	ldc 49256,I0
+	ldc 4,I2
+	stx A0,(I0)/*V*/
+
+//              SpiLoad(0+4, 1 );
+
+	// Register parameter: I0, pass by value
+	// Register parameter: I2, pass by value
+	call _SpiLoad
+	ldc 1,I0
+// jumped away
+
+//                     while (1)
+
+L121:
+	j L121
+	nop
+// jumped away
+L117:
+
+//                         ;
+//                 }
+//                 SetHookFunction((u_int16)IdleHook, NullHook);
+
+	// Register parameter: A0, pass by ref
+	// Register parameter: I0, pass by value
+	call _SetHookFunction
+	ldc _NullHook,A0
+// jumped away
+
+//                 putstrp("\pdone\n");
+
+	// Register parameter: I0, pass by value
+	ldc L123,I0
+	call _putstrp
+	ldc L54,LR0
+// jumped away
+L101:
+
+//             } else {
+//                 player.nextFile = 0;
+
+	// field nextFile, offset 2
+	// variable player address -1 in I0
+	j L54
+	stx A0,(I0)
+// jumped away
+L39:
+
+//             }
+//         }
+//     } else {
+//         putstrp("\pnofat\n");
+
+	// Register parameter: I0, pass by value
+	call _putstrp
+	ldc L125,I0
+// jumped away
+
+//     noFSnorFiles:
+
+_main_noFSnorFiles:
+
+//         if (USBIsAttached())
+
+	call _USBIsAttached
+	ldx (I6)+1,NULL
+// jumped away
+	add A0,NULL,A0	// update flags
+	nop
+	callzc _ResetIRAMVectors
+	ldc _main_gotusb,LR0
+// jumped away
+//  {
+//             goto gotusb;
+
+
+//         }
+//         LoadCheck(&cs, 32);
+
+	ldc 32,A0
+	ldc _cs,A1
+	ldc _tmpBuf,I0
+	ldx (I6)+1,NULL
+	stx A0,(I6)+1
+	ldc 64,A0
+	call _LoadCheck
+	stx A1,(I6)
+// jumped away
+	// safe: A0
+
+//         memset(tmpBuf, 0, sizeof(tmpBuf));
+
+	// Register parameter: I0, pass by ref
+	// Register parameter: A0, pass by value
+	// Register parameter: A1, pass by value
+	call _memset
+	ldx (I6)-2,NULL ; and NULL,NULL,A1
+// jumped away
+
+//         AudioOutputSamples(tmpBuf, sizeof(tmpBuf)/2);
+
+	ldc 32,A0
+	ldc _tmpBuf,A1
+	ldx (I6)+1,NULL
+	stx A0,(I6)+1
+	call _AudioOutputSamples
+	stx A1,(I6)+1
+// jumped away
+	// safe: A0
+	j L36
+	ldx (I6)-2,NULL
+// jumped away
+	// Epilog omitted
+	// FUNCTION main(): stack usage ~ 2 x (10 + 3) = 2 x 13 words
+
+
+	.end

@@ -1,0 +1,698 @@
+
+	.sect code,FsFatFree	// 138 words
+	.export _FsFatFree
+_FsFatFree:	// PROLOGUE
+	ldx (I6)+1,NULL	// Room for Sp and Fp
+	stx MR0,(I6)+1 ; sty I7,(I6)
+	stx LR0,(I6)+1 ; sty I5,(I6)	// return address
+	stx I6,(I6) ; sty I4,(I6)
+	ldx (I6)+1,I4	// FP' = SP, reserve space
+	ldc 512,MR0
+	stx A0,(I6)+1 ; sty A1,(I6)
+	stx B0,(I6)+1 ; sty B1,(I6)
+	stx C0,(I6)+1 ; sty C1,(I6)
+	stx D0,(I6)+1 ; sty D1,(I6)
+	stx I0,(I6)+1 ; sty I1,(I6)
+	.import _minifatInfo
+	ldc _minifatInfo+11,I0
+	stx I2,(I6)+1 ; sty I3,(I6)
+
+// typedef unsigned int size_t;
+// typedef signed int ptrdiff_t;
+// typedef short wchar_t;
+// typedef struct __sfpos {
+//     short _pos[4];
+// } fpos_t;
+// typedef void FILE;
+// __near FILE register __a0 *fopen(__near const char register __i0 *filename,
+//      __near const char register __i1 *mode);
+// __near FILE register __a0 *freopen(__near const char register __i0 *filename,
+//        __near const char register __i1 *mode,
+//        __near FILE register __a0 *stream);
+// int register __a0 fflush(__near FILE register __a0 *stream);
+// int register __a0 fclose(__near FILE register __a0 *stream);
+// int register __a0 remove(__near const char register __i0 *filename);
+// int register __a0 rename(__near const char register __i0 *oldname,
+//     __near const char register __i1 *newname);
+// int register __a0 fgetc(__near FILE register __a1 *stream);
+// __near char register __a0 *fgets(__near char register __i0 *s,
+//      int register __a0 n,
+//      __near FILE register __a1 *stream);
+// int register __a0 fputc(int register __a0 c,
+//    __near FILE register __a1 *stream);
+// int register __a0 fputs(__near const char register __i0 *s,
+//    __near FILE register __a1 *stream);
+// int register __a0 getc(__near FILE register __a1 *stream);
+// int register __a0 getchar(void);
+// __near char register __a0 *gets(__near char register __i0 *s);
+// int register __a0 putc(int register __a0 c, __near FILE register __a1 *stream);
+// int register __a0 putchar(int register __a0 c);
+// int register __a0 puts(__near const char register __i0 *s);
+// int register __a0 ungetc(int register __a0 c,
+//     __near FILE register __a1 *stream);
+// size_t register __a0 fread(__near void register __i0 *ptr,
+//       size_t register __b0 size,
+//       size_t register __b1 nobj,
+//       __near FILE register __a1 *stream);
+// size_t register __a0 fwrite(__near const void register __i0 *ptr,
+//        size_t register __b0 size,
+//        size_t register __b1 nobj,
+//        __near FILE register __a1 *stream);
+// int register __a0 fseek(__near FILE register __a0 *stream,
+//    long register __b offset,
+//    int register __a1 origin);
+// long register __a ftell(__near FILE register __a0 *stream);
+// void rewind(__near FILE register __a0 *stream);
+// int register __a0 fgetpos(__near FILE register __a0 *stream,
+//      __near fpos_t register __i0 *ptr);
+// int register __a0 fsetpos(__near FILE register __a0 *stream,
+//      __near const fpos_t register __i0 *ptr);
+// void clearerr(__near FILE register __a0 *stream);
+// int register __a0 feof(__near FILE register __a0 *stream);
+// int register __a0 ferror(__near FILE register __a0 *stream);
+// void perror(__near const char register __i0 *s);
+// int fprintf(__near FILE *stream, __near const char *fmt, ...);
+// int printf(__near const char *fmt, ...);
+// int sprintf(__near char *s, __near const char *fmt, ...);
+// int sscanf(const char *str, const char *fmt, ...);
+// int tinysprintf(char *str, const char *fmt, ...);
+// int tinyprintf(const char *fmt, ...);
+// int tinyfprintf(FILE *fp, const char *fmt, ...);
+// typedef short s_int16;
+// typedef unsigned short u_int16;
+// typedef long s_int32;
+// typedef unsigned long u_int32;
+// typedef __fract short f_int16;
+// typedef __fract long f_int32;
+// typedef unsigned int entry_u_int16;
+// extern __y short rand_seed;
+// int rand(void);
+// void srand(register __a0 unsigned int seed);
+// void exit(register __a0 int exitValue);
+// __near int atoi(__near const char *s);
+// __near unsigned short atou(__near register __i2 const char *s);
+// __near long strtol(__near const char *s, __near char * __near *endp, int base);
+// __near double strtod(__near const char *nptr, __near char * __near *endptr);
+// extern __near long random_state;
+// __near long random(void);
+// __near void srandom(register __a unsigned long x);
+// unsigned short QsortLog2(register __a0 short x);
+// void qsort(void *base, int nmemb, int size,
+//     int (*compar)(const void *, const void *));
+// short CountBitsLong(register __a unsigned long val);
+// __near char register __i0 *strcpy(__near char register __i0 *s,
+//       __near const char register __i1 *ct);
+// __near char register __i0 *strncpy(__near char register __i0 *s,
+//        __near const char register __i1 *ct,
+//        size_t register __a0 n);
+// __near char register __i0 *strcat(__near char register __i0 *s,
+//       __near const char register __i1 *ct);
+// __near char register __i0 *strncat(__near char register __i0 *s,
+//        __near const char register __i1 *ct,
+//        size_t register __a0 n);
+// int register __a0 strcmp(__near const char register __i0 *cs,
+//     __near const char register __i1 *ct);
+// int register __a0 strncmp(__near const char register __i0 *cs,
+//      __near const char register __i1 *ct,
+//      size_t register __a0 n);
+// __near char register __i0 *strchr(__near const char register __i0 *cs,
+//       int register __a0 c);
+// __near char register __i0 *strrchr(__near const char register __i0 *cs,
+//        int register __a0 c);
+// size_t register __a0 strspn(__near const char register __i0 *cs,
+//        __near const char register __i1 *ct);
+// size_t register __a0 strcspn(__near const char register __i0 *cs,
+//         __near const char register __i1 *ct);
+// __near char register __i0 *strpbrk(__near const char register __i0 *cs,
+//        __near const char register __i1 *ct);
+// __near char register __i0 *strstr(__near const char register __i0 *cs,
+//       __near const char register __i1 *ct);
+// size_t register __a0 strlen(__near const char register __i0 *cs);
+// __near char register __i0 *strerror(int register __a0 n);
+// __near char register __i0 *strtok(__near char register __i0 *s,
+//       __near const char register __i1 *ct);
+// __near void register __i0 *memcpy(__near void register __i0 *d,
+//       __near const void register __i1 *s,
+//       size_t register __a0 n);
+// __near __y void register __i0 *memcpyXY(__near __y void register __i0 *d,
+//           __near const void register __i1 *s,
+//           size_t register __a0 n);
+// __near void register __i0 *memcpyYX(__near void register __i0 *d,
+//         __near __y const void register __i1 *s,
+//         size_t register __a0 n);
+// __near __y void register __i0 *memcpyYY(__near __y void register __i0 *d,
+//      __near __y const void register __i1 *s,
+//      size_t register __a0 n);
+// __near void memcpyii(__near void register __i0 *d,
+//        __near const void register __i1 *s,
+//        size_t register __a0 n);
+// __near void memmoveii(__near void register __i0 *d,
+//        __near const void register __i1 *s,
+//        size_t register __a0 n);
+// __near void register __i0 *memmove(__near void register __i0 *s,
+//        const __near void register __i1 *ct,
+//        unsigned short register __a0 n);
+// int register __a0 memcmp(__near const void register __i0 *cs,
+//     __near const void register __i1 *ct,
+//     size_t register __a0 n);
+// int register __a0 memcmpY(__y __near const void register __i0 *cs,
+//      __y __near const void register __i1 *ct,
+//     size_t register __a0 n);
+// int register __a0 memcmpXY(__near const void register __i0 *cs,
+//       __y __near const void register __i1 *ct,
+//       size_t register __a0 n);
+// __near void register __i0 *memchr(__near const void register __i0 *cs,
+//       int register __a0 c,
+//       size_t register __a1 n);
+// __near void register __i0 *memset(__near void register __i0 *s,
+//       int register __a1 c,
+//       size_t register __a0 n);
+// __near void register __i0 *memsetY(__near __y void register __i0 *s,
+//       int register __a1 c,
+//       size_t register __a0 n);
+// __near void register __i0 *memseti(__near void register __i0 *s,
+//       register __a unsigned long c,
+//       size_t register __c0 n);
+// __near void memclearXY(register __i0 unsigned short *p, register __a0 short c);
+// size_t register __a0 strxfrm(__near char register __i0 *s1,
+//         __near const char register __i1 *s2,
+//         size_t register __a0 n);
+// void memswap(register __i0 void *a, register __i1 void *b,
+//       register __a0 size_t size);
+// void memswapy(register __i0 __y void *a, register __i1 __y void *b,
+//        register __a0 size_t size);
+// void memswapxy(register __i0 void *a, register __i1 __y void *b,
+//       register __a0 size_t size);
+// __near void MemCopyPackedBigEndian(register __i0 __near unsigned short *dst,
+//        register __a0 unsigned short dstbyteidx,
+//        register __i1 __near unsigned short *src,
+//        register __a1 unsigned short srcbyteidx,
+//        register __b0 unsigned short byteSize);
+// __near void MemCopyPackedBigEndianYX(register __i0 __near unsigned short *dst,
+//        register __a0 unsigned short dstbyteidx,
+//        register __i1 __near __y unsigned short *src,
+//        register __a1 unsigned short srcbyteidx,
+//        register __b0 unsigned short byteSize);
+// __near void MemCopyPackedBigEndianXY(register __i0 __near __y unsigned short *dst,
+//        register __a0 unsigned short dstbyteidx,
+//        register __i1 __near unsigned short *src,
+//        register __a1 unsigned short srcbyteidx,
+//        register __b0 unsigned short byteSize);
+// __near void MemCopyPackedBigEndianYY(register __i0 __near __y unsigned short *dst,
+//        register __a0 unsigned short dstbyteidx,
+//        register __i1 __near __y unsigned short *src,
+//        register __a1 unsigned short srcbyteidx,
+//        register __b0 unsigned short byteSize);
+// void ShiftSatVector(register __i0 short *vector, register __a0 short elements, register __a1 short shift);
+// void SpiBoot(register __a0 short clkConf, register __i2 short addr,
+//       register __i0 short m24);
+// void SpiLoad(register __i2 short startAddr, register __i0 short m24);
+// void SpiDelay(register __a0 u_int16 wait);
+// auto u_int16 SpiSendReceive(register __a0 u_int16 data);
+// void Restart(void);
+// void IdleHook(void);
+// auto u_int16 InitFileSystem(void);
+// auto s_int16 OpenFile(register __c0 u_int16 fileNum);
+// auto s_int16 ReadFile(register __i3 u_int16 *buf,
+//         register __c1 s_int16 byteOff,
+//         register __c0 s_int16 byteSize
+//                                                     );
+// u_int32 Seek(register __a u_int32 pos);
+// u_int32 Tell(void);
+// auto u_int16 ReadDiskSector(register __i0 u_int16 *buffer,
+//        register __a u_int32 sector);
+// auto u_int16 MapperReadDiskSector(register __i0 u_int16 *buffer,
+//       register __a u_int32 sector);
+// void Disable(void);
+// void Enable(void);
+// void Sleep(void);
+// void NullHook(void);
+// void *SetHookFunction(register __i0 u_int16 hook, register __a0 void *newFunc);
+// register __b0 u_int16 BootFromX(register __i0 u_int16 *start);
+// void SinTest(void);
+// void MemTests(register short __b0 muxTestResult);
+// enum voltIdx {
+//     voltCorePlayer = 0,
+//     voltIoPlayer,
+//     voltAnaPlayer,
+//     voltCoreUSB,
+//     voltIoUSB,
+//     voltAnaUSB,
+//     voltCoreSuspend,
+//     voltIoSuspend,
+//     voltAnaSuspend,
+//     voltCoreUser,
+//     voltIoUser,
+//     voltAnaUser,
+//     voltEnd
+// };
+// extern u_int16 voltages[voltEnd];
+// void BusyWait10(void);
+// void BusyWait1(void);
+// void PowerSetVoltages(u_int16 volt[3]);
+// void PowerOff(void);
+// void RealPowerOff(void);
+// u_int16 PlayCurrentFile(void);
+// u_int16 RealPlayCurrentFile(void);
+// void LoadCheck(struct CodecServices *cs, s_int16 n);
+// void RealLoadCheck(struct CodecServices *cs, s_int16 n);
+// u_int16 UnsupportedFile(struct CodecServices *cs);
+// u_int16 DefUnsupportedFile(struct CodecServices *cs);
+// extern u_int16 g_dctlo[2048];
+// extern __y u_int16 g_dcthi[2048];
+// extern s_int16 g_others[2048];
+// extern s_int16 g_yprev0[1024];
+// extern s_int16 g_yprev1[1024];
+// struct FsMapper *FsMapRamCreate(struct FsPhysical *physical,
+//     u_int16 cacheSize);
+// void putch(register __a0 s_int16 ch);
+// s_int16 getch(void);
+// void putword(register __a0 s_int16 ch);
+// s_int16 getword(void);
+// struct FATINFO {
+//     u_int16 IS_FAT_32;
+//     u_int32 fatStart;
+//     u_int32 rootStart;
+//     u_int32 dataStart;
+//     u_int32 currentSector;
+//     u_int32 fileSize;
+//     u_int16 fatSectorsPerCluster;
+//     u_int16 BPB_RootEntCnt;
+//     u_int16 FilSysType;
+//     s_int32 totSize;
+//     u_int16 fileName[6];
+//     u_int16 gFileNum[2];
+//     s_int32 filePos;
+//     s_int32 parentDir;
+//     const u_int32 *supportedSuffixes;
+//     u_int16 longFileName[(2*13 *2)/2];
+// };
+// struct FRAGMENT {
+//     u_int32 start;
+//     u_int16 size;
+// };
+// extern __y struct FRAGMENT minifatFragments[35];
+// extern __y struct FATINFO minifatInfo;
+// extern u_int16 minifatBuffer[256];
+// auto u_int16 FatGetByte(register __c0 u_int16 n);
+// auto u_int16 FatGetWord(register __c0 u_int16 n);
+// auto u_int32 FatGetLong(register __c0 u_int16 n);
+// auto u_int16 FatInitFileSystem(void);
+// auto __y struct FRAGMENT *FatFragmentList(
+//     register __i2 __y struct FRAGMENT *frag,
+//     register __b u_int32 fatCluster);
+// auto s_int16 FatHandleDir(register __y struct FRAGMENT *curFragment,
+//      __y struct FRAGMENT *nextFragment);
+// auto s_int16 FatOpenFile(register __c0 u_int16 fileNum);
+// auto s_int16 FatReadFile(register __i3 u_int16 *buf,
+//     register __c1 s_int16 byteOff,
+//     register __c0 s_int16 byteSize);
+// u_int32 FatTell(void);
+// u_int32 FatSeek(register __a u_int32 pos);
+// auto u_int32 FatFindSector(register __d u_int32 pos);
+// auto s_int16 FatCheckFileType(register __a u_int32 suffix);
+// void MemCopyPackedBigEndian(register __i0 u_int16 *dst,
+//        register __a0 u_int16 dstidx,
+//        register __i1 u_int16 *src,
+//        register __a1 u_int16 srcidx,
+//        register __b0 u_int16 byteSize);
+// void MemCopyPackedLittleEndian(register __i0 u_int16 *dst,
+//           register __a0 u_int16 dstidx,
+//           register __i1 u_int16 *src,
+//           register __a1 u_int16 srcidx,
+//           register __b0 u_int16 byteSize);
+// void MemWritePacked(register __a0 void *dst, register __a1 u_int16 dstidx,
+//       register __b0 u_int16 dat);
+// u_int16 MemReadPacked(register __a0 const void *src,
+//         register __a1 u_int16 srcidx);
+// void MemWritePackedY(register __a0 __y void *dst, register __a1 u_int16 dstidx,
+//       register __b0 u_int16 dat);
+// u_int16 MemReadPackedY(register __a0 __y const void *src,
+//         register __a1 u_int16 srcidx);
+// typedef s_int16 (*freeSectorCallback)(void *private, u_int32 sector, u_int32 numSecs);
+// s_int16 FatIterateOverFreeSectors(freeSectorCallback callBackFunction,
+//       void *private);
+// auto u_int16 ReadDiskSector(register __i0 u_int16 *buffer,
+//        register __a u_int32 sector);
+// struct FsPhysical;
+// struct FsMapper {
+//   u_int16 version;
+//   u_int16 blockSize;
+//   u_int32 blocks;
+//   u_int16 cacheBlocks;
+//   struct FsMapper *(*Create)(struct FsPhysical *physical, u_int16 cacheSize);
+//   s_int16 (*Delete)(struct FsMapper *map);
+//   s_int16 (*Read)(struct FsMapper *map, u_int32 firstBlock, u_int16 blocks,
+//     u_int16 *data);
+//   s_int16 (*Write)(struct FsMapper *map, u_int32 firstBlock, u_int16 blocks,
+//      u_int16 *data);
+//   s_int16 (*Free)(struct FsMapper *map, u_int32 firstBlock, u_int32 blocks);
+//   s_int16 (*Flush)(struct FsMapper *map, u_int16 hard);
+//   struct FsPhysical *physical;
+// };
+// struct FsPhysical;
+// struct FmfMeta {
+//   u_int16 ecc01;
+//   u_int16 ecc2AndType;
+//   u_int16 reservedAndBadBlock;
+//   u_int16 unused;
+//   u_int32 logicalPageNo;
+//   s_int32 newBranch;
+// };
+// struct FsMapperFlash {
+//   struct FsMapper m;
+//   u_int32 root;
+//   s_int16 blocksPerErase;
+//   s_int32 lastUsed;
+//   struct FmfCache *cache;
+//   s_int32 physPages;
+//   s_int32 emptyBlock[4];
+//   s_int16 nonFullLimit;
+//   s_int32 skipped;
+//   s_int32 freed;
+// };
+// struct FsMapper *FsMapFlCreate(struct FsPhysical *physical, u_int16 format);
+// s_int16 FsMapFlDelete(struct FsMapper *map);
+// s_int16 FsMapFlRead(struct FsMapper *map, u_int32 firstLogicalBlock,
+//       u_int16 logicalBlocks, u_int16 *data);
+// s_int16 FsMapFlWrite(struct FsMapper *map, u_int32 firstLogicalBlock,
+//        u_int16 logicalBlocks, u_int16 *data);
+// s_int16 FsMapFlFlush(struct FsMapper *map, u_int16 hard);
+// s_int16 FsMapFlFree(struct FsMapper *m, u_int32 logicalBlockNo,
+//       u_int32 logicalBlocks);
+// void FsMapFlDump(struct FsMapper *map, s_int32 maxBlocks);
+// void FsMapFlCacheDump(struct FsMapper *map);
+// void FsMapFlPrint(s_int32 page);
+// struct FsPhysical;
+// struct FsMapperTiny {
+//   struct FsMapper m;
+//   s_int32 root;
+//   s_int16 blocksPerErase;
+//   s_int32 firstBlock;
+//   s_int32 lastBlock;
+//   s_int32 logToPhys;
+//   struct FmfMeta meta;
+// };
+// struct FsMapper *FsMapTnCreate(struct FsPhysical *physical,
+//           u_int16 cacheSize);
+// s_int16 FsMapTnDelete(struct FsMapper *map);
+// s_int16 FsMapTnRead(struct FsMapper *map, u_int32 firstLogicalBlock,
+//       u_int16 logicalBlocks, u_int16 *data);
+// s_int16 FsMapTnWrite(struct FsMapper *map, u_int32 firstLogicalBlock,
+//        u_int16 logicalBlocks, u_int16 *data);
+// s_int16 FsMapTnFlush(struct FsMapper *map, u_int16 hard);
+// s_int16 FsMapTnFree(struct FsMapper *m, u_int32 logicalBlockNo,
+//       u_int32 logicalBlocks);
+// s_int16 FsMapFlNullFail();
+// s_int16 FsMapFlNullOk();
+// extern struct FsMapper *map;
+// void FsFatFree(u_int32 start, u_int32 length){
+//     register u_int32 fatSector;
+//     register u_int16 fatLine;
+
+	// C
+	// allocated C as fatSector
+	// B0
+	// allocated B0 as fatLine
+
+//     length = (length + minifatInfo.fatSectorsPerCluster - 1) / minifatInfo.fatSectorsPerCluster;
+
+	// B already allocated
+	sty B0,(I6) ; ldx (I4)-6,NULL
+	// cast int1 -> int2 (B/NULL)
+	// field fatSectorsPerCluster, offset 11
+	ldy (I0),B0 ; ldx (I4)+1,D0
+	ldx (I4)+5,D1 ; and B1,NULL,B1
+	// length
+	add B,D,B ; ldy (I0),A0
+	add B,ONES,B
+	// cast int1 -> int2 (A/NULL)
+	// field fatSectorsPerCluster, offset 11
+	// variable minifatInfo address +0 in I0
+	.import divide32unsigned
+	call divide32unsigned
+	and A1,NULL,A1
+// jumped away
+	ldc _minifatInfo+5,I0
+	ldx (I4)-6,NULL ; ldy (I0)+1,D0	// B restored
+	stx A0,(I4)+1 ; ldy (I0)+5,D1	// length
+	stx A1,(I4)+1 ; ldy (I0),A0
+
+//     start = (start - minifatInfo.dataStart) / minifatInfo.fatSectorsPerCluster;
+
+	// B already allocated
+	ldx (I4)+1,B0	// start
+	ldx (I4)+3,B1
+	// field dataStart, offset 5
+	sub B,D,B
+	// cast int1 -> int2 (A/NULL)
+	// field fatSectorsPerCluster, offset 11
+	// variable minifatInfo address -6 in I0
+	call divide32unsigned
+	and A1,NULL,A1
+// jumped away
+	ldc _minifatInfo,I0
+	ldy (I6)-1,NULL ; ldx (I4)-4,NULL	// B restored
+	stx A0,(I4)+1 ; ldy (I0)+1,A0	// start
+	stx A1,(I4)-1 ; add A0,NULL,A0
+	ldc 65528,B1
+
+//     if (minifatInfo.IS_FAT_32)
+
+	// field IS_FAT_32, offset 0
+	// update flags
+	jzs L2
+	ldy (I0)+1,C0 ; ldx (I4)+1,A0
+// jumped away
+//  {
+//          fatSector = minifatInfo.fatStart + ((s_int32)start >> 7);
+
+	// field fatStart, offset 1
+	// variable minifatInfo address -1 in I0
+	sub B1,ONES,B1 ; ldy (I0)-1,C1
+	ldx (I4)-1,A1
+	// start
+	ashl A,B1,A ; ldx (I4)+1,B0
+	add C,A,C ; ldx (I4)+3,B1
+
+//          fatLine = ((u_int16)start << 2);
+
+	// cast int2 -> int1 (B0/NULL)
+	// start
+	j LE1
+	add B0,B0,B0
+// jumped away
+L2:
+
+//     } else {
+//          fatSector = minifatInfo.fatStart + ((s_int32)start >> 8);
+
+	// field fatStart, offset 1
+	// variable minifatInfo address -1 in I0
+	ldy (I0)-1,C1 ; ldx (I4)-1,A1
+	// start
+	ashl A,B1,A ; ldx (I4)+1,B0
+	add C,A,C ; ldx (I4)+3,B1
+
+//          fatLine = ((u_int16)start << 1);
+
+	// cast int2 -> int1 (B0/NULL)
+	// start
+LE1:
+	ldc 511,A0
+	add B0,B0,B0
+
+//     }
+//     fatLine &= 511;
+
+
+//     goto read;
+
+	j _FsFatFree_read
+	and B0,A0,B0
+// jumped away
+
+//     while (length)
+
+	j LU3
+	nop
+// jumped away
+L3:
+//  {
+//          {
+//           register u_int32 t = ++start;
+
+	// A
+	// allocated A as t
+	ldx (I4)-4,NULL ; and NULL,NULL,B1
+	mv I4,I0	// start
+	ldx (I0)+1,A0 ; ldy (I4)+4,NULL
+	ldx (I0)-1,A1
+	sub A,ONES,A
+	stx A0,(I0)+1
+	stx A1,(I0)-3
+
+//           --length;
+
+	// stack variable length address +2 in I0
+	ldx (I0)+1,D0
+	ldx (I0)-1,D1
+	add D,ONES,D
+	stx D0,(I0)+1
+	.import _minifatBuffer
+	ldc _minifatBuffer,D0
+	stx D1,(I0)-1 ; lsr B0,D1
+
+//           minifatBuffer[fatLine/2] = 0;
+
+	// expression in B0
+	add D0,D1,D0	// #1 [] element size 1
+	mv D0,I5 ; sub B0,ONES,B0
+	stx B1,(I5) ; ldy (I1),B1 ; sub B0,ONES,B0
+
+//           fatLine += 2;
+
+
+//           if (minifatInfo.IS_FAT_32)
+
+	// field IS_FAT_32, offset 0
+	add B1,NULL,B1	// update flags
+	ldc 511,A0
+	jzs L5
+	nop
+// jumped away
+//  {
+//            minifatBuffer[fatLine/2] = 0;
+
+	ldc 0,B1
+	lsr B0,D1
+	ldc _minifatBuffer,D0
+	// expression in B0
+	add D0,D1,D0	// #1 [] element size 1
+	mv D0,I5 ; sub B0,ONES,B0
+	stx B1,(I5) ; sub B0,ONES,B0
+
+//            fatLine += 2;
+
+	// freed register variable A
+
+//           }
+//          }
+//          fatLine &= 511;
+
+L5:
+	and B0,A0,B0
+
+//          if (fatLine == 0 || length == 0)
+
+	ldc _minifatBuffer,A0
+	jzs L8	// ==
+	nop
+// jumped away
+	// stack variable length address +0 in I0
+	ldx (I0)+1,A0
+	ldx (I0)-1,A1
+	add A,NULL,A	// compare 0
+	ldc _minifatBuffer,A0
+	jzc L7	// !=
+	add B0,NULL,B0
+// jumped away
+//  {
+//           map->Write(map, fatSector, 1, minifatBuffer);
+
+L8:
+	.import _map
+	ldc _map,I2
+	ldx (I6)+1,NULL
+	stx A0,(I6)+1 ; sub NULL,ONES,A0
+	stx A0,(I6)+1
+	stx C0,(I6)+1
+	stx C1,(I6)+1
+	ldx (I2),A0
+	mv A0,I3
+	stx A0,(I6) ; ldy (I3)+7,NULL
+	// indirect field Write, offset 8 (struct at page 1)
+	// expression in A0
+	ldx (I3)+1,NULL
+	ldx (I3),LR0
+	jr
+	ldc L9,LR0
+// jumped away
+L9:
+	ldx (I6)-5,NULL ; add B0,NULL,B0
+	// not safe: I3
+
+//          }
+//          if (fatLine != 0)
+
+//  {
+//           continue;
+
+	// compare 0
+L7:
+	nop
+	jzc LU3	// !=
+	nop
+// jumped away
+
+//          }
+//          fatSector++;
+
+	sub C,ONES,C
+
+//          read:
+
+_FsFatFree_read:
+
+//          map->Read(map, minifatInfo.currentSector = fatSector, 1, minifatBuffer);
+
+	ldc _minifatBuffer,A0
+	ldc _minifatInfo+7,I0
+	ldc _map,I1
+	ldx (I6)+1,NULL ; sty C0,(I0)+1
+	stx A0,(I6)+1 ; sub NULL,ONES,A0
+	stx A0,(I6)+1 ; add C,NULL,D
+	// expression in C
+	// field currentSector, offset 7
+	sty C1,(I0)-1 ; stx C0,(I6)+1
+	stx C1,(I6)+1
+	ldx (I1),A0
+	mv A0,I2
+	stx A0,(I6) ; ldy (I2)+7,NULL
+	// indirect field Read, offset 7 (struct at page 1)
+	// expression in A0
+	ldx (I2),LR0
+	jr
+	ldc L12,LR0
+// jumped away
+L12:
+	ldx (I6)-5,NULL
+	// not safe: I2 D
+LU3:
+	ldx (I4)-6,NULL
+	ldx (I4)+1,D0	// length
+	ldx (I4)+5,D1
+	add D,NULL,D	// update flags
+	ldc _minifatInfo,I1
+	jzc L3
+	nop
+// jumped away
+	// freed register variable B0
+	// freed register variable C
+	// EPILOGUE
+	ldx (I6)-1,I2 ; ldy (I6),I3
+	ldx (I6)-1,I0 ; ldy (I6),I1
+	ldx (I6)-1,D0 ; ldy (I6),D1
+	ldx (I6)-1,C0 ; ldy (I6),C1
+	ldx (I6)-1,B0 ; ldy (I6),B1
+	ldx (I6)-1,A0 ; ldy (I6),A1
+	ldx (I4),I6 ; ldy (I4),I4	// Read Sp and Fp
+	ldx (I6)-1,NULL
+	ldx (I6)-1,LR0 ; ldy (I6),I5
+	jr
+	ldx (I6)-1,MR0 ; ldy (I6),I7
+// jumped away
+	// FUNCTION FsFatFree(): stack usage ~ 2 x (10 + 5) = 2 x 15 words
+
+
+	.end

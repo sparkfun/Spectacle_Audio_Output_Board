@@ -1,0 +1,254 @@
+
+//_____________________________________________________________
+//
+	.sect code,GPIOCtrlIdleHook	// 122 words
+	.export _GPIOCtrlIdleHook
+_GPIOCtrlIdleHook:
+	ldx (I6)+1,NULL	// I6 += 1
+	stx LR0,(I6)+1
+	stx I6,(I6) ; sty I4,(I6)
+	ldx (I6)+1,I4
+	stx A0,(I6) ; sty A1,(I6)+1
+	stx B0,(I6) ; sty B1,(I6)+1
+	stx I0,(I6) ; sty I2,(I6)+1
+	ldc _uiTrigger,I0	// ET0
+	stx LC,(I6) ; sty LS,(I6)+1
+	stx LE,(I6) ; ldy (I0),A0/*V*/
+//     if (uiTrigger)
+	sub A0,NULL,A0	// 'uiTrigger' == (0) -> (0)
+	ldc 0,A0	// 0 -> 1 -> ET1
+	jzs F0B33	// unsigned compare
+	nop
+// jumped away
+//     }
+// {
+// 	uiTrigger = 0;
+	sty A0,(I0)/*V*/	// ET1 ==> ET0
+// 	if (player.currentFile != -1)
+	ldc _player+1,I0	// ET4
+	ldx (I0),A0	// ET4 ==> 1 -> ET5
+	sub A0,ONES,A0	// ET5 == (-1) -> AT36
+	ldc 64,A0
+	jzs F0B7	// signed compare
+	ldc 49223,I0
+// jumped away
+// 	}
+// {
+// (*(__x volatile u_int16 *)(u_int16)(0xC046)) =(1<<6);
+	ldx (I0)-1,NULL
+F0B7:
+	ldc 128,A1	// 128 -> 1 -> ETb
+	ldc 9999,LC	// loop 10000 iterations
+	stx A0,(I0)/*V*/	// ET7 ==> ET8
+// 	}
+// *(__x volatile u_int16 *)(u_int16)(0xC047)) = 0x04ff;
+	ldc 49223,I0	// 49223 -> ET9
+	ldc 1279,A0	// 1279 -> 1 -> ETa
+	stx A0,(I0)-1/*V*/	// ETa ==> ET9
+// (*(__x volatile u_int16 *)(u_int16)(0xC046))   = 0x04ff & 0x1b80;
+	stx A1,(I0)/*V*/	// ETb ==> ET8
+// (*(__x volatile u_int16 *)(u_int16)(0xC040)) |= 0x04ff;
+	ldc 49216,I0	// 49216 -> ETc
+	ldx (I0),A1/*V*/	// ETc ==> ETd
+	or A1,A0,A0	// ETd or ETa -> ETe
+// 	    for (mask = 0;mask<10000;mask++)
+	stx A0,(I0)/*V*/	// ETe ==> ETc
+	loop LC,F0B9-1
+	ldc 0,I0	// 0 -> ET10
+//loop resumes
+// (*(__x volatile u_int16 *)(u_int16)(0));
+	ldx (I0),I7/*V*/
+//	(0 nop's needed)
+// loop end
+F0B9:	// loop exit
+// (*(__x volatile u_int16 *)(u_int16)(0xC040)) &= ~ 0x04ff;
+	ldc 49216,I0	// 49216 -> ETc
+	ldc 64256,A1	// 64256 -> 1 -> ET14
+	ldc 9999,LC	// loop 10000 iterations
+	ldx (I0),A0/*V*/	// ETc ==> ET15
+	and A0,A1,A0	// ET15 and ET14 -> ET16
+	stx A0,(I0)/*V*/	// ET16 ==> ETc
+// 	    for (mask = 0;mask<10000;mask++)
+	loop LC,F0B13-1
+	ldc 0,I0	// 0 -> ET10
+//loop resumes
+// (*(__x volatile u_int16 *)(u_int16)(0));
+	ldx (I0),I7/*V*/
+//	(0 nop's needed)
+// loop end
+F0B13:	// loop exit
+// 	    mask = ((*(__x volatile u_int16 *)(u_int16)(0xC042)) ^ 0x1b80) & 0x04ff;
+	ldc 49218,I0	// 49218 -> ET18
+	ldc 7040,A0	// 7040 -> 1 -> ET1b
+	ldx (I0),A1/*V*/	// ET18 ==> ET19
+	xor A1,A0,A1	// ET19 xor ET1b -> ET1c
+	ldc 1279,A0	// 1279 -> 1 -> ETa
+	and A1,A0,A1	// ET1c and ETa -> 'mask'
+// 	    if (mask)
+	nop
+	jzs F0B17	// compare against zero
+	nop
+// jumped away
+// 	    }
+
+
+// (m)
+	j F0B21
+	and NULL,NULL,A0 ; mv A0,B0	// 0 -> 'n'
+// jumped away
+F0B18:	// (loop lvl 2)
+// 		}
+// {
+// 		    if (m & 1)
+	sub NULL,ONES,B1	// 1 -> 0 -> ET20
+	and B0,B1,B1	// 'm' and ET20 -> ET21
+	nop
+	jzs F0B23	// compare against zero
+	nop
+// jumped away
+// 		    }
+// {
+// 			if (mask & 1)
+	sub NULL,ONES,B1	// 1 -> 1 -> ET3
+	and A1,B1,B1	// 'mask' and ET3 -> ET22
+	nop
+	jzc F0B19	// compare against zero
+	nop
+// jumped away
+// 			n++;
+	sub A0,ONES,A0	// 'n' - (-1) -> 'n'
+F0B23:	// (loop lvl 2)
+// 		    m >>= 1;
+	asr B0,B0	// 'm' << (-1) -> 'm'
+	lsr A1,A1	// 'mask' << (-1) -> 'mask'
+// 		    mask >>= 1;
+F0B21:	// (loop lvl 2)
+	sub B0,NULL,B0	// 'm' != (0) -> (0)
+	nop
+	jzc F0B18	// signed compare
+	nop
+// jumped away
+F0B19:
+// 		if (
+// 		    player.currentFile == -1 || n < player.currentFile
+// 		    )
+	ldc _player+1,I0	// ET4
+	ldx (I0),A1	// ET4 ==> 1 -> ET5
+	sub A1,ONES,B0	// ET5 == (-1) -> AT3a
+	ldc _player+2,I0
+	jzs F0B26	// signed compare
+	sub A0,A1,A1	// 'n' >= ET5 -> AT3d
+// jumped away
+	nop
+	jge F0B17	// signed compare
+	nop	// ET28
+// jumped away
+// 		}
+// {
+// 		    player.currentFile = player.nextFile = n;
+F0B26:
+	ldc _cs+13,I2	// ET2b
+	stx A0,(I0)-1	// 'n' ==> ET28
+	stx A0,(I0)+3 ; sub NULL,ONES,A0	// 'n' ==> ET28
+// 		    cs.cancel = 1;
+	stx A0,(I2) ; and NULL,NULL,A0	// ET20 ==> ET2b
+// 		    player.pauseOn = 0;
+	stx A0,(I0)	// ET1e ==> ET28
+F0B17:
+// 	if ((*(__x volatile u_int16 *)(u_int16)(0xC001)) &(1<<4))
+	ldc 49153,I0	// 49153 -> ET2e
+	ldc 16,A0	// 16 -> 1 -> ET31
+	ldx (I0),A1/*V*/	// ET2e ==> ET2f
+	and A1,A0,A0	// ET2f and ET31 -> ET32
+	nop
+	jzs F0B30	// compare against zero
+	nop
+// jumped away
+// 	}
+// {
+// (*(__x volatile u_int16 *)(u_int16)(0xC047)) = 0x2000;
+	ldc 49223,I0	// 49223 -> ET9
+	ldc 8192,A0	// 8192 -> 1 -> ET33
+// 		RealPowerOff();
+	call _RealPowerOff
+	stx A0,(I0)/*V*/	// ET33 ==> ET9
+// jumped away
+F0B30:
+// 	if (USBIsAttached())
+	call _USBIsAttached
+	ldx (I6)+1,NULL	// I6 += 1
+// jumped away
+	sub A0,NULL,A0	// ET34 == (0) -> (0)
+	nop
+	callzs _CheckSd
+	ldc F0B33,LR0
+// jumped away
+// 	}
+// {
+// 	    cs.cancel = 1;
+	ldc _cs+13,I0	// ET2b
+	sub NULL,ONES,A0	// 1 -> 0 -> ET20
+	stx A0,(I0) ; and NULL,NULL,A0	// ET20 ==> ET2b
+// 	    player.pauseOn = 0;
+	ldc _player+4,I0	// ET2d
+// 	CheckSd();
+	call _CheckSd
+	stx A0,(I0)	// ET1e ==> ET2d
+// jumped away
+F0B33:
+	ldx (I6)-1,LE
+	ldy (I6),LS ; ldx (I6)-1,LC
+	ldy (I6),I2 ; ldx (I6)-1,I0
+	ldy (I6),B1 ; ldx (I6)-1,B0
+	ldy (I6),A1 ; ldx (I6)-1,A0
+	ldx (I4),I6 ; ldy (I4),I4
+	ldx (I6)-1,NULL	// I6 += -1
+	ldx (I6)-1,LR0
+	jr
+	nop
+// jumped away
+// 	}
+// else {
+// (*(__x volatile u_int16 *)(u_int16)(0xC047)) =(1<<6);
+	ldc 64,A0	// 64 -> 1 -> ET7
+	j F0B7
+	ldc 49223,I0	// 49223 -> ET9
+// jumped away
+
+//_____________________________________________________________
+//
+	.sect code,GPIOInit	// 25 words
+	.export _GPIOInit
+_GPIOInit:
+	ldx (I6)+1,NULL	// I6 += 1
+	stx A0,(I6) ; sty A1,(I6)+1
+	ldc 64256,A0	// 64256 -> 1 -> ET0
+	stx I0,(I6)
+// (*(__x volatile u_int16 *)(u_int16)(0xC010)) &= ~ 0x04ff;
+	ldc 49168,I0	// 49168 -> ET1
+	ldx (I0),A1/*V*/	// ET1 ==> ET2
+	and A1,A0,A1	// ET2 and ET0 -> ET3
+	stx A1,(I0)/*V*/	// ET3 ==> ET1
+// (*(__x volatile u_int16 *)(u_int16)(0xC040))  &= ~ 0x04ff;
+	ldc 49216,I0	// 49216 -> ET4
+	ldx (I0),A1/*V*/	// ET4 ==> ET5
+	and A1,A0,A0	// ET5 and ET0 -> ET6
+	ldc 64,A1	// 64 -> 1 -> ET7
+	stx A0,(I0)/*V*/	// ET6 ==> ET4
+// (*(__x volatile u_int16 *)(u_int16)(0xC040)) |=(1<<6);
+	ldx (I0),A0/*V*/	// ET4 ==> ET8
+	or A0,A1,A0	// ET8 or ET7 -> ET9
+	stx A0,(I0)/*V*/ ; or NULL,ONES,A0	// ET9 ==> ET4
+//   player.nextFile = -1;
+	ldc _player+2,I0	// ETd
+	stx A0,(I0)+4	// ETa ==> ETd
+//   player.volume = -24;
+	ldc -24,A0	// -24 -> 0 -> ETe
+	stx A0,(I0)	// ETe ==> ETd
+	ldx (I6)-1,I0
+	ldy (I6),A1 ; ldx (I6)-1,A0
+	jr
+	nop
+// jumped away
+
+	.end
