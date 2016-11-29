@@ -16,6 +16,11 @@ int main()
   CyGlobalIntEnable; /* Enable global interrupts. */
   UART_PC_Start();
   UART_VS_Start();
+
+  POWBTN_Write(1);
+  CyDelay(5);
+  POWBTN_Write(0);
+
   uint32 rxBuffer = 0;
 
   /* Place your initialization/startup code here (e.g. MyInst_Start()) */

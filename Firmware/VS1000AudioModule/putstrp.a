@@ -20,23 +20,23 @@ _putstrp:	// PROLOGUE
 // } fpos_t;
 // typedef void FILE;
 // __near FILE register __a0 *fopen(__near const char register __i0 *filename,
-//      __near const char register __i1 *mode);
+// 				 __near const char register __i1 *mode);
 // __near FILE register __a0 *freopen(__near const char register __i0 *filename,
-//        __near const char register __i1 *mode,
-//        __near FILE register __a0 *stream);
+// 				   __near const char register __i1 *mode,
+// 				   __near FILE register __a0 *stream);
 // int register __a0 fflush(__near FILE register __a0 *stream);
 // int register __a0 fclose(__near FILE register __a0 *stream);
 // int register __a0 remove(__near const char register __i0 *filename);
 // int register __a0 rename(__near const char register __i0 *oldname,
-//     __near const char register __i1 *newname);
+// 			 __near const char register __i1 *newname);
 // int register __a0 fgetc(__near FILE register __a1 *stream);
 // __near char register __a0 *fgets(__near char register __i0 *s,
-//      int register __a0 n,
-//      __near FILE register __a1 *stream);
+// 				 int register __a0 n,
+// 				 __near FILE register __a1 *stream);
 // int register __a0 fputc(int register __a0 c,
-//    __near FILE register __a1 *stream);
+// 			__near FILE register __a1 *stream);
 // int register __a0 fputs(__near const char register __i0 *s,
-//    __near FILE register __a1 *stream);
+// 			__near FILE register __a1 *stream);
 // int register __a0 getc(__near FILE register __a1 *stream);
 // int register __a0 getchar(void);
 // __near char register __a0 *gets(__near char register __i0 *s);
@@ -44,24 +44,24 @@ _putstrp:	// PROLOGUE
 // int register __a0 putchar(int register __a0 c);
 // int register __a0 puts(__near const char register __i0 *s);
 // int register __a0 ungetc(int register __a0 c,
-//     __near FILE register __a1 *stream);
+// 			 __near FILE register __a1 *stream);
 // size_t register __a0 fread(__near void register __i0 *ptr,
-//       size_t register __b0 size,
-//       size_t register __b1 nobj,
-//       __near FILE register __a1 *stream);
+// 			   size_t register __b0 size,
+// 			   size_t register __b1 nobj,
+// 			   __near FILE register __a1 *stream);
 // size_t register __a0 fwrite(__near const void register __i0 *ptr,
-//        size_t register __b0 size,
-//        size_t register __b1 nobj,
-//        __near FILE register __a1 *stream);
+// 			    size_t register __b0 size,
+// 			    size_t register __b1 nobj,
+// 			    __near FILE register __a1 *stream);
 // int register __a0 fseek(__near FILE register __a0 *stream,
-//    long register __b offset,
-//    int register __a1 origin);
+// 			long register __b offset,
+// 			int register __a1 origin);
 // long register __a ftell(__near FILE register __a0 *stream);
 // void rewind(__near FILE register __a0 *stream);
 // int register __a0 fgetpos(__near FILE register __a0 *stream,
-//      __near fpos_t register __i0 *ptr);
+// 			  __near fpos_t register __i0 *ptr);
 // int register __a0 fsetpos(__near FILE register __a0 *stream,
-//      __near const fpos_t register __i0 *ptr);
+// 			  __near const fpos_t register __i0 *ptr);
 // void clearerr(__near FILE register __a0 *stream);
 // int register __a0 feof(__near FILE register __a0 *stream);
 // int register __a0 ferror(__near FILE register __a0 *stream);
@@ -81,7 +81,7 @@ _putstrp:	// PROLOGUE
 // typedef __fract long f_int32;
 // typedef unsigned int entry_u_int16;
 // void SpiBoot(register __a0 short clkConf, register __i2 short addr,
-//       register __i0 short m24);
+// 	     register __i0 short m24);
 // void SpiLoad(register __i2 short startAddr, register __i0 short m24);
 // void SpiDelay(register __a0 u_int16 wait);
 // auto u_int16 SpiSendReceive(register __a0 u_int16 data);
@@ -90,15 +90,15 @@ _putstrp:	// PROLOGUE
 // auto u_int16 InitFileSystem(void);
 // auto s_int16 OpenFile(register __c0 u_int16 fileNum);
 // auto s_int16 ReadFile(register __i3 u_int16 *buf,
-//         register __c1 s_int16 byteOff,
-//         register __c0 s_int16 byteSize
-//                                                     );
+// 		      register __c1 s_int16 byteOff,
+// 		      register __c0 s_int16 byteSize
+//  );
 // u_int32 Seek(register __a u_int32 pos);
 // u_int32 Tell(void);
 // auto u_int16 ReadDiskSector(register __i0 u_int16 *buffer,
-//        register __a u_int32 sector);
+// 			    register __a u_int32 sector);
 // auto u_int16 MapperReadDiskSector(register __i0 u_int16 *buffer,
-//       register __a u_int32 sector);
+// 				  register __a u_int32 sector);
 // void Disable(void);
 // void Enable(void);
 // void Sleep(void);
@@ -140,7 +140,7 @@ _putstrp:	// PROLOGUE
 // extern s_int16 g_yprev0[1024];
 // extern s_int16 g_yprev1[1024];
 // struct FsMapper *FsMapRamCreate(struct FsPhysical *physical,
-//     u_int16 cacheSize);
+// 				u_int16 cacheSize);
 // void putch(register __a0 s_int16 ch);
 // s_int16 getch(void);
 // void putword(register __a0 s_int16 ch);
@@ -150,14 +150,14 @@ _putstrp:	// PROLOGUE
 
 L1:
 //  {
-//  register int i = *packedStr++;
+// 	register int i = *packedStr++;
 
 	// C0
 	// allocated C0 as i
 	ldc 65528,A1
 	ldx (I0)+1,C0
 
-//  if (i >> 8)
+// 	if (i >> 8)
 
 	// expression in C0
 	ashl C0,A1,A0
@@ -166,7 +166,7 @@ L1:
 	nop
 // jumped away
 //  {
-//      putch(i >> 8);
+// 	    putch(i >> 8);
 
 	// Register parameter: A0, pass by value
 	// expression already in A0
@@ -175,12 +175,12 @@ L1:
 	nop
 // jumped away
 
-//  } else {
-//      break;
+// 	} else {
+// 	    break;
 
 
-//  }
-//  if (i & 255)
+// 	}
+// 	if (i & 255)
 
 	ldc 255,A0
 	and C0,A0,A0
@@ -189,7 +189,7 @@ L1:
 	add C0,NULL,A0
 // jumped away
 //  {
-//      putch(i);
+// 	    putch(i);
 
 	// Register parameter: A0, pass by value
 	// expression in C0
@@ -197,8 +197,8 @@ L1:
 	ldc L1,LR0
 // jumped away
 
-//  } else {
-//      break;
+// 	} else {
+// 	    break;
 
 	// freed register variable C0
 	j L1

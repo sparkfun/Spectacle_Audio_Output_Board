@@ -39,8 +39,8 @@ else
 # For Windows
 VCCFLAGS = -P130 -O -fsmall-code $(FEATURES) \
 	-DSPIPLAYERSTART=$(SPIPLAYERSTART) -DSDPLAYERSTART=$(SDPLAYERSTART) -DSDMASSSTART=$(SDMASSSTART)
-RM = del
-CP = copy
+RM = rm
+CP = cp
 endif
 endif
 

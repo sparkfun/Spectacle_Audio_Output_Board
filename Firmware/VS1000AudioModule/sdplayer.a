@@ -24,23 +24,23 @@ _InitializeMmc:	// PROLOGUE
 // } fpos_t;
 // typedef void FILE;
 // __near FILE register __a0 *fopen(__near const char register __i0 *filename,
-//      __near const char register __i1 *mode);
+// 				 __near const char register __i1 *mode);
 // __near FILE register __a0 *freopen(__near const char register __i0 *filename,
-//        __near const char register __i1 *mode,
-//        __near FILE register __a0 *stream);
+// 				   __near const char register __i1 *mode,
+// 				   __near FILE register __a0 *stream);
 // int register __a0 fflush(__near FILE register __a0 *stream);
 // int register __a0 fclose(__near FILE register __a0 *stream);
 // int register __a0 remove(__near const char register __i0 *filename);
 // int register __a0 rename(__near const char register __i0 *oldname,
-//     __near const char register __i1 *newname);
+// 			 __near const char register __i1 *newname);
 // int register __a0 fgetc(__near FILE register __a1 *stream);
 // __near char register __a0 *fgets(__near char register __i0 *s,
-//      int register __a0 n,
-//      __near FILE register __a1 *stream);
+// 				 int register __a0 n,
+// 				 __near FILE register __a1 *stream);
 // int register __a0 fputc(int register __a0 c,
-//    __near FILE register __a1 *stream);
+// 			__near FILE register __a1 *stream);
 // int register __a0 fputs(__near const char register __i0 *s,
-//    __near FILE register __a1 *stream);
+// 			__near FILE register __a1 *stream);
 // int register __a0 getc(__near FILE register __a1 *stream);
 // int register __a0 getchar(void);
 // __near char register __a0 *gets(__near char register __i0 *s);
@@ -48,24 +48,24 @@ _InitializeMmc:	// PROLOGUE
 // int register __a0 putchar(int register __a0 c);
 // int register __a0 puts(__near const char register __i0 *s);
 // int register __a0 ungetc(int register __a0 c,
-//     __near FILE register __a1 *stream);
+// 			 __near FILE register __a1 *stream);
 // size_t register __a0 fread(__near void register __i0 *ptr,
-//       size_t register __b0 size,
-//       size_t register __b1 nobj,
-//       __near FILE register __a1 *stream);
+// 			   size_t register __b0 size,
+// 			   size_t register __b1 nobj,
+// 			   __near FILE register __a1 *stream);
 // size_t register __a0 fwrite(__near const void register __i0 *ptr,
-//        size_t register __b0 size,
-//        size_t register __b1 nobj,
-//        __near FILE register __a1 *stream);
+// 			    size_t register __b0 size,
+// 			    size_t register __b1 nobj,
+// 			    __near FILE register __a1 *stream);
 // int register __a0 fseek(__near FILE register __a0 *stream,
-//    long register __b offset,
-//    int register __a1 origin);
+// 			long register __b offset,
+// 			int register __a1 origin);
 // long register __a ftell(__near FILE register __a0 *stream);
 // void rewind(__near FILE register __a0 *stream);
 // int register __a0 fgetpos(__near FILE register __a0 *stream,
-//      __near fpos_t register __i0 *ptr);
+// 			  __near fpos_t register __i0 *ptr);
 // int register __a0 fsetpos(__near FILE register __a0 *stream,
-//      __near const fpos_t register __i0 *ptr);
+// 			  __near const fpos_t register __i0 *ptr);
 // void clearerr(__near FILE register __a0 *stream);
 // int register __a0 feof(__near FILE register __a0 *stream);
 // int register __a0 ferror(__near FILE register __a0 *stream);
@@ -97,114 +97,114 @@ _InitializeMmc:	// PROLOGUE
 // __near void srandom(register __a unsigned long x);
 // unsigned short QsortLog2(register __a0 short x);
 // void qsort(void *base, int nmemb, int size,
-//     int (*compar)(const void *, const void *));
+// 	   int (*compar)(const void *, const void *));
 // short CountBitsLong(register __a unsigned long val);
 // __near char register __i0 *strcpy(__near char register __i0 *s,
-//       __near const char register __i1 *ct);
+// 				  __near const char register __i1 *ct);
 // __near char register __i0 *strncpy(__near char register __i0 *s,
-//        __near const char register __i1 *ct,
-//        size_t register __a0 n);
+// 				   __near const char register __i1 *ct,
+// 				   size_t register __a0 n);
 // __near char register __i0 *strcat(__near char register __i0 *s,
-//       __near const char register __i1 *ct);
+// 				  __near const char register __i1 *ct);
 // __near char register __i0 *strncat(__near char register __i0 *s,
-//        __near const char register __i1 *ct,
-//        size_t register __a0 n);
+// 				   __near const char register __i1 *ct,
+// 				   size_t register __a0 n);
 // int register __a0 strcmp(__near const char register __i0 *cs,
-//     __near const char register __i1 *ct);
+// 			 __near const char register __i1 *ct);
 // int register __a0 strncmp(__near const char register __i0 *cs,
-//      __near const char register __i1 *ct,
-//      size_t register __a0 n);
+// 			  __near const char register __i1 *ct,
+// 			  size_t register __a0 n);
 // __near char register __i0 *strchr(__near const char register __i0 *cs,
-//       int register __a0 c);
+// 				  int register __a0 c);
 // __near char register __i0 *strrchr(__near const char register __i0 *cs,
-//        int register __a0 c);
+// 				   int register __a0 c);
 // size_t register __a0 strspn(__near const char register __i0 *cs,
-//        __near const char register __i1 *ct);
+// 			    __near const char register __i1 *ct);
 // size_t register __a0 strcspn(__near const char register __i0 *cs,
-//         __near const char register __i1 *ct);
+// 			     __near const char register __i1 *ct);
 // __near char register __i0 *strpbrk(__near const char register __i0 *cs,
-//        __near const char register __i1 *ct);
+// 				   __near const char register __i1 *ct);
 // __near char register __i0 *strstr(__near const char register __i0 *cs,
-//       __near const char register __i1 *ct);
+// 				  __near const char register __i1 *ct);
 // size_t register __a0 strlen(__near const char register __i0 *cs);
 // __near char register __i0 *strerror(int register __a0 n);
 // __near char register __i0 *strtok(__near char register __i0 *s,
-//       __near const char register __i1 *ct);
+// 				  __near const char register __i1 *ct);
 // __near void register __i0 *memcpy(__near void register __i0 *d,
-//       __near const void register __i1 *s,
-//       size_t register __a0 n);
+// 				  __near const void register __i1 *s,
+// 				  size_t register __a0 n);
 // __near __y void register __i0 *memcpyXY(__near __y void register __i0 *d,
-//           __near const void register __i1 *s,
-//           size_t register __a0 n);
+// 				      __near const void register __i1 *s,
+// 				      size_t register __a0 n);
 // __near void register __i0 *memcpyYX(__near void register __i0 *d,
-//         __near __y const void register __i1 *s,
-//         size_t register __a0 n);
+// 				    __near __y const void register __i1 *s,
+// 				    size_t register __a0 n);
 // __near __y void register __i0 *memcpyYY(__near __y void register __i0 *d,
-//      __near __y const void register __i1 *s,
-//      size_t register __a0 n);
+// 					__near __y const void register __i1 *s,
+// 					size_t register __a0 n);
 // __near void memcpyii(__near void register __i0 *d,
-//        __near const void register __i1 *s,
-//        size_t register __a0 n);
+// 		     __near const void register __i1 *s,
+// 		     size_t register __a0 n);
 // __near void memmoveii(__near void register __i0 *d,
-//        __near const void register __i1 *s,
-//        size_t register __a0 n);
+// 		     __near const void register __i1 *s,
+// 		     size_t register __a0 n);
 // __near void register __i0 *memmove(__near void register __i0 *s,
-//        const __near void register __i1 *ct,
-//        unsigned short register __a0 n);
+// 				   const __near void register __i1 *ct,
+// 				   unsigned short register __a0 n);
 // int register __a0 memcmp(__near const void register __i0 *cs,
-//     __near const void register __i1 *ct,
-//     size_t register __a0 n);
+// 			 __near const void register __i1 *ct,
+// 			 size_t register __a0 n);
 // int register __a0 memcmpY(__y __near const void register __i0 *cs,
-//      __y __near const void register __i1 *ct,
-//     size_t register __a0 n);
+//  __y __near const void register __i1 *ct,
+// 			 size_t register __a0 n);
 // int register __a0 memcmpXY(__near const void register __i0 *cs,
-//       __y __near const void register __i1 *ct,
-//       size_t register __a0 n);
+//  __y __near const void register __i1 *ct,
+// 			   size_t register __a0 n);
 // __near void register __i0 *memchr(__near const void register __i0 *cs,
-//       int register __a0 c,
-//       size_t register __a1 n);
+// 				  int register __a0 c,
+// 				  size_t register __a1 n);
 // __near void register __i0 *memset(__near void register __i0 *s,
-//       int register __a1 c,
-//       size_t register __a0 n);
+// 				  int register __a1 c,
+// 				  size_t register __a0 n);
 // __near void register __i0 *memsetY(__near __y void register __i0 *s,
-//       int register __a1 c,
-//       size_t register __a0 n);
+// 				  int register __a1 c,
+// 				  size_t register __a0 n);
 // __near void register __i0 *memseti(__near void register __i0 *s,
-//       register __a unsigned long c,
-//       size_t register __c0 n);
+// 				  register __a unsigned long c,
+// 				  size_t register __c0 n);
 // __near void memclearXY(register __i0 unsigned short *p, register __a0 short c);
 // size_t register __a0 strxfrm(__near char register __i0 *s1,
-//         __near const char register __i1 *s2,
-//         size_t register __a0 n);
+// 			     __near const char register __i1 *s2,
+// 			     size_t register __a0 n);
 // void memswap(register __i0 void *a, register __i1 void *b,
-//       register __a0 size_t size);
+// 	     register __a0 size_t size);
 // void memswapy(register __i0 __y void *a, register __i1 __y void *b,
-//        register __a0 size_t size);
+// 	      register __a0 size_t size);
 // void memswapxy(register __i0 void *a, register __i1 __y void *b,
-//       register __a0 size_t size);
+// 	     register __a0 size_t size);
 // __near void MemCopyPackedBigEndian(register __i0 __near unsigned short *dst,
-//        register __a0 unsigned short dstbyteidx,
-//        register __i1 __near unsigned short *src,
-//        register __a1 unsigned short srcbyteidx,
-//        register __b0 unsigned short byteSize);
+// 				   register __a0 unsigned short dstbyteidx,
+// 				   register __i1 __near unsigned short *src,
+// 				   register __a1 unsigned short srcbyteidx,
+// 				   register __b0 unsigned short byteSize);
 // __near void MemCopyPackedBigEndianYX(register __i0 __near unsigned short *dst,
-//        register __a0 unsigned short dstbyteidx,
-//        register __i1 __near __y unsigned short *src,
-//        register __a1 unsigned short srcbyteidx,
-//        register __b0 unsigned short byteSize);
+// 				   register __a0 unsigned short dstbyteidx,
+// 				   register __i1 __near __y unsigned short *src,
+// 				   register __a1 unsigned short srcbyteidx,
+// 				   register __b0 unsigned short byteSize);
 // __near void MemCopyPackedBigEndianXY(register __i0 __near __y unsigned short *dst,
-//        register __a0 unsigned short dstbyteidx,
-//        register __i1 __near unsigned short *src,
-//        register __a1 unsigned short srcbyteidx,
-//        register __b0 unsigned short byteSize);
+// 				   register __a0 unsigned short dstbyteidx,
+// 				   register __i1 __near unsigned short *src,
+// 				   register __a1 unsigned short srcbyteidx,
+// 				   register __b0 unsigned short byteSize);
 // __near void MemCopyPackedBigEndianYY(register __i0 __near __y unsigned short *dst,
-//        register __a0 unsigned short dstbyteidx,
-//        register __i1 __near __y unsigned short *src,
-//        register __a1 unsigned short srcbyteidx,
-//        register __b0 unsigned short byteSize);
+// 				   register __a0 unsigned short dstbyteidx,
+// 				   register __i1 __near __y unsigned short *src,
+// 				   register __a1 unsigned short srcbyteidx,
+// 				   register __b0 unsigned short byteSize);
 // void ShiftSatVector(register __i0 short *vector, register __a0 short elements, register __a1 short shift);
 // void SpiBoot(register __a0 short clkConf, register __i2 short addr,
-//       register __i0 short m24);
+// 	     register __i0 short m24);
 // void SpiLoad(register __i2 short startAddr, register __i0 short m24);
 // void SpiDelay(register __a0 u_int16 wait);
 // auto u_int16 SpiSendReceive(register __a0 u_int16 data);
@@ -213,15 +213,15 @@ _InitializeMmc:	// PROLOGUE
 // auto u_int16 InitFileSystem(void);
 // auto s_int16 OpenFile(register __c0 u_int16 fileNum);
 // auto s_int16 ReadFile(register __i3 u_int16 *buf,
-//         register __c1 s_int16 byteOff,
-//         register __c0 s_int16 byteSize
-//                                                     );
+// 		      register __c1 s_int16 byteOff,
+// 		      register __c0 s_int16 byteSize
+//  );
 // u_int32 Seek(register __a u_int32 pos);
 // u_int32 Tell(void);
 // auto u_int16 ReadDiskSector(register __i0 u_int16 *buffer,
-//        register __a u_int32 sector);
+// 			    register __a u_int32 sector);
 // auto u_int16 MapperReadDiskSector(register __i0 u_int16 *buffer,
-//       register __a u_int32 sector);
+// 				  register __a u_int32 sector);
 // void Disable(void);
 // void Enable(void);
 // void Sleep(void);
@@ -263,7 +263,7 @@ _InitializeMmc:	// PROLOGUE
 // extern s_int16 g_yprev0[1024];
 // extern s_int16 g_yprev1[1024];
 // struct FsMapper *FsMapRamCreate(struct FsPhysical *physical,
-//     u_int16 cacheSize);
+// 				u_int16 cacheSize);
 // void putch(register __a0 s_int16 ch);
 // s_int16 getch(void);
 // void putword(register __a0 s_int16 ch);
@@ -271,9 +271,9 @@ _InitializeMmc:	// PROLOGUE
 // extern __y volatile u_int32 timeCount;
 // u_int32 ReadTimeCount(void);
 // extern s_int16 (*applAddr)(s_int16 register __i0 **d,
-//       s_int16 register __a1 mode,
-//       s_int16 register __a0 n);
-// extern __y s_int16 audioBuffer[2*2048];
+// 			   s_int16 register __a1 mode,
+// 			   s_int16 register __a0 n);
+// extern __y s_int16 audioBuffer[2* 2048];
 // struct AUDIOPTR {
 //     __y s_int16 *wr;
 //     __y s_int16 *rd;
@@ -323,9 +323,9 @@ _InitializeMmc:	// PROLOGUE
 //   struct FsMapper *(*Create)(struct FsPhysical *physical, u_int16 cacheSize);
 //   s_int16 (*Delete)(struct FsMapper *map);
 //   s_int16 (*Read)(struct FsMapper *map, u_int32 firstBlock, u_int16 blocks,
-//     u_int16 *data);
+// 		  u_int16 *data);
 //   s_int16 (*Write)(struct FsMapper *map, u_int32 firstBlock, u_int16 blocks,
-//      u_int16 *data);
+// 		   u_int16 *data);
 //   s_int16 (*Free)(struct FsMapper *map, u_int32 firstBlock, u_int32 blocks);
 //   s_int16 (*Flush)(struct FsMapper *map, u_int16 hard);
 //   struct FsPhysical *physical;
@@ -354,12 +354,12 @@ _InitializeMmc:	// PROLOGUE
 // struct FsMapper *FsMapFlCreate(struct FsPhysical *physical, u_int16 format);
 // s_int16 FsMapFlDelete(struct FsMapper *map);
 // s_int16 FsMapFlRead(struct FsMapper *map, u_int32 firstLogicalBlock,
-//       u_int16 logicalBlocks, u_int16 *data);
+// 		    u_int16 logicalBlocks, u_int16 *data);
 // s_int16 FsMapFlWrite(struct FsMapper *map, u_int32 firstLogicalBlock,
-//        u_int16 logicalBlocks, u_int16 *data);
+// 		     u_int16 logicalBlocks, u_int16 *data);
 // s_int16 FsMapFlFlush(struct FsMapper *map, u_int16 hard);
 // s_int16 FsMapFlFree(struct FsMapper *m, u_int32 logicalBlockNo,
-//       u_int32 logicalBlocks);
+// 		    u_int32 logicalBlocks);
 // void FsMapFlDump(struct FsMapper *map, s_int32 maxBlocks);
 // void FsMapFlCacheDump(struct FsMapper *map);
 // void FsMapFlPrint(s_int32 page);
@@ -374,15 +374,15 @@ _InitializeMmc:	// PROLOGUE
 //   struct FmfMeta meta;
 // };
 // struct FsMapper *FsMapTnCreate(struct FsPhysical *physical,
-//           u_int16 cacheSize);
+// 			       u_int16 cacheSize);
 // s_int16 FsMapTnDelete(struct FsMapper *map);
 // s_int16 FsMapTnRead(struct FsMapper *map, u_int32 firstLogicalBlock,
-//       u_int16 logicalBlocks, u_int16 *data);
+// 		    u_int16 logicalBlocks, u_int16 *data);
 // s_int16 FsMapTnWrite(struct FsMapper *map, u_int32 firstLogicalBlock,
-//        u_int16 logicalBlocks, u_int16 *data);
+// 		     u_int16 logicalBlocks, u_int16 *data);
 // s_int16 FsMapTnFlush(struct FsMapper *map, u_int16 hard);
 // s_int16 FsMapTnFree(struct FsMapper *m, u_int32 logicalBlockNo,
-//       u_int32 logicalBlocks);
+// 		    u_int32 logicalBlocks);
 // s_int16 FsMapFlNullFail();
 // s_int16 FsMapFlNullOk();
 // struct FATINFO {
@@ -418,49 +418,49 @@ _InitializeMmc:	// PROLOGUE
 //     register __i2 __y struct FRAGMENT *frag,
 //     register __b u_int32 fatCluster);
 // auto s_int16 FatHandleDir(register __y struct FRAGMENT *curFragment,
-//      __y struct FRAGMENT *nextFragment);
+// 			  __y struct FRAGMENT *nextFragment);
 // auto s_int16 FatOpenFile(register __c0 u_int16 fileNum);
 // auto s_int16 FatReadFile(register __i3 u_int16 *buf,
-//     register __c1 s_int16 byteOff,
-//     register __c0 s_int16 byteSize);
+// 			 register __c1 s_int16 byteOff,
+// 			 register __c0 s_int16 byteSize);
 // u_int32 FatTell(void);
 // u_int32 FatSeek(register __a u_int32 pos);
 // auto u_int32 FatFindSector(register __d u_int32 pos);
 // auto s_int16 FatCheckFileType(register __a u_int32 suffix);
 // void MemCopyPackedBigEndian(register __i0 u_int16 *dst,
-//        register __a0 u_int16 dstidx,
-//        register __i1 u_int16 *src,
-//        register __a1 u_int16 srcidx,
-//        register __b0 u_int16 byteSize);
+// 			    register __a0 u_int16 dstidx,
+// 			    register __i1 u_int16 *src,
+// 			    register __a1 u_int16 srcidx,
+// 			    register __b0 u_int16 byteSize);
 // void MemCopyPackedLittleEndian(register __i0 u_int16 *dst,
-//           register __a0 u_int16 dstidx,
-//           register __i1 u_int16 *src,
-//           register __a1 u_int16 srcidx,
-//           register __b0 u_int16 byteSize);
+// 			       register __a0 u_int16 dstidx,
+// 			       register __i1 u_int16 *src,
+// 			       register __a1 u_int16 srcidx,
+// 			       register __b0 u_int16 byteSize);
 // void MemWritePacked(register __a0 void *dst, register __a1 u_int16 dstidx,
-//       register __b0 u_int16 dat);
+// 		    register __b0 u_int16 dat);
 // u_int16 MemReadPacked(register __a0 const void *src,
-//         register __a1 u_int16 srcidx);
+// 		      register __a1 u_int16 srcidx);
 // void MemWritePackedY(register __a0 __y void *dst, register __a1 u_int16 dstidx,
-//       register __b0 u_int16 dat);
+// 		    register __b0 u_int16 dat);
 // u_int16 MemReadPackedY(register __a0 __y const void *src,
-//         register __a1 u_int16 srcidx);
+// 		      register __a1 u_int16 srcidx);
 // typedef s_int16 (*freeSectorCallback)(void *private, u_int32 sector, u_int32 numSecs);
 // s_int16 FatIterateOverFreeSectors(freeSectorCallback callBackFunction,
-//       void *private);
+// 				  void *private);
 // auto u_int16 ReadDiskSector(register __i0 u_int16 *buffer,
-//        register __a u_int32 sector);
+// 			    register __a u_int32 sector);
 // struct CodecServices {
 //   u_int16 version;
 //   u_int16 (*Read)(struct CodecServices *cs, u_int16 *ptr,
-//     u_int16 firstOdd, u_int16 bytes);
+// 		  u_int16 firstOdd, u_int16 bytes);
 //   u_int32 (*Skip)(struct CodecServices *cs, u_int32 bytes);
 //   s_int16 (*Seek)(struct CodecServices *cs, s_int32 offset, s_int16 whence);
 //   s_int32 (*Tell)(struct CodecServices *cs);
 //   s_int16 (*Output)(struct CodecServices *cs, s_int16 *data, s_int16 n);
 //   void (*Comment)(struct CodecServices *cs, u_int16 c);
 //   void (*Spectrum)(struct CodecServices *cs, s_int16 __y *data, s_int16 n,
-//      s_int16 ch);
+// 		   s_int16 ch);
 //   u_int32 fileSize;
 //   u_int32 fileLeft;
 //   u_int16 goTo;
@@ -490,7 +490,7 @@ _InitializeMmc:	// PROLOGUE
 //   u_int16 version;
 //   struct Codec *(*Create)(void);
 //   enum CodecError (*Decode)(struct Codec *cod, struct CodecServices *cs,
-//        const char **errorString);
+// 			    const char **errorString);
 //   void (*Delete)(struct Codec *cod);
 //   struct CodecServices *cs;
 // };
@@ -502,9 +502,9 @@ _InitializeMmc:	// PROLOGUE
 //   struct FsPhysical *(*Create)(u_int16 param);
 //   s_int16 (*Delete)(struct FsPhysical *p);
 //   s_int16 (*Read)(struct FsPhysical *p, s_int32 firstPage, u_int16 pages,
-//     u_int16 *data, u_int16 *meta);
+// 		  u_int16 *data, u_int16 *meta);
 //   s_int16 (*Write)(struct FsPhysical *p, s_int32 firstPage, u_int16 pages,
-//      u_int16 *data, u_int16 *meta);
+// 		   u_int16 *data, u_int16 *meta);
 //   s_int16 (*Erase)(struct FsPhysical *p, s_int32 page);
 //   s_int16 (*FreeBus)(struct FsPhysical *p);
 //   s_int16 (*Reinitialize)(struct FsPhysical *p);
@@ -520,9 +520,9 @@ _InitializeMmc:	// PROLOGUE
 // s_int16 FsPhNandFreeBus(struct FsPhysical *p);
 // s_int16 FsPhNandReinitialize(struct FsPhysical *p);
 // s_int16 FsPhNandRead(struct FsPhysical *p, s_int32 firstPage,
-//        u_int16 pages, u_int16 *data, u_int16 *meta);
+// 		     u_int16 pages, u_int16 *data, u_int16 *meta);
 // s_int16 FsPhNandWrite(struct FsPhysical *p, s_int32 firstPage,
-//         u_int16 pages, u_int16 *data, u_int16 *meta);
+// 		      u_int16 pages, u_int16 *data, u_int16 *meta);
 // s_int16 NandCountBits(register __a u_int32 val);
 // s_int16 NandMingle(register __a u_int32 val);
 // void NandSwapBad(register __i0 u_int16 *spare);
@@ -592,14 +592,14 @@ _InitializeMmc:	// PROLOGUE
 // void KeyScan(void);
 // void UserInterfaceIdleHook(void);
 // u_int16 CsRead(struct CodecServices *cs, u_int16 *data,
-//         u_int16 firstOdd, u_int16 bytes);
+// 	       u_int16 firstOdd, u_int16 bytes);
 // s_int16 CsSeek(struct CodecServices *cs, s_int32 offset, s_int16 whence);
 // s_int16 CsOutput(struct CodecServices *cs, s_int16 *data, s_int16 n);
 // extern __y u_int16 vs1000d_BitReverse[256];
 // extern __y u_int16 vs1000d_Latin1[256*3];
 // auto void RingBufCopyX(register __i2 u_int16 *d,
-//         register __i0 const u_int16 *s,
-//         register __a0 u_int16 n);
+// 		      register __i0 const u_int16 *s,
+// 		      register __a0 u_int16 n);
 // typedef struct usbpkt {
 //   u_int16 length;
 //   u_int16 payload[(512 +1)>>1];
@@ -620,7 +620,7 @@ _InitializeMmc:	// PROLOGUE
 //   u_int32 lastSofTime;
 // } USB;
 // int USBStartTransmission(u_int16 ep, const void *buf,
-//     u_int16 length, u_int16 requestedLength);
+// 			 u_int16 length, u_int16 requestedLength);
 // void USBContinueTransmission(u_int16 ep);
 // void InitUSBDescriptors(u_int16 initDescriptors);
 // void RealInitUSBDescriptors(u_int16 initDescriptors);
@@ -663,7 +663,7 @@ _InitializeMmc:	// PROLOGUE
 // void UartIdleHook(void);
 // void UartInit(void);
 // auto u_int16 SpiSendReceiveMmc(register __a0 u_int16 dataTopAligned,
-//           register __a1 s_int16 bits);
+// 			       register __a1 s_int16 bits);
 // auto void SpiSendBlockMmc(register __i0 u_int16 *data, register __c0 s_int16 words);
 // auto void SpiSendClocks(void);
 // auto u_int16 MmcCommand(register __b0 s_int16 cmd, register __d u_int32 arg);
@@ -688,7 +688,7 @@ _InitializeMmc:	// PROLOGUE
 // void KeyScanMatrix(register __i2 const u_int16 *matrix);
 // void SuspendMatrix(void);
 // auto u_int16 MapperlessReadDiskSector(register __i0 u_int16 *buffer,
-//           register __a u_int32 sector);
+// 				      register __a u_int32 sector);
 // void NandPutCommand(register __a0 u_int16 command);
 // void NandPutAddressOctet(register __a0 u_int16 address);
 // void NandGetOctets(register __c0 s_int16 length, register __i2 u_int16 *buf);
@@ -741,39 +741,39 @@ _InitializeMmc:	// PROLOGUE
 // void LcdPutChar(register __c0 u_int16 c);
 // u_int16 LcdPutCharNoWrap(register __c0 u_int16 c);
 // auto void LcdPutGfx(register __i1 const u_int16 *d,
-//       register __c0 u_int16 words);
+// 		    register __c0 u_int16 words);
 // auto void LcdPutGfxDouble(register __i1 const u_int16 *d,
-//      register __c0 u_int16 words);
+// 			  register __c0 u_int16 words);
 // auto void LcdPutGfxShifted(register __i1 const u_int16 *s1,
-//       register __c0 u_int16 words,
-//       register __c1 s_int16 shift);
+// 			   register __c0 u_int16 words,
+// 			   register __c1 s_int16 shift);
 // auto void LcdPutPackedX(register __i1 const u_int16 *p,
-//    register __c0 u_int16 maxWords,
-//    register __c1 u_int16 xEnd);
+// 			register __c0 u_int16 maxWords,
+// 			register __c1 u_int16 xEnd);
 // auto void LcdContrast(register __c0 u_int16 contrast);
 // void LcdPutNum(register __c1 u_int16 c);
 // void LcdPutLong(register __b u_int32 c);
 // auto int LcdRenderPackedX(register __i0 u_int16 *buf,
-//      register __c0 u_int16 bIdx,
-//      register __i1 const u_int16 *str,
-//      register __c1 u_int16 sIdx);
+// 			  register __c0 u_int16 bIdx,
+// 			  register __i1 const u_int16 *str,
+// 			  register __c1 u_int16 sIdx);
 // auto void LcdRenderDoubled(register __i0 u_int16 *buf1,
-//       register __i2 u_int16 *buf2);
+// 			   register __i2 u_int16 *buf2);
 // void LcdEol(void);
 // void ResetIRAMVectors(void);
 // s_int16 LargePageWrite(u_int32 page, u_int16 *data, u_int16 *meta);
 // s_int16 LargePageRead(s_int32 page, u_int16 *data, u_int16 *meta);
 // s_int16 FsMlcMapRead1(struct FsMapper *map, u_int32 sector,
-//         u_int16 logicalBlocks, u_int16 *data);
+//  		     u_int16 logicalBlocks, u_int16 *data);
 // s_int16 FsMlcMapRead(struct FsMapper *map, u_int32 sector,
-//         u_int16 logicalBlocks, u_int16 *data);
+//  		     u_int16 logicalBlocks, u_int16 *data);
 // u_int16 GetBitArray(register __i0 u_int16 *array, register __a0 int bit);
 // void SetBitArray(register __i0 u_int16 *array, register __a0 int bit);
 // void ClearBitArray(register __i0 u_int16 *array, register __a0 int bit);
 // u_int32 CheckSumBlock(register u_int32 __a accu, register __i0 u_int16 *p,
-//          register __c0 s_int16 words);
+//  		      register __c0 s_int16 words);
 // int stricmppacked(__near const u_int16 register __i0 *cs,
-//     __near const u_int16 register __i1 *ct);
+// 		  __near const u_int16 register __i1 *ct);
 // void FIFOInit(register __i2 struct FIFOX *f, register __a1 void *fifoBuf, register __a0 s_int16 size);
 // void FIFOPut(register __i2 struct FIFOX *f, register __a0 u_int16 data);
 // u_int16 FIFOGet(register __i2 struct FIFOX *f);
@@ -784,9 +784,9 @@ _InitializeMmc:	// PROLOGUE
 // u_int32 CalcECCBySoftware(register __i2 s_int16 *dp);
 // void VorbisSkip(s_int16 secs);
 // auto s_int16 PatchFatReadFile(register __i3 u_int16 *buf,
-//          register __c1 s_int16 byteOff,
-//          register __c0 s_int16 byteSize
-//                                        );
+// 			      register __c1 s_int16 byteOff,
+// 			      register __c0 s_int16 byteSize
+//  );
 // auto void SpeedShift(register __i2 s_int16 *p, register __a0 u_int16 n);
 // void InitSpeedShift(double speed);
 // void NewSpeedShift(double speed);
@@ -799,7 +799,7 @@ _InitializeMmc:	// PROLOGUE
 // auto u_int16 FatOpenFileNoSubdirs(register __c0 u_int16 fileNum);
 // u_int16 PatchPlayCurrentFile(void);
 // s_int16 Large8kPageReadSingle(struct FsPhysical *ph, u_int32 page,
-//           u_int16 sectors, u_int16 *data, u_int16 *meta);
+//  			      u_int16 sectors, u_int16 *data, u_int16 *meta);
 // void NandPut8kPageSpareAddress(register __c u_int32 addr);
 // void NandPut8kDataAddress(register __c u_int32 addr);
 // s_int16 Large8kPageRead(u_int32 page, u_int16 *data, u_int16 *meta);
@@ -810,7 +810,7 @@ _InitializeMmc:	// PROLOGUE
 // void SpiReadData(register __i2 u_int16 *data, register __a1 s_int16 words);
 // u_int16 SpiReadDataDiscardOne(register __i2 u_int16 *data, register __a1 s_int16 words);
 // s_int16 Large4kPageReadSingle(struct FsPhysical *ph, u_int32 page,
-//           u_int16 sectors, u_int16 *data, u_int16 *meta);
+//  			      u_int16 sectors, u_int16 *data, u_int16 *meta);
 // void NandPut4kPageSpareAddress(register __c u_int32 addr);
 // void NandPut4kDataAddress(register __c u_int32 addr);
 // s_int16 Large4kPageRead(u_int32 page, u_int16 *data, u_int16 *meta);
@@ -820,10 +820,10 @@ _InitializeMmc:	// PROLOGUE
 // u_int16 EccFixError(register __i2 u_int16 *data, register __c u_int32 xored);
 // s_int16 Large4kPageRead2(u_int32 page, u_int16 *data, u_int16 *meta);
 // s_int16 Large4kPageReadSingle2(struct FsPhysical *ph, u_int32 page,
-//           u_int16 sectors, u_int16 *data, u_int16 *meta);
+//  			      u_int16 sectors, u_int16 *data, u_int16 *meta);
 // auto u_int32 WavSwap32(register __c u_int32 n);
 // enum CodecError PatchCodVorbisDecode(struct Codec *cod, struct CodecServices *cs,
-//       const char **errorString, int dummy);
+// 				  const char **errorString, int dummy);
 // u_int32 PlayTimeFile(s_int16 sc );
 // auto s_int16 OpenFileNamedSupported(const u_int16 *fname, u_int32 suffix);
 // s_int16 VS1000D_RomTest(void);
@@ -960,7 +960,7 @@ LE4:
 L8:
 
 //     }
-//     cmd = 1|0x40;
+//     cmd = 1 |0x40;
 
 	ldc 65,C1
 	ldc 72,B0
@@ -1256,7 +1256,7 @@ L36:
 L35:
 
 //     }
-//     MmcCommand(17|0x40,(sector<<mmc.hcShift));
+//     MmcCommand(17 |0x40,(sector<<mmc.hcShift));
 
 	sty A0,(I6)+1 ; ashl A,B1,D
 	// Register parameter: D, pass by value
@@ -1534,7 +1534,7 @@ _CheckSd:	// PROLOGUE
 	ldc L55,I0
 // jumped away
 
-//         (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (7<<1) | (1<<0);
+// (*(__x volatile u_int16 *)(u_int16)(0xC068)) =(1<<5) |(7<<1) |(1<<0);
 
 	ldc 49256,I0
 
@@ -1721,7 +1721,7 @@ _main:	// PROLOGUE
 	// field pauseOn, offset 4
 	stx A0,(I0)
 
-//     (*(__x volatile u_int16 *)(u_int16)(0xC010)) &= ~((1<<8)|(1<<9)|(1<<12)|(1<<11));
+// (*(__x volatile u_int16 *)(u_int16)(0xC010)) &= ~((1<< 8)|(1<<9)|(1<< 12)|(1<<11));
 
 	ldc _mmc,I0
 	ldx (I2),A0/*V*/
@@ -1730,8 +1730,8 @@ _main:	// PROLOGUE
 	// I0 not because register
 	// I1 not because register
 
-//     (*(__x volatile u_int16 *)(u_int16)(0xC040)) = ((*(__x volatile u_int16 *)(u_int16)(0xC040)) & ~((1<<8)))
-//         | ((1<<9)|(1<<12)|(1<<11))
+// (*(__x volatile u_int16 *)(u_int16)(0xC040)) = ((*(__x volatile u_int16 *)(u_int16)(0xC040)) & ~((1<< 8)))
+//         | ((1<<9)|(1<< 12)|(1<<11))
 //         | 0x2000;
 
 	ldc 65279,A1
@@ -1745,7 +1745,7 @@ _main:	// PROLOGUE
 	// I0 not because register
 	// I1 not because register
 
-//     (*(__x volatile u_int16 *)(u_int16)(0xC046)) = ((1<<11) | 0x0400);
+// (*(__x volatile u_int16 *)(u_int16)(0xC046))   = ((1<<11) | 0x0400);
 
 	ldc 3072,A0
 	// const -6 in I3
@@ -1753,7 +1753,7 @@ _main:	// PROLOGUE
 	// I0 not because register
 	// I1 not because register
 
-//     (*(__x volatile u_int16 *)(u_int16)(0xC047)) = ((1<<9)|(1<<12));
+// (*(__x volatile u_int16 *)(u_int16)(0xC047)) = ((1<<9)|(1<< 12));
 
 	ldc 4608,A0
 	// const -1 in I3
@@ -1818,7 +1818,7 @@ L69:
 	nop
 // jumped away
 //  {
-//             (*(__x volatile u_int16 *)(u_int16)(0xC046)) = 0x2000;
+// (*(__x volatile u_int16 *)(u_int16)(0xC046)) = 0x2000;
 
 L73:
 	ldc 49222,I0
@@ -1847,7 +1847,7 @@ L72:
 	ldc 47,A0
 // jumped away
 //  {
-//             (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (7<<1) | (1<<0);
+// (*(__x volatile u_int16 *)(u_int16)(0xC068)) =(1<<5) |(7<<1) |(1<<0);
 
 
 //             ResetIRAMVectors();
@@ -1875,7 +1875,7 @@ L72:
 	ldc 1,I0
 // jumped away
 //  {
-//          SpiLoad(24576 +4, 1 );
+//         	SpiLoad(24576 +4, 1 );
 
 	// Register parameter: I0, pass by value
 	// Register parameter: I2, pass by value
@@ -1885,7 +1885,7 @@ L72:
 L80:
 
 //             } else {
-//          SpiLoad(0+4, 1 );
+//         	SpiLoad(0+4, 1 );
 
 	// Register parameter: I0, pass by value
 	ldc 4,I2
@@ -1911,7 +1911,7 @@ LE79:
 // jumped away
 //  {
 //             static const u_int32 allowedExtensions[] = {
-//                 (('P')|(('R')<<8)|((u_int32)('G')<<16)), 0
+// (('P')|(('R')<<8)|((u_int32)('G')<<16)), 0
 //             };
 //             static const __y u_int16 sdupdate[] = "\pSDUPDATE";
 
@@ -1982,12 +1982,12 @@ LE79:
 	ldc 49184,I0
 	add B0,NULL,A0
 
-//                     (*(__x volatile u_int16 *)(u_int16)(0xC020)) = 2;
+// (*(__x volatile u_int16 *)(u_int16)(0xC020)) = 2;
 
 	ldc 2,A0
 	stx A0,(I0)+1/*V*/
 
-//                     (*(__x volatile u_int16 *)(u_int16)(0xC021)) = 0x4ea9;
+// (*(__x volatile u_int16 *)(u_int16)(0xC021)) = 0x4ea9;
 
 	// const -1 in I0
 	ldc 20137,A0
@@ -2193,7 +2193,7 @@ L119:
 //  {
 //                                 u_int16 fName[10/2];
 //                                 __y u_int32 fSuffix =
-//                                     ((buffer[9])|((buffer[10])<<8)|((u_int32)(buffer[11])<<16));
+// ((buffer[9])|((buffer[10])<<8)|((u_int32)(buffer[11])<<16));
 
 	// cast int1 -> int2 (A/NULL)
 	// constant index 9, element size 1
@@ -2382,7 +2382,7 @@ LCASE126_73:
 	// CASE 80
 
 //                                     player.nextFile =
-//                                         OpenFileNamedSupported(fName,fSuffix);
+//  OpenFileNamedSupported(fName,fSuffix);
 
 	ldc _player+2,I0
 	ldx (I4)+2,NULL ; ldy (I6)+1,NULL
@@ -2431,7 +2431,7 @@ LCASE126_105:
 _main_checkvalidfile:
 
 //                                     if (player.nextFile >= player.totalFiles
-//             || player.nextFile < 0)
+//         				|| player.nextFile < 0)
 
 	// field nextFile, offset 2
 	ldc _player+2,I0
@@ -2451,7 +2451,7 @@ _main_checkvalidfile:
 	nop
 // jumped away
 //  {
-//             putstrp("\pnot found\n");
+//         				putstrp("\pnot found\n");
 
 	// Register parameter: I0, pass by value
 	ldc L133,I0
@@ -2459,13 +2459,13 @@ L132:
 	call _putstrp
 	// not safe: A0 A1
 
-//             break;
+//         				break;
 
 	ldc L136,LR0
 // jumped away
 L131:
 
-//                }
+//         			    }
 //                                     if (buffer[0] == 'i' || buffer[0] == 'I')
 
 	// constant index 0, element size 1
@@ -2486,7 +2486,7 @@ L137:
 //                                         u_int32 secs;
 
 
-//             OpenFile(player.nextFile);
+//         				OpenFile(player.nextFile);
 
 	// Register parameter: C0, pass by value
 	// field nextFile, offset 2
@@ -2495,7 +2495,7 @@ L137:
 	ldx (I1),C0 ; ldy (I6)+1,NULL
 // jumped away
 
-//             secs = PlayTimeFile(0);
+//         				secs = PlayTimeFile(0);
 
 	and NULL,NULL,B0 ; ldx (I6)+1,NULL
 	.import _PlayTimeFile
@@ -2506,7 +2506,7 @@ L137:
 	// safe: B0
 	stx A0,(I4)+1 ; add A1,NULL,A0	// secs
 
-//             putword(secs>>16);
+//         				putword(secs>>16);
 
 	// Register parameter: A0, pass by value
 	// cast int2 -> int1 (A0/NULL)
@@ -2516,7 +2516,7 @@ L137:
 // jumped away
 	// safe: B0
 
-//             putword(secs);
+//         				putword(secs);
 
 	// Register parameter: A0, pass by value
 	// cast int2 -> int1 (A0/NULL)
@@ -2525,7 +2525,7 @@ L137:
 // jumped away
 	// safe: B0
 
-//             putstrp("\pseconds\n");
+//         				putstrp("\pseconds\n");
 
 	// Register parameter: I0, pass by value
 	call _putstrp
@@ -2533,12 +2533,12 @@ L137:
 // jumped away
 	// safe: B0
 
-//             break;
+//         				break;
 
 L136:
 
 //                                     }
-//                goto playloop;
+//         			    goto playloop;
 
 
 //                                 }

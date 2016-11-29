@@ -37,23 +37,23 @@ _MyInitUSBDescriptors:	// PROLOGUE
 // } fpos_t;
 // typedef void FILE;
 // __near FILE register __a0 *fopen(__near const char register __i0 *filename,
-//      __near const char register __i1 *mode);
+// 				 __near const char register __i1 *mode);
 // __near FILE register __a0 *freopen(__near const char register __i0 *filename,
-//        __near const char register __i1 *mode,
-//        __near FILE register __a0 *stream);
+// 				   __near const char register __i1 *mode,
+// 				   __near FILE register __a0 *stream);
 // int register __a0 fflush(__near FILE register __a0 *stream);
 // int register __a0 fclose(__near FILE register __a0 *stream);
 // int register __a0 remove(__near const char register __i0 *filename);
 // int register __a0 rename(__near const char register __i0 *oldname,
-//     __near const char register __i1 *newname);
+// 			 __near const char register __i1 *newname);
 // int register __a0 fgetc(__near FILE register __a1 *stream);
 // __near char register __a0 *fgets(__near char register __i0 *s,
-//      int register __a0 n,
-//      __near FILE register __a1 *stream);
+// 				 int register __a0 n,
+// 				 __near FILE register __a1 *stream);
 // int register __a0 fputc(int register __a0 c,
-//    __near FILE register __a1 *stream);
+// 			__near FILE register __a1 *stream);
 // int register __a0 fputs(__near const char register __i0 *s,
-//    __near FILE register __a1 *stream);
+// 			__near FILE register __a1 *stream);
 // int register __a0 getc(__near FILE register __a1 *stream);
 // int register __a0 getchar(void);
 // __near char register __a0 *gets(__near char register __i0 *s);
@@ -61,24 +61,24 @@ _MyInitUSBDescriptors:	// PROLOGUE
 // int register __a0 putchar(int register __a0 c);
 // int register __a0 puts(__near const char register __i0 *s);
 // int register __a0 ungetc(int register __a0 c,
-//     __near FILE register __a1 *stream);
+// 			 __near FILE register __a1 *stream);
 // size_t register __a0 fread(__near void register __i0 *ptr,
-//       size_t register __b0 size,
-//       size_t register __b1 nobj,
-//       __near FILE register __a1 *stream);
+// 			   size_t register __b0 size,
+// 			   size_t register __b1 nobj,
+// 			   __near FILE register __a1 *stream);
 // size_t register __a0 fwrite(__near const void register __i0 *ptr,
-//        size_t register __b0 size,
-//        size_t register __b1 nobj,
-//        __near FILE register __a1 *stream);
+// 			    size_t register __b0 size,
+// 			    size_t register __b1 nobj,
+// 			    __near FILE register __a1 *stream);
 // int register __a0 fseek(__near FILE register __a0 *stream,
-//    long register __b offset,
-//    int register __a1 origin);
+// 			long register __b offset,
+// 			int register __a1 origin);
 // long register __a ftell(__near FILE register __a0 *stream);
 // void rewind(__near FILE register __a0 *stream);
 // int register __a0 fgetpos(__near FILE register __a0 *stream,
-//      __near fpos_t register __i0 *ptr);
+// 			  __near fpos_t register __i0 *ptr);
 // int register __a0 fsetpos(__near FILE register __a0 *stream,
-//      __near const fpos_t register __i0 *ptr);
+// 			  __near const fpos_t register __i0 *ptr);
 // void clearerr(__near FILE register __a0 *stream);
 // int register __a0 feof(__near FILE register __a0 *stream);
 // int register __a0 ferror(__near FILE register __a0 *stream);
@@ -103,10 +103,10 @@ _MyInitUSBDescriptors:	// PROLOGUE
 // __near void srandom(register __a unsigned long x);
 // unsigned short QsortLog2(register __a0 short x);
 // void qsort(void *base, int nmemb, int size,
-//     int (*compar)(const void *, const void *));
+// 	   int (*compar)(const void *, const void *));
 // short CountBitsLong(register __a unsigned long val);
 // void SpiBoot(register __a0 short clkConf, register __i2 short addr,
-//       register __i0 short m24);
+// 	     register __i0 short m24);
 // void SpiLoad(register __i2 short startAddr, register __i0 short m24);
 // void SpiDelay(register __a0 u_int16 wait);
 // auto u_int16 SpiSendReceive(register __a0 u_int16 data);
@@ -115,15 +115,15 @@ _MyInitUSBDescriptors:	// PROLOGUE
 // auto u_int16 InitFileSystem(void);
 // auto s_int16 OpenFile(register __c0 u_int16 fileNum);
 // auto s_int16 ReadFile(register __i3 u_int16 *buf,
-//         register __c1 s_int16 byteOff,
-//         register __c0 s_int16 byteSize
-//                                                     );
+// 		      register __c1 s_int16 byteOff,
+// 		      register __c0 s_int16 byteSize
+//  );
 // u_int32 Seek(register __a u_int32 pos);
 // u_int32 Tell(void);
 // auto u_int16 ReadDiskSector(register __i0 u_int16 *buffer,
-//        register __a u_int32 sector);
+// 			    register __a u_int32 sector);
 // auto u_int16 MapperReadDiskSector(register __i0 u_int16 *buffer,
-//       register __a u_int32 sector);
+// 				  register __a u_int32 sector);
 // void Disable(void);
 // void Enable(void);
 // void Sleep(void);
@@ -165,14 +165,14 @@ _MyInitUSBDescriptors:	// PROLOGUE
 // extern s_int16 g_yprev0[1024];
 // extern s_int16 g_yprev1[1024];
 // struct FsMapper *FsMapRamCreate(struct FsPhysical *physical,
-//     u_int16 cacheSize);
+// 				u_int16 cacheSize);
 // void putch(register __a0 s_int16 ch);
 // s_int16 getch(void);
 // void putword(register __a0 s_int16 ch);
 // s_int16 getword(void);
 // auto void RingBufCopyX(register __i2 u_int16 *d,
-//         register __i0 const u_int16 *s,
-//         register __a0 u_int16 n);
+// 		      register __i0 const u_int16 *s,
+// 		      register __a0 u_int16 n);
 // typedef struct usbpkt {
 //   u_int16 length;
 //   u_int16 payload[(512 +1)>>1];
@@ -193,7 +193,7 @@ _MyInitUSBDescriptors:	// PROLOGUE
 //   u_int32 lastSofTime;
 // } USB;
 // int USBStartTransmission(u_int16 ep, const void *buf,
-//     u_int16 length, u_int16 requestedLength);
+// 			 u_int16 length, u_int16 requestedLength);
 // void USBContinueTransmission(u_int16 ep);
 // void InitUSBDescriptors(u_int16 initDescriptors);
 // void RealInitUSBDescriptors(u_int16 initDescriptors);
@@ -259,38 +259,38 @@ _MyInitUSBDescriptors:	// PROLOGUE
 //     register __i2 __y struct FRAGMENT *frag,
 //     register __b u_int32 fatCluster);
 // auto s_int16 FatHandleDir(register __y struct FRAGMENT *curFragment,
-//      __y struct FRAGMENT *nextFragment);
+// 			  __y struct FRAGMENT *nextFragment);
 // auto s_int16 FatOpenFile(register __c0 u_int16 fileNum);
 // auto s_int16 FatReadFile(register __i3 u_int16 *buf,
-//     register __c1 s_int16 byteOff,
-//     register __c0 s_int16 byteSize);
+// 			 register __c1 s_int16 byteOff,
+// 			 register __c0 s_int16 byteSize);
 // u_int32 FatTell(void);
 // u_int32 FatSeek(register __a u_int32 pos);
 // auto u_int32 FatFindSector(register __d u_int32 pos);
 // auto s_int16 FatCheckFileType(register __a u_int32 suffix);
 // void MemCopyPackedBigEndian(register __i0 u_int16 *dst,
-//        register __a0 u_int16 dstidx,
-//        register __i1 u_int16 *src,
-//        register __a1 u_int16 srcidx,
-//        register __b0 u_int16 byteSize);
+// 			    register __a0 u_int16 dstidx,
+// 			    register __i1 u_int16 *src,
+// 			    register __a1 u_int16 srcidx,
+// 			    register __b0 u_int16 byteSize);
 // void MemCopyPackedLittleEndian(register __i0 u_int16 *dst,
-//           register __a0 u_int16 dstidx,
-//           register __i1 u_int16 *src,
-//           register __a1 u_int16 srcidx,
-//           register __b0 u_int16 byteSize);
+// 			       register __a0 u_int16 dstidx,
+// 			       register __i1 u_int16 *src,
+// 			       register __a1 u_int16 srcidx,
+// 			       register __b0 u_int16 byteSize);
 // void MemWritePacked(register __a0 void *dst, register __a1 u_int16 dstidx,
-//       register __b0 u_int16 dat);
+// 		    register __b0 u_int16 dat);
 // u_int16 MemReadPacked(register __a0 const void *src,
-//         register __a1 u_int16 srcidx);
+// 		      register __a1 u_int16 srcidx);
 // void MemWritePackedY(register __a0 __y void *dst, register __a1 u_int16 dstidx,
-//       register __b0 u_int16 dat);
+// 		    register __b0 u_int16 dat);
 // u_int16 MemReadPackedY(register __a0 __y const void *src,
-//         register __a1 u_int16 srcidx);
+// 		      register __a1 u_int16 srcidx);
 // typedef s_int16 (*freeSectorCallback)(void *private, u_int32 sector, u_int32 numSecs);
 // s_int16 FatIterateOverFreeSectors(freeSectorCallback callBackFunction,
-//       void *private);
+// 				  void *private);
 // auto u_int16 ReadDiskSector(register __i0 u_int16 *buffer,
-//        register __a u_int32 sector);
+// 			    register __a u_int32 sector);
 // struct FsPhysical;
 // struct FsMapper {
 //   u_int16 version;
@@ -300,116 +300,116 @@ _MyInitUSBDescriptors:	// PROLOGUE
 //   struct FsMapper *(*Create)(struct FsPhysical *physical, u_int16 cacheSize);
 //   s_int16 (*Delete)(struct FsMapper *map);
 //   s_int16 (*Read)(struct FsMapper *map, u_int32 firstBlock, u_int16 blocks,
-//     u_int16 *data);
+// 		  u_int16 *data);
 //   s_int16 (*Write)(struct FsMapper *map, u_int32 firstBlock, u_int16 blocks,
-//      u_int16 *data);
+// 		   u_int16 *data);
 //   s_int16 (*Free)(struct FsMapper *map, u_int32 firstBlock, u_int32 blocks);
 //   s_int16 (*Flush)(struct FsMapper *map, u_int16 hard);
 //   struct FsPhysical *physical;
 // };
 // __near char register __i0 *strcpy(__near char register __i0 *s,
-//       __near const char register __i1 *ct);
+// 				  __near const char register __i1 *ct);
 // __near char register __i0 *strncpy(__near char register __i0 *s,
-//        __near const char register __i1 *ct,
-//        size_t register __a0 n);
+// 				   __near const char register __i1 *ct,
+// 				   size_t register __a0 n);
 // __near char register __i0 *strcat(__near char register __i0 *s,
-//       __near const char register __i1 *ct);
+// 				  __near const char register __i1 *ct);
 // __near char register __i0 *strncat(__near char register __i0 *s,
-//        __near const char register __i1 *ct,
-//        size_t register __a0 n);
+// 				   __near const char register __i1 *ct,
+// 				   size_t register __a0 n);
 // int register __a0 strcmp(__near const char register __i0 *cs,
-//     __near const char register __i1 *ct);
+// 			 __near const char register __i1 *ct);
 // int register __a0 strncmp(__near const char register __i0 *cs,
-//      __near const char register __i1 *ct,
-//      size_t register __a0 n);
+// 			  __near const char register __i1 *ct,
+// 			  size_t register __a0 n);
 // __near char register __i0 *strchr(__near const char register __i0 *cs,
-//       int register __a0 c);
+// 				  int register __a0 c);
 // __near char register __i0 *strrchr(__near const char register __i0 *cs,
-//        int register __a0 c);
+// 				   int register __a0 c);
 // size_t register __a0 strspn(__near const char register __i0 *cs,
-//        __near const char register __i1 *ct);
+// 			    __near const char register __i1 *ct);
 // size_t register __a0 strcspn(__near const char register __i0 *cs,
-//         __near const char register __i1 *ct);
+// 			     __near const char register __i1 *ct);
 // __near char register __i0 *strpbrk(__near const char register __i0 *cs,
-//        __near const char register __i1 *ct);
+// 				   __near const char register __i1 *ct);
 // __near char register __i0 *strstr(__near const char register __i0 *cs,
-//       __near const char register __i1 *ct);
+// 				  __near const char register __i1 *ct);
 // size_t register __a0 strlen(__near const char register __i0 *cs);
 // __near char register __i0 *strerror(int register __a0 n);
 // __near char register __i0 *strtok(__near char register __i0 *s,
-//       __near const char register __i1 *ct);
+// 				  __near const char register __i1 *ct);
 // __near void register __i0 *memcpy(__near void register __i0 *d,
-//       __near const void register __i1 *s,
-//       size_t register __a0 n);
+// 				  __near const void register __i1 *s,
+// 				  size_t register __a0 n);
 // __near __y void register __i0 *memcpyXY(__near __y void register __i0 *d,
-//           __near const void register __i1 *s,
-//           size_t register __a0 n);
+// 				      __near const void register __i1 *s,
+// 				      size_t register __a0 n);
 // __near void register __i0 *memcpyYX(__near void register __i0 *d,
-//         __near __y const void register __i1 *s,
-//         size_t register __a0 n);
+// 				    __near __y const void register __i1 *s,
+// 				    size_t register __a0 n);
 // __near __y void register __i0 *memcpyYY(__near __y void register __i0 *d,
-//      __near __y const void register __i1 *s,
-//      size_t register __a0 n);
+// 					__near __y const void register __i1 *s,
+// 					size_t register __a0 n);
 // __near void memcpyii(__near void register __i0 *d,
-//        __near const void register __i1 *s,
-//        size_t register __a0 n);
+// 		     __near const void register __i1 *s,
+// 		     size_t register __a0 n);
 // __near void memmoveii(__near void register __i0 *d,
-//        __near const void register __i1 *s,
-//        size_t register __a0 n);
+// 		     __near const void register __i1 *s,
+// 		     size_t register __a0 n);
 // __near void register __i0 *memmove(__near void register __i0 *s,
-//        const __near void register __i1 *ct,
-//        unsigned short register __a0 n);
+// 				   const __near void register __i1 *ct,
+// 				   unsigned short register __a0 n);
 // int register __a0 memcmp(__near const void register __i0 *cs,
-//     __near const void register __i1 *ct,
-//     size_t register __a0 n);
+// 			 __near const void register __i1 *ct,
+// 			 size_t register __a0 n);
 // int register __a0 memcmpY(__y __near const void register __i0 *cs,
-//      __y __near const void register __i1 *ct,
-//     size_t register __a0 n);
+//  __y __near const void register __i1 *ct,
+// 			 size_t register __a0 n);
 // int register __a0 memcmpXY(__near const void register __i0 *cs,
-//       __y __near const void register __i1 *ct,
-//       size_t register __a0 n);
+//  __y __near const void register __i1 *ct,
+// 			   size_t register __a0 n);
 // __near void register __i0 *memchr(__near const void register __i0 *cs,
-//       int register __a0 c,
-//       size_t register __a1 n);
+// 				  int register __a0 c,
+// 				  size_t register __a1 n);
 // __near void register __i0 *memset(__near void register __i0 *s,
-//       int register __a1 c,
-//       size_t register __a0 n);
+// 				  int register __a1 c,
+// 				  size_t register __a0 n);
 // __near void register __i0 *memsetY(__near __y void register __i0 *s,
-//       int register __a1 c,
-//       size_t register __a0 n);
+// 				  int register __a1 c,
+// 				  size_t register __a0 n);
 // __near void register __i0 *memseti(__near void register __i0 *s,
-//       register __a unsigned long c,
-//       size_t register __c0 n);
+// 				  register __a unsigned long c,
+// 				  size_t register __c0 n);
 // __near void memclearXY(register __i0 unsigned short *p, register __a0 short c);
 // size_t register __a0 strxfrm(__near char register __i0 *s1,
-//         __near const char register __i1 *s2,
-//         size_t register __a0 n);
+// 			     __near const char register __i1 *s2,
+// 			     size_t register __a0 n);
 // void memswap(register __i0 void *a, register __i1 void *b,
-//       register __a0 size_t size);
+// 	     register __a0 size_t size);
 // void memswapy(register __i0 __y void *a, register __i1 __y void *b,
-//        register __a0 size_t size);
+// 	      register __a0 size_t size);
 // void memswapxy(register __i0 void *a, register __i1 __y void *b,
-//       register __a0 size_t size);
+// 	     register __a0 size_t size);
 // __near void MemCopyPackedBigEndian(register __i0 __near unsigned short *dst,
-//        register __a0 unsigned short dstbyteidx,
-//        register __i1 __near unsigned short *src,
-//        register __a1 unsigned short srcbyteidx,
-//        register __b0 unsigned short byteSize);
+// 				   register __a0 unsigned short dstbyteidx,
+// 				   register __i1 __near unsigned short *src,
+// 				   register __a1 unsigned short srcbyteidx,
+// 				   register __b0 unsigned short byteSize);
 // __near void MemCopyPackedBigEndianYX(register __i0 __near unsigned short *dst,
-//        register __a0 unsigned short dstbyteidx,
-//        register __i1 __near __y unsigned short *src,
-//        register __a1 unsigned short srcbyteidx,
-//        register __b0 unsigned short byteSize);
+// 				   register __a0 unsigned short dstbyteidx,
+// 				   register __i1 __near __y unsigned short *src,
+// 				   register __a1 unsigned short srcbyteidx,
+// 				   register __b0 unsigned short byteSize);
 // __near void MemCopyPackedBigEndianXY(register __i0 __near __y unsigned short *dst,
-//        register __a0 unsigned short dstbyteidx,
-//        register __i1 __near unsigned short *src,
-//        register __a1 unsigned short srcbyteidx,
-//        register __b0 unsigned short byteSize);
+// 				   register __a0 unsigned short dstbyteidx,
+// 				   register __i1 __near unsigned short *src,
+// 				   register __a1 unsigned short srcbyteidx,
+// 				   register __b0 unsigned short byteSize);
 // __near void MemCopyPackedBigEndianYY(register __i0 __near __y unsigned short *dst,
-//        register __a0 unsigned short dstbyteidx,
-//        register __i1 __near __y unsigned short *src,
-//        register __a1 unsigned short srcbyteidx,
-//        register __b0 unsigned short byteSize);
+// 				   register __a0 unsigned short dstbyteidx,
+// 				   register __i1 __near __y unsigned short *src,
+// 				   register __a1 unsigned short srcbyteidx,
+// 				   register __b0 unsigned short byteSize);
 // void ShiftSatVector(register __i0 short *vector, register __a0 short elements, register __a1 short shift);
 // void putch(register __a0 short dat);
 // extern s_int16 tmpBuf[2*32];
@@ -476,7 +476,7 @@ _MyInitUSBDescriptors:	// PROLOGUE
 // void KeyScan(void);
 // void UserInterfaceIdleHook(void);
 // u_int16 CsRead(struct CodecServices *cs, u_int16 *data,
-//         u_int16 firstOdd, u_int16 bytes);
+// 	       u_int16 firstOdd, u_int16 bytes);
 // s_int16 CsSeek(struct CodecServices *cs, s_int32 offset, s_int16 whence);
 // s_int16 CsOutput(struct CodecServices *cs, s_int16 *data, s_int16 n);
 // extern __y u_int16 vs1000d_BitReverse[256];
@@ -484,9 +484,9 @@ _MyInitUSBDescriptors:	// PROLOGUE
 // extern __y volatile u_int32 timeCount;
 // u_int32 ReadTimeCount(void);
 // extern s_int16 (*applAddr)(s_int16 register __i0 **d,
-//       s_int16 register __a1 mode,
-//       s_int16 register __a0 n);
-// extern __y s_int16 audioBuffer[2*2048];
+// 			   s_int16 register __a1 mode,
+// 			   s_int16 register __a0 n);
+// extern __y s_int16 audioBuffer[2* 2048];
 // struct AUDIOPTR {
 //     __y s_int16 *wr;
 //     __y s_int16 *rd;
@@ -530,14 +530,14 @@ _MyInitUSBDescriptors:	// PROLOGUE
 // struct CodecServices {
 //   u_int16 version;
 //   u_int16 (*Read)(struct CodecServices *cs, u_int16 *ptr,
-//     u_int16 firstOdd, u_int16 bytes);
+// 		  u_int16 firstOdd, u_int16 bytes);
 //   u_int32 (*Skip)(struct CodecServices *cs, u_int32 bytes);
 //   s_int16 (*Seek)(struct CodecServices *cs, s_int32 offset, s_int16 whence);
 //   s_int32 (*Tell)(struct CodecServices *cs);
 //   s_int16 (*Output)(struct CodecServices *cs, s_int16 *data, s_int16 n);
 //   void (*Comment)(struct CodecServices *cs, u_int16 c);
 //   void (*Spectrum)(struct CodecServices *cs, s_int16 __y *data, s_int16 n,
-//      s_int16 ch);
+// 		   s_int16 ch);
 //   u_int32 fileSize;
 //   u_int32 fileLeft;
 //   u_int16 goTo;
@@ -567,7 +567,7 @@ _MyInitUSBDescriptors:	// PROLOGUE
 //   u_int16 version;
 //   struct Codec *(*Create)(void);
 //   enum CodecError (*Decode)(struct Codec *cod, struct CodecServices *cs,
-//        const char **errorString);
+// 			    const char **errorString);
 //   void (*Delete)(struct Codec *cod);
 //   struct CodecServices *cs;
 // };
@@ -579,9 +579,9 @@ _MyInitUSBDescriptors:	// PROLOGUE
 //   struct FsPhysical *(*Create)(u_int16 param);
 //   s_int16 (*Delete)(struct FsPhysical *p);
 //   s_int16 (*Read)(struct FsPhysical *p, s_int32 firstPage, u_int16 pages,
-//     u_int16 *data, u_int16 *meta);
+// 		  u_int16 *data, u_int16 *meta);
 //   s_int16 (*Write)(struct FsPhysical *p, s_int32 firstPage, u_int16 pages,
-//      u_int16 *data, u_int16 *meta);
+// 		   u_int16 *data, u_int16 *meta);
 //   s_int16 (*Erase)(struct FsPhysical *p, s_int32 page);
 //   s_int16 (*FreeBus)(struct FsPhysical *p);
 //   s_int16 (*Reinitialize)(struct FsPhysical *p);
@@ -597,9 +597,9 @@ _MyInitUSBDescriptors:	// PROLOGUE
 // s_int16 FsPhNandFreeBus(struct FsPhysical *p);
 // s_int16 FsPhNandReinitialize(struct FsPhysical *p);
 // s_int16 FsPhNandRead(struct FsPhysical *p, s_int32 firstPage,
-//        u_int16 pages, u_int16 *data, u_int16 *meta);
+// 		     u_int16 pages, u_int16 *data, u_int16 *meta);
 // s_int16 FsPhNandWrite(struct FsPhysical *p, s_int32 firstPage,
-//         u_int16 pages, u_int16 *data, u_int16 *meta);
+// 		      u_int16 pages, u_int16 *data, u_int16 *meta);
 // s_int16 NandCountBits(register __a u_int32 val);
 // s_int16 NandMingle(register __a u_int32 val);
 // void NandSwapBad(register __i0 u_int16 *spare);
@@ -628,12 +628,12 @@ _MyInitUSBDescriptors:	// PROLOGUE
 // struct FsMapper *FsMapFlCreate(struct FsPhysical *physical, u_int16 format);
 // s_int16 FsMapFlDelete(struct FsMapper *map);
 // s_int16 FsMapFlRead(struct FsMapper *map, u_int32 firstLogicalBlock,
-//       u_int16 logicalBlocks, u_int16 *data);
+// 		    u_int16 logicalBlocks, u_int16 *data);
 // s_int16 FsMapFlWrite(struct FsMapper *map, u_int32 firstLogicalBlock,
-//        u_int16 logicalBlocks, u_int16 *data);
+// 		     u_int16 logicalBlocks, u_int16 *data);
 // s_int16 FsMapFlFlush(struct FsMapper *map, u_int16 hard);
 // s_int16 FsMapFlFree(struct FsMapper *m, u_int32 logicalBlockNo,
-//       u_int32 logicalBlocks);
+// 		    u_int32 logicalBlocks);
 // void FsMapFlDump(struct FsMapper *map, s_int32 maxBlocks);
 // void FsMapFlCacheDump(struct FsMapper *map);
 // void FsMapFlPrint(s_int32 page);
@@ -648,19 +648,19 @@ _MyInitUSBDescriptors:	// PROLOGUE
 //   struct FmfMeta meta;
 // };
 // struct FsMapper *FsMapTnCreate(struct FsPhysical *physical,
-//           u_int16 cacheSize);
+// 			       u_int16 cacheSize);
 // s_int16 FsMapTnDelete(struct FsMapper *map);
 // s_int16 FsMapTnRead(struct FsMapper *map, u_int32 firstLogicalBlock,
-//       u_int16 logicalBlocks, u_int16 *data);
+// 		    u_int16 logicalBlocks, u_int16 *data);
 // s_int16 FsMapTnWrite(struct FsMapper *map, u_int32 firstLogicalBlock,
-//        u_int16 logicalBlocks, u_int16 *data);
+// 		     u_int16 logicalBlocks, u_int16 *data);
 // s_int16 FsMapTnFlush(struct FsMapper *map, u_int16 hard);
 // s_int16 FsMapTnFree(struct FsMapper *m, u_int32 logicalBlockNo,
-//       u_int32 logicalBlocks);
+// 		    u_int32 logicalBlocks);
 // s_int16 FsMapFlNullFail();
 // s_int16 FsMapFlNullOk();
 // auto u_int16 SpiSendReceiveMmc(register __a0 u_int16 dataTopAligned,
-//           register __a1 s_int16 bits);
+// 			       register __a1 s_int16 bits);
 // auto void SpiSendBlockMmc(register __i0 u_int16 *data, register __c0 s_int16 words);
 // auto void SpiSendClocks(void);
 // auto u_int16 MmcCommand(register __b0 s_int16 cmd, register __d u_int32 arg);
@@ -685,7 +685,7 @@ _MyInitUSBDescriptors:	// PROLOGUE
 // void KeyScanMatrix(register __i2 const u_int16 *matrix);
 // void SuspendMatrix(void);
 // auto u_int16 MapperlessReadDiskSector(register __i0 u_int16 *buffer,
-//           register __a u_int32 sector);
+// 				      register __a u_int32 sector);
 // void NandPutCommand(register __a0 u_int16 command);
 // void NandPutAddressOctet(register __a0 u_int16 address);
 // void NandGetOctets(register __c0 s_int16 length, register __i2 u_int16 *buf);
@@ -738,39 +738,39 @@ _MyInitUSBDescriptors:	// PROLOGUE
 // void LcdPutChar(register __c0 u_int16 c);
 // u_int16 LcdPutCharNoWrap(register __c0 u_int16 c);
 // auto void LcdPutGfx(register __i1 const u_int16 *d,
-//       register __c0 u_int16 words);
+// 		    register __c0 u_int16 words);
 // auto void LcdPutGfxDouble(register __i1 const u_int16 *d,
-//      register __c0 u_int16 words);
+// 			  register __c0 u_int16 words);
 // auto void LcdPutGfxShifted(register __i1 const u_int16 *s1,
-//       register __c0 u_int16 words,
-//       register __c1 s_int16 shift);
+// 			   register __c0 u_int16 words,
+// 			   register __c1 s_int16 shift);
 // auto void LcdPutPackedX(register __i1 const u_int16 *p,
-//    register __c0 u_int16 maxWords,
-//    register __c1 u_int16 xEnd);
+// 			register __c0 u_int16 maxWords,
+// 			register __c1 u_int16 xEnd);
 // auto void LcdContrast(register __c0 u_int16 contrast);
 // void LcdPutNum(register __c1 u_int16 c);
 // void LcdPutLong(register __b u_int32 c);
 // auto int LcdRenderPackedX(register __i0 u_int16 *buf,
-//      register __c0 u_int16 bIdx,
-//      register __i1 const u_int16 *str,
-//      register __c1 u_int16 sIdx);
+// 			  register __c0 u_int16 bIdx,
+// 			  register __i1 const u_int16 *str,
+// 			  register __c1 u_int16 sIdx);
 // auto void LcdRenderDoubled(register __i0 u_int16 *buf1,
-//       register __i2 u_int16 *buf2);
+// 			   register __i2 u_int16 *buf2);
 // void LcdEol(void);
 // void ResetIRAMVectors(void);
 // s_int16 LargePageWrite(u_int32 page, u_int16 *data, u_int16 *meta);
 // s_int16 LargePageRead(s_int32 page, u_int16 *data, u_int16 *meta);
 // s_int16 FsMlcMapRead1(struct FsMapper *map, u_int32 sector,
-//         u_int16 logicalBlocks, u_int16 *data);
+//  		     u_int16 logicalBlocks, u_int16 *data);
 // s_int16 FsMlcMapRead(struct FsMapper *map, u_int32 sector,
-//         u_int16 logicalBlocks, u_int16 *data);
+//  		     u_int16 logicalBlocks, u_int16 *data);
 // u_int16 GetBitArray(register __i0 u_int16 *array, register __a0 int bit);
 // void SetBitArray(register __i0 u_int16 *array, register __a0 int bit);
 // void ClearBitArray(register __i0 u_int16 *array, register __a0 int bit);
 // u_int32 CheckSumBlock(register u_int32 __a accu, register __i0 u_int16 *p,
-//          register __c0 s_int16 words);
+//  		      register __c0 s_int16 words);
 // int stricmppacked(__near const u_int16 register __i0 *cs,
-//     __near const u_int16 register __i1 *ct);
+// 		  __near const u_int16 register __i1 *ct);
 // void FIFOInit(register __i2 struct FIFOX *f, register __a1 void *fifoBuf, register __a0 s_int16 size);
 // void FIFOPut(register __i2 struct FIFOX *f, register __a0 u_int16 data);
 // u_int16 FIFOGet(register __i2 struct FIFOX *f);
@@ -781,9 +781,9 @@ _MyInitUSBDescriptors:	// PROLOGUE
 // u_int32 CalcECCBySoftware(register __i2 s_int16 *dp);
 // void VorbisSkip(s_int16 secs);
 // auto s_int16 PatchFatReadFile(register __i3 u_int16 *buf,
-//          register __c1 s_int16 byteOff,
-//          register __c0 s_int16 byteSize
-//                                        );
+// 			      register __c1 s_int16 byteOff,
+// 			      register __c0 s_int16 byteSize
+//  );
 // auto void SpeedShift(register __i2 s_int16 *p, register __a0 u_int16 n);
 // void InitSpeedShift(double speed);
 // void NewSpeedShift(double speed);
@@ -796,7 +796,7 @@ _MyInitUSBDescriptors:	// PROLOGUE
 // auto u_int16 FatOpenFileNoSubdirs(register __c0 u_int16 fileNum);
 // u_int16 PatchPlayCurrentFile(void);
 // s_int16 Large8kPageReadSingle(struct FsPhysical *ph, u_int32 page,
-//           u_int16 sectors, u_int16 *data, u_int16 *meta);
+//  			      u_int16 sectors, u_int16 *data, u_int16 *meta);
 // void NandPut8kPageSpareAddress(register __c u_int32 addr);
 // void NandPut8kDataAddress(register __c u_int32 addr);
 // s_int16 Large8kPageRead(u_int32 page, u_int16 *data, u_int16 *meta);
@@ -807,7 +807,7 @@ _MyInitUSBDescriptors:	// PROLOGUE
 // void SpiReadData(register __i2 u_int16 *data, register __a1 s_int16 words);
 // u_int16 SpiReadDataDiscardOne(register __i2 u_int16 *data, register __a1 s_int16 words);
 // s_int16 Large4kPageReadSingle(struct FsPhysical *ph, u_int32 page,
-//           u_int16 sectors, u_int16 *data, u_int16 *meta);
+//  			      u_int16 sectors, u_int16 *data, u_int16 *meta);
 // void NandPut4kPageSpareAddress(register __c u_int32 addr);
 // void NandPut4kDataAddress(register __c u_int32 addr);
 // s_int16 Large4kPageRead(u_int32 page, u_int16 *data, u_int16 *meta);
@@ -817,10 +817,10 @@ _MyInitUSBDescriptors:	// PROLOGUE
 // u_int16 EccFixError(register __i2 u_int16 *data, register __c u_int32 xored);
 // s_int16 Large4kPageRead2(u_int32 page, u_int16 *data, u_int16 *meta);
 // s_int16 Large4kPageReadSingle2(struct FsPhysical *ph, u_int32 page,
-//           u_int16 sectors, u_int16 *data, u_int16 *meta);
+//  			      u_int16 sectors, u_int16 *data, u_int16 *meta);
 // auto u_int32 WavSwap32(register __c u_int32 n);
 // enum CodecError PatchCodVorbisDecode(struct Codec *cod, struct CodecServices *cs,
-//       const char **errorString, int dummy);
+// 				  const char **errorString, int dummy);
 // u_int32 PlayTimeFile(s_int16 sc );
 // auto s_int16 OpenFileNamedSupported(const u_int16 *fname, u_int32 suffix);
 // s_int16 VS1000D_RomTest(void);
@@ -864,7 +864,7 @@ _MyInitUSBDescriptors:	// PROLOGUE
 	// constant index 1, element size 1
 	// field descriptorTable, offset 0
 
-//   USB.descriptorTable[2] = myModelNameStr;
+//   USB.descriptorTable[2]  = myModelNameStr;
 
 	// constant index 2, element size 1
 	// field descriptorTable, offset 0
@@ -913,11 +913,11 @@ _SingleCycleCommand:	// PROLOGUE
 // s_int16 lastFoundBlock = -1;
 // u_int16 shouldFlush = 0;
 // void SingleCycleCommand(u_int16 cmd){
-//   (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (7<<1) | (1<<0);
+// (*(__x volatile u_int16 *)(u_int16)(0xC068)) =(1<<5) |(7<<1) |(1<<0);
 
 	stx A0,(I0)/*V*/ ; ldy (I4)-3,NULL
 
-//   (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (7<<1) | (0<<0);
+// (*(__x volatile u_int16 *)(u_int16)(0xC068)) =(1<<5) |(7<<1) |(0<<0);
 
 	ldc 46,A0
 	stx A0,(I0)/*V*/
@@ -931,7 +931,7 @@ _SingleCycleCommand:	// PROLOGUE
 // jumped away
 	// safe: I0
 
-//   (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (7<<1) | (1<<0);
+// (*(__x volatile u_int16 *)(u_int16)(0xC068)) =(1<<5) |(7<<1) |(1<<0);
 
 	ldc 47,A0
 	stx A0,(I0)/*V*/ ; ldy (I6),I0
@@ -966,11 +966,11 @@ _SpiWaitStatus:	// PROLOGUE
 //   u_int16 status;
 
 
-//   (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (7<<1) | (1<<0);
+// (*(__x volatile u_int16 *)(u_int16)(0xC068)) =(1<<5) |(7<<1) |(1<<0);
 
 	stx A0,(I0)/*V*/
 
-//   (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (7<<1) | (0<<0);
+// (*(__x volatile u_int16 *)(u_int16)(0xC068)) =(1<<5) |(7<<1) |(0<<0);
 
 	ldc 46,A0
 	stx A0,(I0)/*V*/
@@ -995,7 +995,7 @@ L4:
 // jumped away
 	stx A0,(I4)-1	// status
 
-//     if ((*(__x volatile u_int16 *)(u_int16)((0xC080U +2))) & (1<<15))
+//     if ((*(__x volatile u_int16 *)(u_int16)((0xC080U +2))) &(1<<15))
 
 	ldx (I0),A0/*V*/
 	and A0,A1,A0
@@ -1012,7 +1012,7 @@ L4:
 // jumped away
 	// safe: I0
 
-//       (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (7<<1) | (1<<0);
+// (*(__x volatile u_int16 *)(u_int16)(0xC068)) =(1<<5) |(7<<1) |(1<<0);
 
 
 //       return -1;
@@ -1034,7 +1034,7 @@ L7:
 // jumped away
 
 //     ;
-//   (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (7<<1) | (1<<0);
+// (*(__x volatile u_int16 *)(u_int16)(0xC068)) =(1<<5) |(7<<1) |(1<<0);
 
 	stx A0,(I1)/*V*/ ; ldy (I4)+1,NULL
 
@@ -1076,7 +1076,7 @@ _EeUnprotect:	// PROLOGUE
 	ldc 46,A0
 	// safe: A0
 
-//   (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (7<<1) | (0<<0);
+// (*(__x volatile u_int16 *)(u_int16)(0xC068)) =(1<<5) |(7<<1) |(0<<0);
 
 
 //   SpiSendReceive(0x01);
@@ -1096,7 +1096,7 @@ _EeUnprotect:	// PROLOGUE
 // jumped away
 	// safe: I0
 
-//   (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (7<<1) | (1<<0);
+// (*(__x volatile u_int16 *)(u_int16)(0xC068)) =(1<<5) |(7<<1) |(1<<0);
 
 	ldc 47,A0
 
@@ -1145,7 +1145,7 @@ _EePutReadBlockAddress:	// PROLOGUE
 
 // }
 // void EePutReadBlockAddress(register u_int16 blockn){
-//   (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (7<<1) | (0<<0);
+// (*(__x volatile u_int16 *)(u_int16)(0xC068)) =(1<<5) |(7<<1) |(0<<0);
 
 	stx A0,(I0)/*V*/
 
@@ -1187,7 +1187,7 @@ _EePutReadBlockAddress:	// PROLOGUE
 // jumped away
 	// safe: A1 I0
 
-//   (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (15<<1) | (0<<0);
+// (*(__x volatile u_int16 *)(u_int16)(0xC068)) =(1<<5) |(15<<1) |(0<<0);
 
 	ldc 62,A0
 	stx A0,(I0)/*V*/
@@ -1258,7 +1258,7 @@ _EeIsBlockErased:	// PROLOGUE
 	ldc 47,A0
 // jumped away
 //  {
-//         (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (7<<1) | (1<<0);
+// (*(__x volatile u_int16 *)(u_int16)(0xC068)) =(1<<5) |(7<<1) |(1<<0);
 
 
 //         return 0;
@@ -1275,7 +1275,7 @@ LE20:
 
 //       }
 //     }
-//     (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (7<<1) | (1<<0);
+// (*(__x volatile u_int16 *)(u_int16)(0xC068)) =(1<<5) |(7<<1) |(1<<0);
 
 	ldc 47,A0
 	ldc 49256,I0
@@ -1315,7 +1315,7 @@ _EeProgram4K:	// PROLOGUE
 //   }
 // }
 // s_int16 EeProgram4K(u_int16 blockn, __y u_int16 *dptr){
-//   (*(__x volatile u_int16 *)(u_int16)((0xC080U +19))) |= (0x0001);
+// (*(__x volatile u_int16 *)(u_int16)((0xC080U +19))) |= (0x0001);
 
 	ldx (I0),A0/*V*/
 	or A0,A1,A1
@@ -1362,7 +1362,7 @@ _EeProgram4K:	// PROLOGUE
 // jumped away
 	// safe: A0 A1 I0
 
-//     (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (7<<1) | (0<<0);
+// (*(__x volatile u_int16 *)(u_int16)(0xC068)) =(1<<5) |(7<<1) |(0<<0);
 
 	stx A0,(I1)/*V*/ ; ldy (I6)+1,NULL
 
@@ -1406,7 +1406,7 @@ _EeProgram4K:	// PROLOGUE
 // jumped away
 	// safe: A1 I0 I1
 
-//     (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (7<<1) | (1<<0);
+// (*(__x volatile u_int16 *)(u_int16)(0xC068)) =(1<<5) |(7<<1) |(1<<0);
 
 	ldc 47,A0
 
@@ -1450,7 +1450,7 @@ L35:
 	ldc 46,A0
 // jumped away
 
-//       (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (7<<1) | (0<<0);
+// (*(__x volatile u_int16 *)(u_int16)(0xC068)) =(1<<5) |(7<<1) |(0<<0);
 
 	stx A0,(I0)/*V*/ ; ldy (I6)+1,NULL
 
@@ -1494,7 +1494,7 @@ L35:
 // jumped away
 	// safe: A1 I0
 
-//       (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (15<<1) | (0<<0);
+// (*(__x volatile u_int16 *)(u_int16)(0xC068)) =(1<<5) |(15<<1) |(0<<0);
 
 	ldc 62,A0
 	stx A0,(I0)/*V*/ ; ldy (I6)+1,NULL
@@ -1538,7 +1538,7 @@ LE43:
 
 //         }
 //       }
-//       (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (7<<1) | (1<<0);
+// (*(__x volatile u_int16 *)(u_int16)(0xC068)) =(1<<5) |(7<<1) |(1<<0);
 
 	ldc 47,A0
 
@@ -1565,7 +1565,7 @@ L46:
 
 	// safe: I0
 
-//       (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (7<<1) | (0<<0);
+// (*(__x volatile u_int16 *)(u_int16)(0xC068)) =(1<<5) |(7<<1) |(0<<0);
 
 	ldc 46,A0
 	ldc 512,A1
@@ -1612,7 +1612,7 @@ L46:
 // jumped away
 	// safe: A1 I0
 
-//       (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (15<<1) | (0<<0);
+// (*(__x volatile u_int16 *)(u_int16)(0xC068)) =(1<<5) |(15<<1) |(0<<0);
 
 	ldc 62,A0
 	stx A0,(I0)/*V*/ ; ldy (I6)+1,NULL
@@ -1656,7 +1656,7 @@ LE53:
 
 //         }
 //       }
-//       (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (7<<1) | (1<<0);
+// (*(__x volatile u_int16 *)(u_int16)(0xC068)) =(1<<5) |(7<<1) |(1<<0);
 
 	ldc 47,A0
 
@@ -1695,7 +1695,7 @@ LE37:
 
 //     }
 //   }
-//   (*(__x volatile u_int16 *)(u_int16)((0xC080U +19))) &= ~(0x0001);
+// (*(__x volatile u_int16 *)(u_int16)((0xC080U +19))) &= ~(0x0001);
 
 	ldx (I0),A0/*V*/
 	and A0,A1,A1
@@ -1779,7 +1779,7 @@ LE60:
 
 //     }
 //   }
-//   (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (7<<1) | (1<<0);
+// (*(__x volatile u_int16 *)(u_int16)(0xC068)) =(1<<5) |(7<<1) |(1<<0);
 
 	ldc 47,A0
 	stx A0,(I0)/*V*/ ; and NULL,NULL,A0
@@ -1863,7 +1863,7 @@ _EeCompareBlock:	// PROLOGUE
 // jumped away
 
 //         {
-//           (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (7<<1) | (1<<0);
+// (*(__x volatile u_int16 *)(u_int16)(0xC068)) =(1<<5) |(7<<1) |(1<<0);
 
 	// I0 not because register
 
@@ -1886,7 +1886,7 @@ LE64:
 //         }
 //     }
 //   }
-//   (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (7<<1) | (1<<0);
+// (*(__x volatile u_int16 *)(u_int16)(0xC068)) =(1<<5) |(7<<1) |(1<<0);
 
 	ldc 47,A0
 	stx A0,(I0)/*V*/ ; and NULL,NULL,A0
@@ -1929,7 +1929,7 @@ _EeRead4KSectorYToWorkspace:	// PROLOGUE
 	// I2
 	// allocated I2 as dptr
 
-//   dptr = (mallocAreaY + 6144);
+//   dptr =(mallocAreaY + 6144);
 
 
 //   SpiWaitStatus();
@@ -1985,7 +1985,7 @@ LE70:
 
 //     }
 //   }
-//   (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (7<<1) | (1<<0);
+// (*(__x volatile u_int16 *)(u_int16)(0xC068)) =(1<<5) |(7<<1) |(1<<0);
 
 	ldc 47,A0
 	stx A0,(I0)/*V*/ ; and NULL,NULL,A0
@@ -2024,17 +2024,17 @@ _InitSpi:	// PROLOGUE
 
 // }
 // void InitSpi(u_int16 clockDivider){
-//   (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (7<<1) | (1<<0);
+// (*(__x volatile u_int16 *)(u_int16)(0xC068)) =(1<<5) |(7<<1) |(1<<0);
 
 	stx A0,(I0)+4/*V*/ ; ldy (I4)-3,NULL
 	ldc 0,A0
 
-//   (*(__x volatile u_int16 *)(u_int16)(0xC06C)) = 0;
+// (*(__x volatile u_int16 *)(u_int16)(0xC06C)) = 0;
 
 	// const -4 in I0
 	stx A0,(I0)-3/*V*/
 
-//   (*(__x volatile u_int16 *)(u_int16)(0xC069)) = (1<<2) * (clockDivider-1);
+// (*(__x volatile u_int16 *)(u_int16)(0xC069)) =(1<<2) * (clockDivider-1);
 
 	ldx (I4)+3,A0	// clockDivider
 	add A0,ONES,A0
@@ -2043,7 +2043,7 @@ _InitSpi:	// PROLOGUE
 	// const +3 in I0
 	stx A0,(I0)/*V*/
 
-//   (*(__x volatile u_int16 *)(u_int16)(0xC011)) |= 0x1f;
+// (*(__x volatile u_int16 *)(u_int16)(0xC011)) |= 0x1f;
 
 	ldx (I1),A0/*V*/
 	or A0,A1,A1
@@ -2085,7 +2085,7 @@ _FindCachedBlock:	// PROLOGUE
 //   lastFoundBlock = -1;
 
 
-//   for (i=0; i<16; i++)
+//   for (i=0; i< 16; i++)
 
 	// 16 loops
 	// i read inside loop 4
@@ -2174,7 +2174,7 @@ _WriteContinuous4K:	// PROLOGUE
 //   u_int16 i,k;
 
 
-//   for (i=0; i<16 -7; i++)
+//   for (i=0; i< 16 -7; i++)
 
 	// can't: label(s) inside loop
 	// can't: goto(s) inside loop
@@ -2383,7 +2383,7 @@ _GetEmptyBlock:	// PROLOGUE
 	// C0
 	// allocated C0 as i
 
-//   for (i=0; i<16; i++)
+//   for (i=0; i< 16; i++)
 
 	// 16 loops
 	// i read inside loop 4
@@ -2553,27 +2553,27 @@ _FsMapSpiFlashCreate:	// PROLOGUE
 
 // }
 // struct FsMapper *FsMapSpiFlashCreate(struct FsPhysical *physical,
-//            u_int16 cacheSize);
+//         			u_int16 cacheSize);
 // s_int16 FsMapSpiFlashRead(struct FsMapper *map, u_int32 firstBlock,
-//               u_int16 blocks, u_int16 *data);
+//         	     u_int16 blocks, u_int16 *data);
 // s_int16 FsMapSpiFlashWrite(struct FsMapper *map, u_int32 firstBlock,
-//                u_int16 blocks, u_int16 *data);
+//         	      u_int16 blocks, u_int16 *data);
 // s_int16 FsMapSpiFlashFlush(struct FsMapper *map, u_int16 hard);
 // struct FsMapper spiFlashMapper = {
 //     0x010c,
 //     256,
-//     (1024 -64),
+// (1024 - 64),
 //     0,
 //     FsMapSpiFlashCreate,
 //     FsMapFlNullOk,
 //     FsMapSpiFlashRead,
 //     FsMapSpiFlashWrite,
-//     0,
+//  0,
 //     FsMapSpiFlashFlush,
-//     0
+//  0
 // };
 // struct FsMapper *FsMapSpiFlashCreate(struct FsPhysical *physical,
-//                 u_int16 cacheSize) {
+//         			     u_int16 cacheSize) {
 //   InitSpi(4);
 
 	ldc 49256,I2
@@ -2597,14 +2597,14 @@ _FsMapSpiFlashCreate:	// PROLOGUE
 
 	stx A0,(I4)-1	// status
 
-//       (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (7<<1) | (1<<0);
+// (*(__x volatile u_int16 *)(u_int16)(0xC068)) =(1<<5) |(7<<1) |(1<<0);
 
 	ldc 47,A0
 	stx A0,(I2)/*V*/
 	// I0 not because register
 	// I1 not because register
 
-//       (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (15<<1) | (0<<0);
+// (*(__x volatile u_int16 *)(u_int16)(0xC068)) =(1<<5) |(15<<1) |(0<<0);
 
 	ldc 62,A0
 	stx A0,(I2)/*V*/
@@ -2637,7 +2637,7 @@ _FsMapSpiFlashCreate:	// PROLOGUE
 	// safe: I2
 	stx A0,(I4)	// status
 
-//       (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (7<<1) | (1<<0);
+// (*(__x volatile u_int16 *)(u_int16)(0xC068)) =(1<<5) |(7<<1) |(1<<0);
 
 	ldc 47,A0
 	stx A0,(I2)/*V*/
@@ -2776,7 +2776,7 @@ _FsMapSpiFlashRead:	// PROLOGUE
 
 // }
 // s_int16 FsMapSpiFlashRead(struct FsMapper *map, u_int32 firstBlock,
-//             u_int16 blocks, u_int16 *data) {
+//         		  u_int16 blocks, u_int16 *data) {
 //   register s_int16 bl = 0;
 
 	// C0
@@ -2925,7 +2925,7 @@ _FsMapSpiFlashWrite:	// PROLOGUE
 
 // }
 // s_int16 FsMapSpiFlashWrite(struct FsMapper *map, u_int32 firstBlock,
-//              u_int16 blocks, u_int16 *data) {
+//         		   u_int16 blocks, u_int16 *data) {
 //   s_int16 bl = 0;
 
 	stx A0,(I4)-6 ; and NULL,NULL,A1	// bl
@@ -3085,7 +3085,7 @@ LE130:
 
 //     } else {
 //     }
-//     if ((*(__x volatile u_int16 *)(u_int16)((0xC080U +2))) & (1<<15))
+//     if ((*(__x volatile u_int16 *)(u_int16)((0xC080U +2))) &(1<<15))
 
 	ldc 256,A1
 L120:
@@ -3183,7 +3183,7 @@ L138:
 	stx A0,(I0) ; ldy (I4)+1,NULL
 	ldc 0,A0
 
-//   for (i=0; i<16; i++)
+//   for (i=0; i< 16; i++)
 
 	// 16 loops
 	// i read inside loop 2
@@ -3300,7 +3300,7 @@ LE143:
 //         } else {
 //         }
 //       }
-//       if (-1 != EeProgram4K (lba, (mallocAreaY + 6144)))
+//       if (-1 != EeProgram4K (lba,(mallocAreaY + 6144)))
 
 	ldx (I4)+3,NULL
 	ldx (I4)-3,A0	// lba
@@ -3660,7 +3660,7 @@ _MyMassStorage:	// PROLOGUE
 // jumped away
 	// safe: A0 B0
 
-//   (*(__x volatile u_int16 *)(u_int16)(0xC001)) &= ~(1<<3);
+// (*(__x volatile u_int16 *)(u_int16)(0xC001)) &= ~(1<<3);
 
 	ldc 63,LS
 	ldx (I1),A0/*V*/
@@ -3798,7 +3798,7 @@ L173:
 
 //     }
 //     if (USBWantsSuspend()
-//         || (USB.lastSofTime && ReadTimeCount() - USB.lastSofTime > 2*100)
+//         || (USB.lastSofTime && ReadTimeCount() - USB.lastSofTime > 2* 100)
 //         )
 
 	.import _USBWantsSuspend
@@ -3914,7 +3914,7 @@ L184:
 	ldc 49153,I1
 // jumped away
 //  {
-//         (*(__x volatile u_int16 *)(u_int16)(0xC001)) &= ~(1<<6);
+// (*(__x volatile u_int16 *)(u_int16)(0xC001)) &= ~(1<<6);
 
 	ldc 49280,I2
 	.import _map
@@ -3925,7 +3925,7 @@ L184:
 	stx A1,(I1)/*V*/
 	// I0 not because register
 
-//         (*(__x volatile u_int16 *)(u_int16)((0xC080U))) = 0x8000U;
+// (*(__x volatile u_int16 *)(u_int16)((0xC080U))) = 0x8000U;
 
 	stx A0,(I2)/*V*/
 	// I0 not because register
@@ -3950,7 +3950,7 @@ L191:
 	// safe: I1 I2
 	// not safe: I0
 
-//         if (((*(__x volatile u_int16 *)(u_int16)(0xC001)) & (1<<4)))
+//         if (((*(__x volatile u_int16 *)(u_int16)(0xC001)) &(1<<4)))
 
 	and A0,A1,A0
 	nop
@@ -4014,14 +4014,14 @@ LE170:
 	sub NULL,ONES,A0 ; ldy (I6)+1,NULL
 	sty A0,(I0) ; ldx (I1),A0/*V*/
 
-//   (*(__x volatile u_int16 *)(u_int16)(0xC001)) &= ~(1<<6);
+// (*(__x volatile u_int16 *)(u_int16)(0xC001)) &= ~(1<<6);
 
 	and A0,A1,A1
 	ldc 32768,A0
 	stx A1,(I1)/*V*/
 	// I0 not because register
 
-//   (*(__x volatile u_int16 *)(u_int16)((0xC080U))) = 0x8000U;
+// (*(__x volatile u_int16 *)(u_int16)((0xC080U))) = 0x8000U;
 
 	stx A0,(I2)/*V*/ ; sub NULL,ONES,A0
 	// I0 not because register
@@ -4293,7 +4293,7 @@ _MyUSBSuspend:	// PROLOGUE
 // }
 // auto u_int16 Fat12OpenFile(register __c0 u_int16 n);
 // void MyUSBSuspend(u_int16 timeOut) {
-//   (*(__x volatile u_int16 *)(u_int16)(0xC001)) |= (1<<2) | (1<<3);
+// (*(__x volatile u_int16 *)(u_int16)(0xC001)) |=(1<<2) |(1<<3);
 
 	ldx (I0),A0/*V*/
 	or A0,A1,A1
@@ -4310,7 +4310,7 @@ _MyUSBSuspend:	// PROLOGUE
 	ldx (I0),A0/*V*/ ; ldy (I6)-1,NULL
 	// safe: A0 I0
 
-//   (*(__x volatile u_int16 *)(u_int16)(0xC001)) &= ~((1<<2) | (1<<3));
+// (*(__x volatile u_int16 *)(u_int16)(0xC001)) &= ~((1<<2) |(1<<3));
 
 	and A0,A1,A1
 	stx A1,(I0)/*V*/
@@ -4342,20 +4342,20 @@ _MyPowerOff:	// PROLOGUE
 
 // }
 // void MyPowerOff(void) {
-//     (*(__x volatile u_int16 *)(u_int16)(0xC050)) |= 1;
+// (*(__x volatile u_int16 *)(u_int16)(0xC050))   |=  1;
 
 	ldx (I0),A0/*V*/ ; sub NULL,ONES,A1
 	or A0,A1,A1
 	stx A1,(I0)+7/*V*/
 
-//     (*(__x volatile u_int16 *)(u_int16)(0xC011)) &= ~1;
+// (*(__x volatile u_int16 *)(u_int16)(0xC011))  &= ~1;
 
 	ldc 65534,A1
 	ldx (I1),A0/*V*/
 	and A0,A1,A1
 	stx A1,(I1)/*V*/ ; sub NULL,ONES,A0
 
-//     (*(__x volatile u_int16 *)(u_int16)(0xC057)) = 1;
+// (*(__x volatile u_int16 *)(u_int16)(0xC057)) = 1;
 
 	// const -7 in I0
 
@@ -4540,7 +4540,7 @@ _main:	// PROLOGUE
 	sub NULL,ONES,A1 ; ldx (I1),A0/*V*/
 	// not safe: A0
 
-//   if (!((*(__x volatile u_int16 *)(u_int16)(0xC072)) & (1<<0)))
+//   if (!((*(__x volatile u_int16 *)(u_int16)(0xC072)) &(1<< 0)))
 
 	and A0,A1,A0 ; ldy (I6)-1,NULL
 	.import _clockX
@@ -4581,7 +4581,7 @@ L228:
 	// safe: I1
 	// not safe: A0
 
-//   (*(__x volatile u_int16 *)(u_int16)(0xC02B)) = UartDiv();
+// (*(__x volatile u_int16 *)(u_int16)(0xC02B)) = UartDiv();
 
 	.import _UartDiv
 	call _UartDiv
@@ -4592,7 +4592,7 @@ L228:
 	// I0 not because register
 	// I2 not because register
 
-//   (*(__x volatile u_int16 *)(u_int16)(0xC070)) |= (1<<5) | (1<<6);
+// (*(__x volatile u_int16 *)(u_int16)(0xC070)) |=(1<< 5) |(1<< 6);
 
 	// const +2 in I1
 	ldx (I1),A0/*V*/
@@ -4601,7 +4601,7 @@ L228:
 	// I0 not because register
 	// I2 not because register
 
-//   (*(__x volatile u_int16 *)(u_int16)(0xC072)) = (1<<0);
+// (*(__x volatile u_int16 *)(u_int16)(0xC072)) =(1<< 0);
 
 	ldc 65471,A1
 	// const -2 in I1
@@ -4609,7 +4609,7 @@ L228:
 	// I0 not because register
 	// I2 not because register
 
-//   (*(__x volatile u_int16 *)(u_int16)(0xC001)) &= ~(1<<6);
+// (*(__x volatile u_int16 *)(u_int16)(0xC001)) &= ~(1<<6);
 
 	ldx (I0),A0/*V*/
 	and A0,A1,A1
@@ -4617,7 +4617,7 @@ L228:
 	stx A1,(I0)/*V*/
 	// I2 not because register
 
-//   (*(__x volatile u_int16 *)(u_int16)((0xC080U))) = 0x8000U;
+// (*(__x volatile u_int16 *)(u_int16)((0xC080U))) = 0x8000U;
 
 	ldc 65280,A1
 	ldc 49280,I0
@@ -4709,7 +4709,7 @@ L228:
 // jumped away
 	// safe: I1 I3
 
-//   (*(__x volatile u_int16 *)(u_int16)(0xC010)) &= 0xff00;
+// (*(__x volatile u_int16 *)(u_int16)(0xC010)) &= 0xff00;
 
 	ldc 49168,I0
 	ldx (I0),A0/*V*/ ; ldy (I6)+1,NULL
@@ -4789,7 +4789,7 @@ L241:
 // jumped away
 	// safe: I1 I3
 
-//           (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (7<<1) | (1<<0);
+// (*(__x volatile u_int16 *)(u_int16)(0xC068)) =(1<<5) |(7<<1) |(1<<0);
 
 	stx A0,(I0)/*V*/
 	// I2 not because register
@@ -4829,7 +4829,7 @@ LE240:
 // jumped away
 	// safe: I1 I3 A
 
-//   (*(__x volatile u_int16 *)(u_int16)(0xC068)) = (1<<5) | (7<<1) | (1<<0);
+// (*(__x volatile u_int16 *)(u_int16)(0xC068)) =(1<<5) |(7<<1) |(1<<0);
 
 	stx A0,(I0)/*V*/
 
