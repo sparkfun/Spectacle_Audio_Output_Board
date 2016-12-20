@@ -85,7 +85,7 @@ int main()
   // Pending audio flag. This depends on the pre- and postdelays, NOT on the
   // actual sound being playing or not.
   uint8 pending = 0;
-  
+  //I2C_Mem[CONFIGURED_REG] = 0;
   behaviors = malloc(64*sizeof(behaviors));
   // Turn LED on. This is a useful check on whether or not the code made it
   // through the initialization process. If it did, the LED will come on. If
@@ -114,12 +114,12 @@ int main()
       {
         program();
       }
-/*      if (I2C_Mem[CONFIGURED_REG] == 1)
+      if (I2C_Mem[CONFIGURED_REG] == 1)
       {
         EZI2C_EzI2CSetAddress1(I2C_Mem[I2C_ADDR_REG]);
         I2C_Mem[CONFIGURED_REG] = 0;
         I2C_OUT_EN_Write(1);
-      }*/
+      }
       // Behavior loop. We'll cycle through this loop for each behavior that we
       // received from the director board, checking that behavior's mailbox to
       // see if any data has been received for that channel. We'll then do

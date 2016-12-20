@@ -545,7 +545,6 @@
 <Unloaded />
 <OpenDocs>
 <name v=".\Spectacle_Audio_Output_Board.cydsn\main.c" />
-<name v=".\Spectacle_Audio_Output_Board.cydsn\audio.h" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -553,7 +552,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1316, 711" SelectedTabbedMdiWindow="6f1c0317-6a93-4aaa-a2aa-5603461c809e"><DocumentWindow Key="eb09476c-b077-4116-80ea-35edb995567b" Guid="543df302-79a8-4bf7-8e0b-d1992cfc370c" /><DocumentWindow Key="4f45ed09-55df-4e14-8588-468699a06bea" Guid="6f1c0317-6a93-4aaa-a2aa-5603461c809e" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1322, 711" SelectedTabbedMdiWindow="c8e1c967-98fb-4734-9c02-9682007fb84a"><DocumentWindow Key="0c966604-ed7a-46f0-9f36-7c4f53d3f9fa" Guid="c8e1c967-98fb-4734-9c02-9682007fb84a" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
