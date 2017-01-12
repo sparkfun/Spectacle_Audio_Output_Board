@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\TopDesign">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\Source Files\programming.c">
 <ExpandedNodeIds>
 <v>Spectacle_Audio_Output_Board</v>
 <v>Spectacle_Audio_Output_Board\Serial_Bridge\TopDesign</v>
@@ -545,6 +545,9 @@
 <Unloaded />
 <OpenDocs>
 <name v=".\Spectacle_Audio_Output_Board.cydsn\main.c" />
+<name v=".\Spectacle_Audio_Output_Board.cydsn\spectacle.h" />
+<name v=".\Spectacle_Audio_Output_Board.cydsn\audio.h" />
+<name v=".\Spectacle_Audio_Output_Board.cydsn\programming.c" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -552,7 +555,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1322, 711" SelectedTabbedMdiWindow="c8e1c967-98fb-4734-9c02-9682007fb84a"><DocumentWindow Key="0c966604-ed7a-46f0-9f36-7c4f53d3f9fa" Guid="c8e1c967-98fb-4734-9c02-9682007fb84a" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1262, 711" SelectedTabbedMdiWindow="f7aa35d1-8753-4644-92a0-28fd6d6e2037"><DocumentWindow Key="acad0e1b-646e-497a-b08f-bc8d3f0f87e2" Guid="99075326-bea4-4e76-a3de-7aecb35dfc19" /><DocumentWindow Key="3d6dee90-eedd-4cdf-a505-a5763218f4c8" Guid="839e38b7-5e36-4acf-8204-0dfedc261aeb" /><DocumentWindow Key="738a2b12-8902-4334-b223-d89a7266d18e" Guid="33872e9f-4c33-432b-8698-a09c56c61d35" /><DocumentWindow Key="0e066cf1-2a22-411d-8199-ddd214244299" Guid="f7aa35d1-8753-4644-92a0-28fd6d6e2037" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

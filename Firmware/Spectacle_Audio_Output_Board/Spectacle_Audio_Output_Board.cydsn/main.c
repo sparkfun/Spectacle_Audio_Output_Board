@@ -45,6 +45,7 @@ int main()
   I2C_Mem[PROG_ENABLE_REG] = 0;
   I2C_Mem[PROG_READY_REG] = 0;
   I2C_Mem[DATA_READY_REG] = 0;
+  I2C_Mem[BOARD_ID_REG] = BOARD_ID;
 
   // This is the startup code for the incoming I2C peripheral. We first enable
   // the peripheral, then tell it what it needs to know about the memory it
