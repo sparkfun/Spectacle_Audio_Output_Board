@@ -8,7 +8,7 @@
 </settings>
 <grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.005" altunitdist="inch" altunit="inch"/>
 <layers>
-<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="1" name="Top" color="4" fill="1" visible="no" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
 <layer number="15" name="Route15" color="4" fill="6" visible="no" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -16,9 +16,9 @@
 <layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="21" name="tPlace" color="16" fill="1" visible="yes" active="yes"/>
+<layer number="21" name="tPlace" color="16" fill="1" visible="no" active="yes"/>
 <layer number="22" name="bPlace" color="14" fill="1" visible="yes" active="yes"/>
-<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="no" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
 <layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
@@ -34,12 +34,12 @@
 <layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
-<layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
 <layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
 <layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
 <layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
-<layer number="51" name="tDocu" color="6" fill="1" visible="yes" active="yes"/>
+<layer number="51" name="tDocu" color="6" fill="1" visible="no" active="yes"/>
 <layer number="52" name="bDocu" color="7" fill="1" visible="no" active="yes"/>
 <layer number="3" name="Route3" color="4" fill="3" visible="no" active="no"/>
 <layer number="4" name="Route4" color="1" fill="4" visible="no" active="no"/>
@@ -1972,7 +1972,15 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <rectangle x1="2.286" y1="-0.254" x2="2.794" y2="0.254" layer="51"/>
 <rectangle x1="-0.254" y1="-0.254" x2="0.254" y2="0.254" layer="51"/>
 </package>
-<package name="AUDIO-JACK-TRRS-SMD">
+<package name="AUDIO_JACK_3.5MM_TRRS_SMD_RA">
+<description>&lt;h3&gt;TRRS 3.5MM Right Angle Stereo Jack - SMT&lt;/h3&gt;
+&lt;p&gt;Specifications:
+&lt;ul&gt;&lt;li&gt;Pin count: 4&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=”http://cdn.sparkfun.com/datasheets/Prototyping/20153.pdf”&gt;Datasheet referenced for footprint&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Example device(s):
+&lt;ul&gt;&lt;li&gt;AUDIO_JACK_TRRS&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;</description>
 <wire x1="0.5" y1="-3.3" x2="10.5" y2="-3.3" width="0.254" layer="21"/>
 <wire x1="12.2" y1="3.3" x2="12.2" y2="-3.3" width="0.254" layer="21"/>
 <wire x1="12.2" y1="3.3" x2="11" y2="3.3" width="0.254" layer="21"/>
@@ -1993,7 +2001,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <wire x1="7" y1="3.3" x2="9.4" y2="3.3" width="0.254" layer="21"/>
 <wire x1="4" y1="3.3" x2="5.4" y2="3.3" width="0.254" layer="21"/>
 <wire x1="0.5" y1="3.3" x2="2.4" y2="3.3" width="0.254" layer="21"/>
-<text x="3.81" y="-2.54" size="0.4064" layer="25">&gt;NAME</text>
+<text x="3.175" y="0.127" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
+<text x="3.175" y="-1.397" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
 </package>
 <package name="MICROSD_1:1">
 <wire x1="-0.03" y1="0" x2="-0.03" y2="13.2" width="0.2032" layer="21"/>
@@ -2048,6 +2057,15 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <rectangle x1="-0.254" y1="-0.254" x2="0.254" y2="0.254" layer="51"/>
 </package>
 <package name="AUDIO-JACK-3.5MM-SMD">
+<description>&lt;h3&gt;3.5mm Stereo Audio Jack - Surface Mount&lt;/h3&gt;
+2.5mm Height. 
+&lt;p&gt;Specifications:
+&lt;ul&gt;&lt;li&gt;Pin count:5&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=”http://www.4uconnector.com/online/object/4udrawing/19269.pdf”&gt;Datasheet referenced for footprint&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Example device(s):
+&lt;ul&gt;&lt;li&gt;Audio_Jack&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;</description>
 <wire x1="3.9" y1="-3" x2="10.2" y2="-3" width="0.254" layer="21"/>
 <wire x1="14.5" y1="-0.635" x2="14.5" y2="-3" width="0.254" layer="21"/>
 <wire x1="14.5" y1="-3" x2="13.2" y2="-3" width="0.254" layer="21"/>
@@ -2067,8 +2085,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <smd name="RSH" x="1.5" y="3.45" dx="1.2" dy="2.5" layer="1" rot="R180"/>
 <hole x="3.5" y="0" drill="2"/>
 <hole x="10.5" y="0" drill="2"/>
-<text x="6.35" y="3.81" size="0.8128" layer="25" font="vector">&gt;Name</text>
-<text x="6.35" y="1.27" size="0.8128" layer="27" font="vector">&gt;Value</text>
+<text x="5.715" y="0.762" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
+<text x="5.715" y="-1.397" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
 </package>
 </packages>
 </library>
@@ -2579,8 +2597,9 @@ design rules under a new name.</description>
 <element name="R6" library="SparkFun-Resistors" package="0603-RES" value="1K" x="19.05" y="30.226" rot="R180">
 <attribute name="PROD_ID" value="RES-07856" x="19.05" y="30.226" size="1.778" layer="27" font="vector" ratio="15" rot="R180" display="off"/>
 </element>
-<element name="J4" library="SparkFun-Connectors" package="AUDIO-JACK-TRRS-SMD" value="AUDIO-JACK3" x="0" y="20.32">
+<element name="J4" library="SparkFun-Connectors" package="AUDIO_JACK_3.5MM_TRRS_SMD_RA" value="AUDIO_JACK_TRRSSMD_RA" x="0" y="20.32">
 <attribute name="PROD_ID" value="CONN-10676" x="0" y="20.32" size="1.778" layer="27" display="off"/>
+<attribute name="SF_ID" value="PRT-12639" x="0" y="20.32" size="1.778" layer="27" display="off"/>
 </element>
 <element name="D4" library="SparkFun-DiscreteSemi" package="SOT23-3" value="PESD1CAN" x="5.969" y="27.051">
 <attribute name="PROD_ID" value="DIO-12501" x="5.969" y="27.051" size="1.778" layer="27" font="vector" ratio="15" display="off"/>
@@ -2692,8 +2711,9 @@ design rules under a new name.</description>
 <element name="C17" library="SparkFun-Capacitors" package="0603-CAP" value="10uF" x="6.35" y="16.51" rot="MR0">
 <attribute name="PROD_ID" value="CAP-11015" x="6.35" y="16.51" size="1.778" layer="28" font="vector" ratio="15" rot="MR0" display="off"/>
 </element>
-<element name="J5" library="SparkFun-Connectors" package="AUDIO-JACK-TRRS-SMD" value="AUDIO-JACK3" x="0" y="10.16">
+<element name="J5" library="SparkFun-Connectors" package="AUDIO_JACK_3.5MM_TRRS_SMD_RA" value="AUDIO_JACK_TRRSSMD_RA" x="0" y="10.16">
 <attribute name="PROD_ID" value="CONN-10676" x="0" y="10.16" size="1.778" layer="27" display="off"/>
+<attribute name="SF_ID" value="PRT-12639" x="0" y="10.16" size="1.778" layer="27" display="off"/>
 </element>
 <element name="J1" library="SparkFun-Connectors" package="1X06_NO_SILK" value="" x="1.27" y="26.67" rot="R90"/>
 <element name="C19" library="SparkFun-Capacitors" package="0402-CAP" value="1.0uF" x="20.701" y="18.161" rot="MR90">
@@ -2730,7 +2750,7 @@ design rules under a new name.</description>
 <element name="R2" library="SparkFun-Resistors" package="0603-RES" value="1M" x="18.415" y="15.24" rot="MR90">
 <attribute name="PROD_ID" value="RES-07868" x="18.415" y="15.24" size="1.778" layer="28" font="vector" ratio="15" rot="MR90" display="off"/>
 </element>
-<element name="J3" library="SparkFun-Connectors" package="AUDIO-JACK-3.5MM-SMD" value="" x="0" y="45.72">
+<element name="J3" library="SparkFun-Connectors" package="AUDIO-JACK-3.5MM-SMD" value="AUDIO_JACK_3.5MM_SMD" x="0" y="45.72">
 <attribute name="PROD_ID" value="CONN-10353" x="0" y="45.72" size="1.778" layer="27" font="vector" ratio="15" display="off"/>
 </element>
 <element name="FD5" library="SparkFun-Aesthetics" package="MICRO-FIDUCIAL" value="FIDUCIALUFIDUCIAL" x="5.08" y="5.08" rot="MR0"/>
@@ -2879,7 +2899,6 @@ design rules under a new name.</description>
 <wire x1="15.24" y1="33.401" x2="15.113" y2="33.274" width="0.2032" layer="16"/>
 <contactref element="R26" pad="2"/>
 <contactref element="R2" pad="2"/>
-<contactref element="J3" pad="SLEEVE"/>
 <via x="21.336" y="49.784" extent="1-16" drill="0.254"/>
 <via x="19.939" y="51.054" extent="1-16" drill="0.254"/>
 <via x="16.891" y="44.45" extent="1-16" drill="0.254"/>
@@ -2913,6 +2932,7 @@ design rules under a new name.</description>
 <contactref element="U6" pad="3"/>
 <via x="15.113" y="3.048" extent="1-16" drill="0.254"/>
 <via x="12.7" y="8.509" extent="1-16" drill="0.254"/>
+<contactref element="J3" pad="SLEEVE"/>
 </signal>
 <signal name="VCC">
 <contactref element="U1" pad="25"/>
@@ -3696,7 +3716,6 @@ design rules under a new name.</description>
 <signal name="L_AC">
 <contactref element="C13" pad="2"/>
 <contactref element="R20" pad="2"/>
-<contactref element="J3" pad="TIP"/>
 <wire x1="18.327" y1="48.26" x2="18.327" y2="49.784" width="0.2032" layer="1"/>
 <wire x1="18.327" y1="48.26" x2="13.208" y2="48.26" width="0.2032" layer="1"/>
 <wire x1="13.208" y1="48.26" x2="12.954" y2="48.006" width="0.2032" layer="1"/>
@@ -3705,12 +3724,12 @@ design rules under a new name.</description>
 <wire x1="12.7" y1="44.45" x2="11.938" y2="44.45" width="0.2032" layer="1"/>
 <wire x1="11.938" y1="44.45" x2="11.684" y2="44.196" width="0.2032" layer="1"/>
 <wire x1="11.684" y1="44.196" x2="11.684" y2="42.286" width="0.2032" layer="1"/>
+<contactref element="J3" pad="TIP"/>
 <wire x1="11.684" y1="42.286" x2="11.7" y2="42.27" width="0.2032" layer="1"/>
 </signal>
 <signal name="R_AC">
 <contactref element="C14" pad="2"/>
 <contactref element="R19" pad="2"/>
-<contactref element="J3" pad="RING"/>
 <wire x1="16.041" y1="41.91" x2="16.041" y2="40.386" width="0.254" layer="1"/>
 <wire x1="16.041" y1="41.91" x2="15.24" y2="41.91" width="0.2032" layer="1"/>
 <wire x1="15.24" y1="41.91" x2="14.986" y2="42.164" width="0.2032" layer="1"/>
@@ -3723,6 +3742,7 @@ design rules under a new name.</description>
 <wire x1="18.923" y1="50.8" x2="4.445" y2="50.8" width="0.2032" layer="1"/>
 <wire x1="4.445" y1="50.8" x2="4.318" y2="50.673" width="0.2032" layer="1"/>
 <wire x1="4.318" y1="50.673" x2="4.318" y2="49.188" width="0.2032" layer="1"/>
+<contactref element="J3" pad="RING"/>
 <wire x1="4.318" y1="49.188" x2="4.3" y2="49.17" width="0.2032" layer="1"/>
 </signal>
 <signal name="N$17">
@@ -4151,6 +4171,7 @@ design rules under a new name.</description>
 <approved hash="19,1,f9659b5d9dd1ffe9"/>
 <approved hash="19,1,fa7198499e4dfc75"/>
 <approved hash="5,1,fb013fad3f7dfad1"/>
+<approved hash="6,1,3197c0740074f197"/>
 <approved hash="19,16,e674dc4cda40e078"/>
 <approved hash="19,16,f9bcc984c858f860"/>
 <approved hash="19,16,03c43bfc3b8003b8"/>
@@ -4162,6 +4183,7 @@ design rules under a new name.</description>
 <approved hash="6,1,94de26ffa6f814d9"/>
 <approved hash="19,1,e674dc4cda40e078"/>
 <approved hash="6,1,4fa701fa01fa4fa7"/>
+<approved hash="6,16,c2e8330bf30b02e8"/>
 </errors>
 </board>
 </drawing>
