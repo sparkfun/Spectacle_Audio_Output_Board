@@ -1,3 +1,22 @@
+/****************************************************************************
+main.c
+Main code file for Spectacle Audio Board Firmware
+Mike Hord @ SparkFun Electronics
+24 Jan 2017
+https://github.com/sparkfun/Spectacle_Audio_Output_Board
+
+This file contains main(), which configures all the various hardware
+components for operation and runs the main loop that handles incoming data
+from the director board.
+
+Development environment specifics:
+Developed in PSoC Creator 4.0
+Board V10
+
+This code is beerware; if you see me (or any other SparkFun employee) at the
+local, and you've found our code helpful, please buy us a round!
+****************************************************************************/
+
 #include <project.h>
 #include <stdbool.h>
 #include <math.h>
@@ -6,7 +25,6 @@
 #include "spectacle.h"
 #include "audio.h"
 #include "programming.h"
-#include "debug.h"
 
 #define I2C_BUFFER_SIZE 256
 #define I2C_BUFFER_RW_BOUNDARY 256
@@ -94,14 +112,6 @@ int main()
   // blinking.
   LED_Write(1);
 
-  ///////////////////////////////////////////////////////////////////////////
-  // Make up some behaviors for use in testing.
-/*  behaviors[0] = audioInit(0, 200, 0, YES_INT, 0, 0, 0, 0);
-  behaviors[1] = audioInit(1, 200, 1, YES_INT, 0, 0, 0, 0);
-  behaviors[2] = audioInit(2, 200, 2, YES_INT, 0, 0, 0, 0);
-  behaviors[3] = audioInit(3, 200, 3, YES_INT, 0, 0, 0, 0);
-  behaviors[4] = audioInit(4, 200, 4, YES_INT, 0, 0, 0, 0);
- */ 
   for(;;)
   {
     uint32 rxBuffer = UART_VS_UartGetByte();

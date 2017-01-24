@@ -38,12 +38,10 @@
         <Files Root="C:\Dropbox\Projects\Spectacle\Spectacle_Audio_Output_Board\Firmware\Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board.cydsn">
           <File BuildType="BUILD" Toolchain="">main.c</File>
           <File BuildType="BUILD" Toolchain="">audio.c</File>
-          <File BuildType="BUILD" Toolchain="">debug.c</File>
           <File BuildType="BUILD" Toolchain="">programming.c</File>
           <File BuildType="BUILD" Toolchain="">cyapicallbacks.h</File>
           <File BuildType="BUILD" Toolchain="">spectacle.h</File>
           <File BuildType="BUILD" Toolchain="">audio.h</File>
-          <File BuildType="BUILD" Toolchain="">debug.h</File>
           <File BuildType="BUILD" Toolchain="">programming.h</File>
         </Files>
       </Folder>

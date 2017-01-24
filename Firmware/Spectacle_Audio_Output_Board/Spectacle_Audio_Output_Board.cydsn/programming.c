@@ -1,3 +1,21 @@
+/****************************************************************************
+programming.c
+Implements programming of behaviors from director board
+Mike Hord @ SparkFun Electronics
+24 Jan 2017
+https://github.com/sparkfun/Spectacle_Audio_Output_Board
+
+This file contains the code that receives behaviors from the director board,
+grows the local behavior list, and stores the behaviors locally.
+
+Development environment specifics:
+Developed in PSoC Creator 4.0
+Board V10
+
+This code is beerware; if you see me (or any other SparkFun employee) at the
+local, and you've found our code helpful, please buy us a round!
+****************************************************************************/
+
 #include <project.h>
 #include "programming.h"
 #include "audio.h"
