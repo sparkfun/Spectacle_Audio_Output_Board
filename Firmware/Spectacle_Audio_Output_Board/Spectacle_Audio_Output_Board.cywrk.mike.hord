@@ -428,6 +428,52 @@
 <VisibleNodeIds>
 <v>Spectacle_Audio_Output_Board</v>
 <v>Spectacle_Audio_Output_Board\Serial_Bridge</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\Cm0plusStart.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\CyFlash.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\CyLFClk.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\CyLib.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\cymetadata.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\cyPm.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\cyutils.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\main.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\Pin_1.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\Pin_1_PM.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\Pin_2.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\Pin_2_PM.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\POWBTN.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\POWBTN_PM.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_PC.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_PC_BOOT.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_PC_PM.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_PC_rx.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_PC_rx_PM.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_PC_SCB_IRQ.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_PC_SCBCLK.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_PC_SPI_UART.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_PC_SPI_UART_INT.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_PC_tx.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_PC_tx_PM.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_PC_UART.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_PC_UART_BOOT.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_VS.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_VS_BOOT.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_VS_PM.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_VS_rx.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_VS_rx_PM.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_VS_SCBCLK.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_VS_SPI_UART.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_VS_SPI_UART_INT.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_VS_tx.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_VS_tx_PM.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_VS_UART.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_VS_UART_BOOT.lst</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Serial_Bridge.elf</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -499,6 +545,7 @@
 <name v=".\Spectacle_Audio_Output_Board.cydsn\spectacle.h" />
 <name v=".\Spectacle_Audio_Output_Board.cydsn\audio.h" />
 <name v=".\Spectacle_Audio_Output_Board.cydsn\programming.c" />
+<name v=".\Spectacle_Audio_Output_Board.cydsn\audio.c" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -506,7 +553,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1262, 711" SelectedTabbedMdiWindow="f7aa35d1-8753-4644-92a0-28fd6d6e2037"><DocumentWindow Key="acad0e1b-646e-497a-b08f-bc8d3f0f87e2" Guid="99075326-bea4-4e76-a3de-7aecb35dfc19" /><DocumentWindow Key="3d6dee90-eedd-4cdf-a505-a5763218f4c8" Guid="839e38b7-5e36-4acf-8204-0dfedc261aeb" /><DocumentWindow Key="738a2b12-8902-4334-b223-d89a7266d18e" Guid="33872e9f-4c33-432b-8698-a09c56c61d35" /><DocumentWindow Key="0e066cf1-2a22-411d-8199-ddd214244299" Guid="f7aa35d1-8753-4644-92a0-28fd6d6e2037" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1262, 711" SelectedTabbedMdiWindow="81a35e4e-1790-4e0f-9524-b34e5babb4df"><DocumentWindow Key="d7715163-cb66-43b2-b452-7db119140660" Guid="5edab947-f731-406c-8810-3dd182f48d66" /><DocumentWindow Key="137d061a-71d5-4201-a2c2-c97a2f54620b" Guid="c4a6d222-6c3c-47c5-b5be-cdd2c78c6cd4" /><DocumentWindow Key="7f033ad6-b32e-4e00-82db-dd3338c08891" Guid="81a35e4e-1790-4e0f-9524-b34e5babb4df" /><DocumentWindow Key="001228d2-6cc9-4c4d-926a-381d18f72721" Guid="fa5068a9-cfc7-467b-bdd4-a52e6c598ded" /><DocumentWindow Key="1fc420c4-ee1b-46d3-b214-33734e63fde1" Guid="af3608a4-af6e-4733-a7c9-bf5f7c156027" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

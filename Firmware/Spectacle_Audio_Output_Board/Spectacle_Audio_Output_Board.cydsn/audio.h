@@ -20,6 +20,9 @@ local, and you've found our code helpful, please buy us a round!
 #ifndef __audio_h__
 #define __audio_h__
 #include "project.h"
+    
+#define USER_DATA_LEN 13
+    
 #pragma pack(1)
 struct audio
 {
@@ -27,9 +30,10 @@ struct audio
   int16 threshold;
   uint8 soundIndex;
   uint8 interruptable;
-  uint8 pending;
   int32 predelay;
   int32 postdelay;
+    // End of user settable configuration data
+  uint8 pending;
   int32 audioTimer;
   uint8 active;
   uint8 playing;
