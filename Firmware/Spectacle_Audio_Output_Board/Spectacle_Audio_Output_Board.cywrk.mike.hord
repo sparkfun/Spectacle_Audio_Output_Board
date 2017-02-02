@@ -488,22 +488,10 @@
 <v>Spectacle_Audio_Output_Board\Serial_Bridge\PSoC 4 Architecture TRM</v>
 <v>Spectacle_Audio_Output_Board\Serial_Bridge\PSoC 4100S Family Datasheet</v>
 <v>Spectacle_Audio_Output_Board\Serial_Bridge\System Reference Guides</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\System Reference Guides\cy_boot_v5_40</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\System Reference Guides\cy_lfclk_v1_10</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\cy_pins_v2_20</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\SCB_P4_v3_20</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\SCB_P4_v3_20\SCB_P4_v3_20.pdf</v>
 <v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board</v>
 <v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\PSoC 4 Architecture TRM</v>
 <v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\PSoC 4100S Family Datasheet</v>
 <v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\System Reference Guides</v>
-<v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\System Reference Guides\cy_boot_v5_40</v>
-<v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\System Reference Guides\cy_lfclk_v1_10</v>
-<v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\cy_pins_v2_20</v>
-<v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
-<v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\SCB_P4_v3_20</v>
-<v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\SCB_P4_v3_20\SCB_P4_v3_20.pdf</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>Spectacle_Audio_Output_Board</v>
@@ -511,22 +499,10 @@
 <v>Spectacle_Audio_Output_Board\Serial_Bridge\PSoC 4 Architecture TRM</v>
 <v>Spectacle_Audio_Output_Board\Serial_Bridge\PSoC 4100S Family Datasheet</v>
 <v>Spectacle_Audio_Output_Board\Serial_Bridge\System Reference Guides</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\System Reference Guides\cy_boot_v5_40</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\System Reference Guides\cy_lfclk_v1_10</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\cy_pins_v2_20</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\SCB_P4_v3_20</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\SCB_P4_v3_20\SCB_P4_v3_20.pdf</v>
 <v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board</v>
 <v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\PSoC 4 Architecture TRM</v>
 <v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\PSoC 4100S Family Datasheet</v>
 <v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\System Reference Guides</v>
-<v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\System Reference Guides\cy_boot_v5_40</v>
-<v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\System Reference Guides\cy_lfclk_v1_10</v>
-<v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\cy_pins_v2_20</v>
-<v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
-<v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\SCB_P4_v3_20</v>
-<v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\SCB_P4_v3_20\SCB_P4_v3_20.pdf</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>
@@ -553,7 +529,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1262, 711" SelectedTabbedMdiWindow="81a35e4e-1790-4e0f-9524-b34e5babb4df"><DocumentWindow Key="d7715163-cb66-43b2-b452-7db119140660" Guid="5edab947-f731-406c-8810-3dd182f48d66" /><DocumentWindow Key="137d061a-71d5-4201-a2c2-c97a2f54620b" Guid="c4a6d222-6c3c-47c5-b5be-cdd2c78c6cd4" /><DocumentWindow Key="7f033ad6-b32e-4e00-82db-dd3338c08891" Guid="81a35e4e-1790-4e0f-9524-b34e5babb4df" /><DocumentWindow Key="001228d2-6cc9-4c4d-926a-381d18f72721" Guid="fa5068a9-cfc7-467b-bdd4-a52e6c598ded" /><DocumentWindow Key="1fc420c4-ee1b-46d3-b214-33734e63fde1" Guid="af3608a4-af6e-4733-a7c9-bf5f7c156027" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1262, 711" SelectedTabbedMdiWindow="faba5d20-f378-4f71-ba43-8880f623ad56"><DocumentWindow Key="9f4e2597-5ed7-4a5d-9661-d3667c8209c5" Guid="a7a708c9-431f-4f27-abc1-5ef865e5ff8c" /><DocumentWindow Key="375caa9d-3b5c-4af9-9154-b50232baf2f0" Guid="e3988210-1ffb-427f-83aa-01ab94a8ac3e" /><DocumentWindow Key="ffdec0f7-dac8-4fbe-bca9-410ea9838005" Guid="c229e6c6-2cff-4686-b941-73baa22fec11" /><DocumentWindow Key="5f281d2c-e575-47f2-b523-a7b44e42ffef" Guid="b1001e07-e162-4766-bb47-da92fc4e9664" /><DocumentWindow Key="d58aba1d-b1ff-44f4-bb4b-f23d1097c429" Guid="faba5d20-f378-4f71-ba43-8880f623ad56" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.7.0">
+<eagle version="7.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -19933,7 +19933,10 @@ Disable</text>
 <instance part="SUPPLY8" gate="G$1" x="162.306" y="70.612"/>
 <instance part="SUPPLY9" gate="G$1" x="55.88" y="119.38"/>
 <instance part="SUPPLY11" gate="G$1" x="223.52" y="104.14"/>
-<instance part="J4" gate="G$1" x="190.5" y="76.2" rot="MR180"/>
+<instance part="J4" gate="G$1" x="190.5" y="76.2" smashed="yes" rot="MR180">
+<attribute name="NAME" x="185.42" y="70.612" size="1.778" layer="95" font="vector" rot="MR180"/>
+<attribute name="VALUE" x="172.72" y="83.82" size="1.778" layer="96" font="vector" rot="MR180"/>
+</instance>
 <instance part="D4" gate="G$1" x="223.52" y="71.12" rot="MR180"/>
 <instance part="GND4" gate="1" x="241.3" y="40.64"/>
 <instance part="D1" gate="G$1" x="223.52" y="43.18"/>
@@ -19945,7 +19948,10 @@ Disable</text>
 <instance part="U$1" gate="G$1" x="213.36" y="27.94"/>
 <instance part="LOGO1" gate="G$1" x="81.28" y="10.16"/>
 <instance part="LOGO2" gate="G$1" x="88.9" y="0"/>
-<instance part="J5" gate="G$1" x="190.5" y="53.34" rot="MR180"/>
+<instance part="J5" gate="G$1" x="190.5" y="53.34" smashed="yes" rot="MR180">
+<attribute name="NAME" x="185.42" y="47.752" size="1.778" layer="95" font="vector" rot="MR180"/>
+<attribute name="VALUE" x="162.56" y="45.72" size="1.778" layer="96" font="vector" rot="MR180"/>
+</instance>
 <instance part="J1" gate="G$1" x="154.94" y="91.44"/>
 <instance part="FD5" gate="G$1" x="238.76" y="25.4"/>
 <instance part="FD6" gate="G$1" x="241.3" y="25.4"/>
