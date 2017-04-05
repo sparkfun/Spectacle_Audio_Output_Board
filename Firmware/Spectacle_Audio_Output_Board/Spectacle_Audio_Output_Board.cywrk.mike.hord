@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\Source Files\audio.c">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\TopDesign">
 <ExpandedNodeIds>
 <v>Spectacle_Audio_Output_Board</v>
 <v>Spectacle_Audio_Output_Board\Serial_Bridge\TopDesign</v>
@@ -280,6 +280,7 @@
 <v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\Generated_Source\PSoC4\UART_PC\UART_PC_BOOT.h</v>
 <v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\Generated_Source\PSoC4\UART_PC\UART_PC_PINS.h</v>
 <v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\Generated_Source\PSoC4\UART_PC\UART_PC_PM.c</v>
+<v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\Generated_Source\PSoC4\UART_PC\UART_PC_PVT.h</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -428,52 +429,6 @@
 <VisibleNodeIds>
 <v>Spectacle_Audio_Output_Board</v>
 <v>Spectacle_Audio_Output_Board\Serial_Bridge</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\Cm0plusStart.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\CyFlash.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\CyLFClk.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\CyLib.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\cymetadata.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\cyPm.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\cyutils.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\main.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\Pin_1.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\Pin_1_PM.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\Pin_2.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\Pin_2_PM.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\POWBTN.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\POWBTN_PM.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_PC.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_PC_BOOT.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_PC_PM.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_PC_rx.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_PC_rx_PM.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_PC_SCB_IRQ.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_PC_SCBCLK.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_PC_SPI_UART.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_PC_SPI_UART_INT.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_PC_tx.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_PC_tx_PM.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_PC_UART.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_PC_UART_BOOT.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_VS.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_VS_BOOT.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_VS_PM.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_VS_rx.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_VS_rx_PM.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_VS_SCBCLK.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_VS_SPI_UART.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_VS_SPI_UART_INT.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_VS_tx.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_VS_tx_PM.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_VS_UART.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Listing Files\UART_VS_UART_BOOT.lst</v>
-<v>Spectacle_Audio_Output_Board\Serial_Bridge\CortexM0p\ARM_GCC_493\Debug\Serial_Bridge.elf</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -488,10 +443,22 @@
 <v>Spectacle_Audio_Output_Board\Serial_Bridge\PSoC 4 Architecture TRM</v>
 <v>Spectacle_Audio_Output_Board\Serial_Bridge\PSoC 4100S Family Datasheet</v>
 <v>Spectacle_Audio_Output_Board\Serial_Bridge\System Reference Guides</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\System Reference Guides\cy_boot_v5_40</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\System Reference Guides\cy_lfclk_v1_10</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\cy_pins_v2_20</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\SCB_P4_v3_20</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\SCB_P4_v3_20\SCB_P4_v3_20.pdf</v>
 <v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board</v>
 <v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\PSoC 4 Architecture TRM</v>
 <v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\PSoC 4100S Family Datasheet</v>
 <v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\System Reference Guides</v>
+<v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\System Reference Guides\cy_boot_v5_40</v>
+<v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\System Reference Guides\cy_lfclk_v1_10</v>
+<v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\cy_pins_v2_20</v>
+<v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\SCB_P4_v3_20</v>
+<v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\SCB_P4_v3_20\SCB_P4_v3_20.pdf</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>Spectacle_Audio_Output_Board</v>
@@ -499,10 +466,22 @@
 <v>Spectacle_Audio_Output_Board\Serial_Bridge\PSoC 4 Architecture TRM</v>
 <v>Spectacle_Audio_Output_Board\Serial_Bridge\PSoC 4100S Family Datasheet</v>
 <v>Spectacle_Audio_Output_Board\Serial_Bridge\System Reference Guides</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\System Reference Guides\cy_boot_v5_40</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\System Reference Guides\cy_lfclk_v1_10</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\cy_pins_v2_20</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\SCB_P4_v3_20</v>
+<v>Spectacle_Audio_Output_Board\Serial_Bridge\SCB_P4_v3_20\SCB_P4_v3_20.pdf</v>
 <v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board</v>
 <v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\PSoC 4 Architecture TRM</v>
 <v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\PSoC 4100S Family Datasheet</v>
 <v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\System Reference Guides</v>
+<v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\System Reference Guides\cy_boot_v5_40</v>
+<v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\System Reference Guides\cy_lfclk_v1_10</v>
+<v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\cy_pins_v2_20</v>
+<v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\SCB_P4_v3_20</v>
+<v>Spectacle_Audio_Output_Board\Spectacle_Audio_Output_Board\SCB_P4_v3_20\SCB_P4_v3_20.pdf</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>
@@ -522,6 +501,8 @@
 <name v=".\Spectacle_Audio_Output_Board.cydsn\audio.h" />
 <name v=".\Spectacle_Audio_Output_Board.cydsn\programming.c" />
 <name v=".\Spectacle_Audio_Output_Board.cydsn\audio.c" />
+<name v=".\Spectacle_Audio_Output_Board.cydsn\Spectacle_Audio_Output_Board.cydwr" />
+<name v=".\Spectacle_Audio_Output_Board.cydsn\TopDesign\TopDesign.cysch" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -529,7 +510,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1262, 711" SelectedTabbedMdiWindow="faba5d20-f378-4f71-ba43-8880f623ad56"><DocumentWindow Key="9f4e2597-5ed7-4a5d-9661-d3667c8209c5" Guid="a7a708c9-431f-4f27-abc1-5ef865e5ff8c" /><DocumentWindow Key="375caa9d-3b5c-4af9-9154-b50232baf2f0" Guid="e3988210-1ffb-427f-83aa-01ab94a8ac3e" /><DocumentWindow Key="ffdec0f7-dac8-4fbe-bca9-410ea9838005" Guid="c229e6c6-2cff-4686-b941-73baa22fec11" /><DocumentWindow Key="5f281d2c-e575-47f2-b523-a7b44e42ffef" Guid="b1001e07-e162-4766-bb47-da92fc4e9664" /><DocumentWindow Key="d58aba1d-b1ff-44f4-bb4b-f23d1097c429" Guid="faba5d20-f378-4f71-ba43-8880f623ad56" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1182, 710" SelectedTabbedMdiWindow="a7420268-bf14-4a4d-907f-48963498cda4"><DocumentWindow Key="0ef746ab-b757-4f46-923d-9851c3aaa369" Guid="1716de08-8f88-424e-bf1c-c8c6dccb8abd" /><DocumentWindow Key="218174f2-acbe-41fc-8675-b4a01e10b333" Guid="33a9fc1a-69da-45e9-93f8-138ceb509791" /><DocumentWindow Key="e7d7c382-14a0-4d99-b9c8-6131cd646c19" Guid="16d79b5c-71ee-4dd0-b941-221e52cde6ca" /><DocumentWindow Key="9d15206d-eaab-48d1-813d-e024de14afc3" Guid="c24cf659-94b9-4c92-97a8-a5b4312a0ea5" /><DocumentWindow Key="02014c58-960b-4527-9d54-d6818431e3ca" Guid="50b6a66e-7f03-4f20-96da-14ec82614653" /><DocumentWindow Key="6e46617d-b65b-4cfd-8128-3da974fcaff9" Guid="dcefed39-1757-47c9-9d1d-ee10256b77bf" /><DocumentWindow Key="fdce4190-2bcd-4709-93bc-08d6abf23318" Guid="a7420268-bf14-4a4d-907f-48963498cda4" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

@@ -1,10 +1,10 @@
 <editor_files>
 "sdupdate.c":0
-"spiplayer.c":420
-"sdplayer.c":134
-"gpioctrl.c":38
-"README.TXT":13
-"system.h":55
+"spiplayer.c":418
+"sdplayer.c":132
+"gpioctrl.c":36
+"README.TXT":11
+"system.h":53
 </editor_files>
 <solution_tree>
 VS1000AudioModule=1

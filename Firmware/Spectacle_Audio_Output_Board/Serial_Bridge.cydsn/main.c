@@ -15,6 +15,7 @@ int main()
 {
   CyGlobalIntEnable; /* Enable global interrupts. */
   UART_PC_Start();
+  UART_PC_UartPutString("1234\n");
   UART_VS_Start();
 
   POWBTN_Write(1);

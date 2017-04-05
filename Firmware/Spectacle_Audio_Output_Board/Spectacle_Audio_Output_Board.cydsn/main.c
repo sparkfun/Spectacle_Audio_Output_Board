@@ -73,7 +73,7 @@ int main()
   
   // Start the "to PC" UART. This is only used during development!
   UART_PC_Start();  
-  UART_PC_UartPutString("Hello world\n");
+  UART_PC_UartPutString("1234\n");
 
   // Start the "to VS1000" UART. This is the path used to control the audio
   // codec chip.
@@ -82,7 +82,7 @@ int main()
   // "Power cycle" the VS1000 chip. Without this, the chip will probably
   // (although not assuredly) not work. Don't go removing it!
   POWBTN_Write(1);
-  CyDelay(5);
+  CyDelay(1);
   POWBTN_Write(0);
 
   // ARM devices have an internal system tick which can be used as a timebase
@@ -104,8 +104,8 @@ int main()
   // Pending audio flag. This depends on the pre- and postdelays, NOT on the
   // actual sound being playing or not.
   uint8 pending = 0;
-  //I2C_Mem[CONFIGURED_REG] = 0;
-  behaviors = malloc(64*sizeof(behaviors));
+
+  behaviors = malloc(32*sizeof(behaviors));
   // Turn LED on. This is a useful check on whether or not the code made it
   // through the initialization process. If it did, the LED will come on. If
   // not, the LED stays off. If it gets hung in the loop, the LED will stop
@@ -114,8 +114,8 @@ int main()
 
   for(;;)
   {
-    uint32 rxBuffer = UART_VS_UartGetByte();
-    if (!(rxBuffer & UART_VS_UART_RX_UNDERFLOW)) UART_PC_UartPutChar(rxBuffer);
+    //uint32 rxBuffer = UART_VS_UartGetByte();
+    //if (!(rxBuffer & UART_VS_UART_RX_UNDERFLOW)) UART_PC_UartPutChar(rxBuffer);
     // One hundred times per second,
     if ((systemTimer - 10) > _100HzTick)
     {
